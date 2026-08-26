@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Le Pommier — Intranet & pilotage opérationnel : intranet PHP métier pour centraliser RH, achats, ventes, comptabilité, HACCP et télémétrie sur un site touristique 5 étoiles."
+    >
+    <title>Le Pommier — Intranet &amp; pilotage opérationnel — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#contenu-principal">Aller directement au contenu</a>
+
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+        </a>
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page" data-menu-link>Projets</a></li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer" data-menu-link>GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer" data-menu-link>LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download data-menu-link>Télécharger le CV</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+                <a class="project-back-link" href="../index.html#projets">
+                    <span aria-hidden="true">←</span>
+                    Retour aux projets
+                </a>
+
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">OPS / PILOT · PHP · DATA</p>
+
+                        <h1 class="project-hero__title" id="project-title">
+                            Le Pommier — Intranet &amp; pilotage opérationnel
+                        </h1>
+
+                        <p class="project-hero__summary">
+                            Direction opérationnelle d’un site touristique complexe et conception
+                            d’un intranet métier PHP centralisant RH, achats, chiffres d’affaires,
+                            comptabilité, HACCP et télémétrie technique pour faciliter le pilotage
+                            quotidien et la traçabilité des opérations.
+                        </p>
+
+                        <ul class="project-tags project-tags--hero" aria-label="Technologies principales du projet">
+                            <li>PHP</li>
+                            <li>Intranet web</li>
+                            <li>Base de données</li>
+                            <li>Excel</li>
+                            <li>Quadratus</li>
+                            <li>BI / KPI</li>
+                        </ul>
+
+                        <!--
+                            Ce dépôt est un projet connexe développé ultérieurement
+                            à partir de l'expérience métier acquise sur le Pommier.
+                            Il ne correspond pas au code source de l'intranet historique.
+                        -->
+                        <div class="project-resource-links">
+                            <a
+                                class="project-resource-link"
+                                href="https://github.com/Fred-Zang/or-tools_planning_parc_aquatique"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir le projet OR-Tools connexe
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <dl class="project-meta" aria-label="Informations principales du projet">
+                        <div>
+                            <dt>Période</dt>
+                            <dd>2011–2017</dd>
+                        </div>
+                        <div>
+                            <dt>Type</dt>
+                            <dd>Intranet métier · pilotage Data</dd>
+                        </div>
+                        <div>
+                            <dt>Rôle</dt>
+                            <dd>Direction opérationnelle &amp; conception SI métier</dd>
+                        </div>
+                        <div>
+                            <dt>Contexte</dt>
+                            <dd>Domaine Le Pommier 5★ · Ardèche</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="overview-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VUE D’ENSEMBLE</p>
+                    <h2 id="overview-title">Comprendre le projet</h2>
+                </header>
+
+                <div class="project-overview">
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">01</p>
+                        <h3>Contexte</h3>
+                        <p>
+                            Un domaine touristique de grande capacité, ouvert sur de nombreux métiers :
+                            hébergement, restauration, commerces, technique, sécurité, RH et réseaux,
+                            avec une forte montée en charge pendant la saison estivale.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">02</p>
+                        <h3>Objectif</h3>
+                        <p>
+                            Remplacer les informations dispersées par un point d’entrée commun
+                            permettant de suivre les opérations, valider les flux et conserver une
+                            traçabilité exploitable par la direction et les responsables de service.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">03</p>
+                        <h3>Notre rôle</h3>
+                        <p>
+                            Concevoir l’intranet PHP et son modèle de données tout en pilotant
+                            les processus métier : RH, ventes, achats, stocks, comptabilité,
+                            HACCP et infrastructures techniques.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">04</p>
+                        <h3>Résultat</h3>
+                        <p>
+                            Un système accessible depuis PC, téléphone ou tablette, utilisé
+                            pour centraliser les déclarations, validations, indicateurs et
+                            historiques nécessaires au fonctionnement quotidien du site.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--media" aria-labelledby="architecture-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">ARCHITECTURE</p>
+                    <h2 id="architecture-title">L’intranet au centre des flux opérationnels</h2>
+                    <p class="project-section__intro">
+                        Le code source d’origine n’est plus disponible pour publication.
+                        Le schéma ci-dessous est donc une reconstruction fonctionnelle fidèle
+                        aux processus documentés : collecte des informations, base métier,
+                        validations et restitution.
+                    </p>
+                </header>
+
+                <figure class="project-media">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/le-pommier/architecture-intranet-le-pommier.png"
+                        data-image-alt="Schéma fonctionnel de l’intranet Le Pommier reliant RH, ventes, achats, HACCP et télémétrie à un intranet PHP, une base de données métier, Quadratus, les fournisseurs et le pilotage temps réel"
+                        aria-haspopup="dialog"
+                    >
+                        <img
+                            src="../assets/images/projects/le-pommier/architecture-intranet-le-pommier.png"
+                            alt="Schéma de principe de l’intranet métier du Domaine Le Pommier"
+                        >
+                    </button>
+
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/le-pommier/architecture-intranet-le-pommier.png"
+                            data-image-alt="Schéma fonctionnel de l’intranet Le Pommier reliant RH, ventes, achats, HACCP et télémétrie à un intranet PHP, une base de données métier, Quadratus, les fournisseurs et le pilotage temps réel"
+                        >
+                            Ouvrir le schéma en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+
+                    <figcaption>
+                        Reconstruction de l’architecture métier à partir des éléments de CV et
+                        de la description fonctionnelle conservée après le départ de l’entreprise.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="markers-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">REPÈRES</p>
+                    <h2 id="markers-title">Un SI conçu pour un site à forte intensité opérationnelle</h2>
+                </header>
+
+                <div class="project-results">
+                    <article class="project-result">
+                        <strong>4 000 / jour</strong>
+                        <span>Capacité de fréquentation en haute saison indiquée dans les CV fournis.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>200+</strong>
+                        <span>Salariés saisonniers coordonnés, dont 19 CDI dans le périmètre décrit.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>15</strong>
+                        <span>Départements opérationnels et points de vente suivis dans le système.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>600+</strong>
+                        <span>Fournisseurs référencés dans la base métier de l’intranet.</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--technical" aria-labelledby="technical-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">DÉTAILS TECHNIQUES</p>
+                    <h2 id="technical-title">Du référentiel métier au contrôle temps réel</h2>
+                    <p class="project-section__intro">
+                        Le système ne se limitait pas à un tableau de bord : il couvrait
+                        plusieurs processus de saisie, validation, génération documentaire,
+                        comptabilité et traçabilité technique.
+                    </p>
+                </header>
+
+                <div class="project-details">
+                    <article class="project-detail">
+                        <p class="project-detail__label">DATA · RÉFÉRENTIELS</p>
+                        <h3>Une base commune pour les métiers du site</h3>
+                        <ul class="project-detail__list">
+                            <li>Référentiel de plus de 600 fournisseurs et des codes d’achat associés.</li>
+                            <li>Référencement des départements opérationnels et des codes comptables liés aux caisses.</li>
+                            <li>Centralisation des plannings et emplois du temps des salariés par département.</li>
+                            <li>Base utilisée comme socle commun par les modules RH, ventes, achats et reporting.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">RH · PRÉSENCE</p>
+                        <h3>Pointage avec double validation</h3>
+                        <ul class="project-detail__list">
+                            <li>Déclaration de présence des salariés directement dans l’intranet.</li>
+                            <li>Validation croisée par le salarié puis son responsable.</li>
+                            <li>Ajout de notes journalières pour absences, retards ou horaires décalés.</li>
+                            <li>Consultation multi-terminal depuis les différents secteurs du domaine.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">VENTES · COMPTABILITÉ</p>
+                        <h3>Du chiffre d’affaires à Quadratus</h3>
+                        <ul class="project-detail__list">
+                            <li>Saisie quotidienne des chiffres d’affaires par point de vente.</li>
+                            <li>Détail des montants HT, TVA et affectations à partir des clôtures de caisse.</li>
+                            <li>Interopérabilité avec le logiciel comptable Quadratus pour centraliser les données comptables.</li>
+                            <li>Indicateurs de suivi et reporting utilisés pour le pilotage financier et opérationnel.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">ACHATS · STOCKS</p>
+                        <h3>Un workflow de commande contrôlé</h3>
+                        <ul class="project-detail__list">
+                            <li>Précommandes préparées par les responsables de département dans un modèle Excel normalisé.</li>
+                            <li>Codes fournisseur, article et quantité intégrés au processus de validation.</li>
+                            <li>Contrôle des niveaux de stock estimés avant validation de la commande.</li>
+                            <li>Génération d’un bon de commande PDF puis transmission par e-mail au fournisseur.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">HACCP · INFRASTRUCTURES</p>
+                        <h3>Traçabilité sanitaire et télémétrie technique</h3>
+                        <ul class="project-detail__list">
+                            <li>Archivage HACCP pour les activités de restauration, avec photos et suivi des DLC.</li>
+                            <li>Récupération d’informations de télémétrie du réseau d’eau potable et des réservoirs.</li>
+                            <li>Suivi d’indicateurs de fonctionnement du réseau Wi-Fi clientèle.</li>
+                            <li>Historisation destinée à faciliter les contrôles, les investigations et la prise de décision.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="stack-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">STACK</p>
+                    <h2 id="stack-title">Technologies &amp; outils mobilisés</h2>
+                </header>
+
+                <ul class="project-stack" aria-label="Stack du projet Le Pommier">
+                    <li>PHP</li>
+                    <li>Intranet web</li>
+                    <li>Base de données métier</li>
+                    <li>Excel</li>
+                    <li>PDF</li>
+                    <li>E-mail</li>
+                    <li>Quadratus</li>
+                    <li>BI / KPI</li>
+                    <li>Reporting</li>
+                    <li>HACCP</li>
+                    <li>Télémétrie</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="project-section project-section--media" aria-labelledby="evidence-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">PREUVE PUBLIQUE</p>
+                    <h2 id="evidence-title">Le Pommier et le projet Aqua’Ardèche dans la presse</h2>
+                    <p class="project-section__intro">
+                        Une archive de presse publique permet de replacer la mission dans le contexte
+                        de développement du Domaine Le Pommier et du projet de parc aquatique.
+                    </p>
+                </header>
+
+                <figure class="project-media project-media--press">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/le-pommier/presse-aquaparc.png"
+                        data-image-alt="Capture d’écran d’un article du Dauphiné Libéré intitulé Le plus grand parc aquatique résidentiel d’Europe ? consacré au projet Aqua’Ardèche du Domaine Le Pommier"
+                        aria-haspopup="dialog"
+                    >
+                        <img
+                            src="../assets/images/projects/le-pommier/presse-aquaparc.png"
+                            alt="Capture d’un article du Dauphiné Libéré consacré au projet Aqua’Ardèche"
+                        >
+                    </button>
+
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/le-pommier/presse-aquaparc.png"
+                            data-image-alt="Capture d’écran d’un article du Dauphiné Libéré intitulé Le plus grand parc aquatique résidentiel d’Europe ? consacré au projet Aqua’Ardèche du Domaine Le Pommier"
+                        >
+                            Ouvrir l’archive en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+
+                    <figcaption>
+                        Le Dauphiné Libéré — « Le plus grand parc aquatique résidentiel d’Europe ? »,
+                        article consacré au projet Aqua’Ardèche.
+                    </figcaption>
+                </figure>
+
+                <div class="project-resource-links" aria-label="Ressources publiques du projet">
+                    <a
+                        class="project-resource-link"
+                        href="https://campinglepommier.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Site officiel du Domaine Le Pommier
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a
+                        class="project-resource-link"
+                        href="https://www.ledauphine.com/ardeche/2013/03/31/aqua-ardeche-n-attend-plus-que-les-autorisations"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Article du Dauphiné Libéré
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <aside class="project-confidentiality" aria-labelledby="confidentiality-title">
+            <div class="content-container project-confidentiality__inner">
+                <p class="project-confidentiality__label" id="confidentiality-title">
+                    Confidentialité &amp; limites de documentation
+                </p>
+
+                <p class="project-confidentiality__text">
+                    Le code source, la base de données et les documents internes de l’intranet
+                    ne sont plus détenus et ne peuvent pas être publiés. La présente fiche repose
+                    sur les éléments de CV conservés, une description fonctionnelle rédigée après
+                    la mission et des ressources publiques. Le schéma est donc une reconstruction
+                    de principe et non une extraction de l’architecture source.
+                </p>
+            </div>
+        </aside>
+
+        <nav class="project-navigation" aria-label="Navigation entre les projets">
+            <div class="content-container project-navigation__inner">
+                <a href="ajc-training.html">
+                    <span aria-hidden="true">←</span>
+                    Projet précédent : AJC Training
+                </a>
+
+                <a class="project-navigation__all" href="../index.html#projets">
+                    Tous les projets
+                </a>
+
+                <a class="project-navigation__next" href="zangai-wordpress-lab.html">
+                    Projet suivant : Zang.AI
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <dialog class="image-dialog" data-image-dialog aria-label="Agrandissement du visuel">
+        <div class="image-dialog__toolbar">
+            <p>Vue agrandie</p>
+            <button
+                class="image-dialog__close"
+                type="button"
+                data-image-dialog-close
+                aria-label="Fermer l’image agrandie"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="image-dialog__viewport">
+            <img data-image-dialog-img src="" alt="">
+        </div>
+    </dialog>
+</body>
+</html>

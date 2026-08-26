@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Réflexion personnelle sur l’IA agentique, le mandat, la supervision, la souveraineté, la responsabilité humaine et l’après-LLM."
+    >
+
+    <title>Après la course aux LLM : quelle IA voulons-nous vraiment ? — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="article.css?v=1.0.0">
+    <script src="../script.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">
+                    Zang<span class="brand__accent">.AI</span>
+                </span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li><a class="navigation-link" href="../index.html#projets" data-menu-link>Projets</a></li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#laboratoire" data-menu-link>Laboratoire IA</a></li>
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="../index.html#articles"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Articles
+                </a>
+            </li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link" href="../index.html#projets">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#laboratoire">Laboratoire IA</a></li>
+                <li>
+                    <a
+                        class="navigation-link navigation-link--active"
+                        href="../index.html#articles"
+                        aria-current="page"
+                    >
+                        Articles
+                    </a>
+                </li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content article-page" id="contenu-principal">
+        <article>
+            <header class="article-hero" aria-labelledby="article-title">
+                <div class="content-container">
+                    <a class="article-back-link" href="../index.html#articles">
+                        <span aria-hidden="true">←</span>
+                        Retour aux articles
+                    </a>
+
+                    <p class="eyebrow">IA · AGENTS · RESPONSABILITÉ</p>
+
+                    <h1 class="article-hero__title" id="article-title">
+                        Après la course aux LLM : quelle IA voulons-nous vraiment ?
+                    </h1>
+
+                    <p class="article-hero__summary">
+                        De l’assistant qui répond à l’agent qui agit, la vraie question devient peut-être moins celle de la puissance que celle du mandat, du contrôle et de la responsabilité.
+                    </p>
+
+                    <div class="article-meta" aria-label="Informations de lecture">
+                        <span>Réflexion &amp; retour d’expérience</span>
+                        <span>≈ 9 min de lecture</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="article-content">
+                <div class="content-container">
+                    <div class="article-content__inner">
+                    <p>Pendant quelques années, nous avons surtout demandé aux intelligences artificielles de répondre.</p>
+                    <p>Écrire un texte. Résumer un document. Produire du code. Chercher une information. Proposer quelques pistes.</p>
+                    <p>Puis la demande a commencé à changer.</p>
+                    <p>Nous ne voulons plus seulement qu’une IA nous conseille. Nous commençons à vouloir qu’elle agisse.</p>
+                    <p>Trouver une offre, réserver, modifier un projet, lancer des traitements, coordonner plusieurs outils ou plusieurs agents.</p>
+                    <p>Cette différence peut sembler minime.</p>
+                    <p>Elle change pourtant presque tout.</p>
+                    <p>Entre « conseille-moi » et « fais-le pour moi » apparaît une notion qui m’intéresse de plus en plus : <strong>le mandat</strong>.</p>
+                    <h2>De l’attention au mandat</h2>
+                    <p>Le Web que nous connaissons s’est largement construit autour de notre attention.</p>
+                    <p>Nous cherchons, comparons, lisons, regardons, cliquons puis décidons.</p>
+                    <p>Un assistant IA peut déjà raccourcir ce parcours. Au lieu de consulter vingt résultats, nous pouvons lui demander de sélectionner les quelques options qui correspondent le mieux à nos critères.</p>
+                    <p>Mais tant qu’il nous conseille, nous restons celui qui agit.</p>
+                    <p>Le changement devient beaucoup plus profond lorsque nous lui donnons l’autorisation de choisir puis d’exécuter.</p>
+                    <p>Acheter.</p>
+                    <p>Réserver.</p>
+                    <p>Modifier.</p>
+                    <p>Déployer.</p>
+                    <p>Négocier.</p>
+                    <p>À cet instant, nous ne transmettons plus seulement une intention. Nous déléguons une partie de notre capacité d’action.</p>
+                    <p>Et plus l’agent connaît nos habitudes, nos données, nos contraintes ou notre historique, plus ce mandat devient puissant.</p>
+                    <p>La question n’est donc plus uniquement : <strong>que sait faire l’IA ?</strong></p>
+                    <p>Elle devient : <strong>qu’acceptons-nous de lui laisser faire à notre place ?</strong></p>
+                    <h2>Produire plus vite ne suffit pas</h2>
+                    <p>Cette évolution me passionne, mais elle fait apparaître un problème très concret.</p>
+                    <p>Les machines peuvent déjà produire bien plus rapidement que nous ne pouvons vérifier.</p>
+                    <p>Du code peut être généré en quelques secondes.</p>
+                    <p>Des analyses peuvent être lancées en parallèle.</p>
+                    <p>Plusieurs agents peuvent explorer simultanément différentes pistes.</p>
+                    <p>À première vue, c’est formidable.</p>
+                    <p>Mais si chaque résultat doit ensuite être relu, testé et validé manuellement, nous déplaçons simplement le goulot d’étranglement.</p>
+                    <p>La production n’est plus la limite.</p>
+                    <p>La supervision le devient.</p>
+                    <p>C’est probablement l’un des sujets qui m’intéressent le plus aujourd’hui.</p>
+                    <p>Je ne veux pas ralentir l’automatisation pour conserver artificiellement du travail humain.</p>
+                    <p>Je préfère chercher comment automatiser aussi une partie de la vérification.</p>
+                    <p>Tests.</p>
+                    <p>Benchmarks.</p>
+                    <p>Contrôles de cohérence.</p>
+                    <p>Traçabilité.</p>
+                    <p>Agents chargés de chercher les erreurs d’autres agents.</p>
+                    <p>Rapports réguliers sur les anomalies ou les points de vigilance.</p>
+                    <p>Puis une intervention humaine là où elle apporte réellement quelque chose.</p>
+                    <p>Le rôle de l’humain peut alors évoluer :</p>
+                    <p><strong>exécuter → superviser → orchestrer → décider → assumer la responsabilité.</strong></p>
+                    <h2>Déléguer consciemment</h2>
+                    <p>Cette logique rejoint ce que j’appelle désormais un <strong>abandon conscient</strong>.</p>
+                    <p>Je peux être parfaitement heureux qu’une IA écrive une partie du code, prépare des données, réalise des comparaisons ou lance des tests.</p>
+                    <p>Je n’ai aucun attachement particulier au fait d’exécuter moi-même chaque étape.</p>
+                    <p>Mais je veux savoir ce que je lui ai donné le droit de faire.</p>
+                    <p>Je veux pouvoir mesurer son résultat.</p>
+                    <p>Je veux pouvoir retrouver ce qui s’est passé.</p>
+                    <p>Et je veux savoir dans quelles situations un humain doit reprendre la main.</p>
+                    <p>Pour moi, l’autonomie d’un système devrait donc progresser avec sa capacité à être contrôlé.</p>
+                    <p>Plus je lui donne de pouvoir d’action, plus les règles, permissions, journaux, benchmarks et mécanismes de retour en arrière deviennent importants.</p>
+                    <p>Ce n’est pas une défiance envers l’IA.</p>
+                    <p>C’est presque l’inverse.</p>
+                    <p>La confiance devient plus utile lorsqu’elle peut s’appuyer sur autre chose qu’une impression.</p>
+                    <h2>La souveraineté devient une question pratique</h2>
+                    <p>C’est aussi pour cette raison que je m’intéresse depuis longtemps aux architectures locales, aux modèles ouverts et aux systèmes capables de changer facilement de modèle.</p>
+                    <p>La souveraineté peut parfois sembler être un débat très abstrait.</p>
+                    <p>Elle devient beaucoup plus concrète lorsqu’un agent ne se contente plus de répondre mais commence à agir.</p>
+                    <p>Où sont traitées les données ?</p>
+                    <p>Qui peut voir les requêtes ?</p>
+                    <p>Qui décide des changements du modèle ?</p>
+                    <p>Que se passe-t-il si un fournisseur modifie ses conditions, son prix ou ses politiques ?</p>
+                    <p>Peut-on auditer les actions ?</p>
+                    <p>Peut-on remplacer une brique sans reconstruire tout le système ?</p>
+                    <p>Je préfère donc, lorsque le contexte le permet, une architecture qui limite les dépendances irréversibles.</p>
+                    <p>Pas nécessairement tout en local.</p>
+                    <p>Pas nécessairement tout en open source.</p>
+                    <p>Mais suffisamment modulaire pour que le meilleur modèle du moment ne devienne pas une prison technique quelques mois plus tard.</p>
+                    <p>Je ne cherche pas le modèle auquel rester fidèle.</p>
+                    <p>Je cherche plutôt une architecture capable de changer de modèle lorsque le contexte change.</p>
+                    <h2>Et si je me trompais ?</h2>
+                    <p>Il est possible que je surestime encore la nécessité d’une supervision humaine dans certains domaines.</p>
+                    <p>Des systèmes automatisés dépassent déjà les humains sur de nombreuses tâches spécialisées, et cette progression continuera probablement.</p>
+                    <p>Il serait donc étrange de décréter que toute décision importante doit éternellement repasser par une personne simplement parce que nous avons toujours travaillé ainsi.</p>
+                    <p>Mais une autre question subsiste.</p>
+                    <p>Être meilleur que nous ne signifie pas automatiquement pouvoir répondre de ses actes.</p>
+                    <p>Dans des domaines critiques, la performance n’est qu’une partie du problème.</p>
+                    <p>Il reste la responsabilité.</p>
+                    <p>Qui accepte les conséquences lorsqu’une décision est mauvaise ?</p>
+                    <p>Qui fixe les limites ?</p>
+                    <p>Qui décide qu’un taux d’erreur est acceptable ?</p>
+                    <p>Qui peut interrompre le système ?</p>
+                    <p>Je n’ai pas de réponse universelle.</p>
+                    <p>Je crois surtout que nous devrons apprendre à placer l’humain non pas partout, mais aux endroits où sa présence a encore du sens.</p>
+                    <p>Et ces endroits évolueront.</p>
+                    <h2>Après les LLM ?</h2>
+                    <p>Nous parlons aujourd’hui énormément des LLM parce qu’ils ont transformé notre rapport aux machines.</p>
+                    <p>Mais je me méfie toujours un peu lorsque nous commençons à considérer un paradigme technique comme définitif.</p>
+                    <p>Les LLM possèdent des limites que nous apprenons progressivement à mieux connaître.</p>
+                    <p>D’autres approches cherchent à représenter le monde, l’action, l’espace, le temps ou les conséquences d’une décision autrement que par la seule prédiction du prochain token.</p>
+                    <p>Les World Models et les architectures qui les accompagneront m’intéressent justement pour cette raison.</p>
+                    <p>Je ne sais pas s’ils remplaceront les LLM.</p>
+                    <p>Peut-être seront-ils complémentaires.</p>
+                    <p>Peut-être qu’un autre paradigme apparaîtra encore.</p>
+                    <p>Cela renforce seulement ma conviction : il est dangereux de construire toute notre stratégie autour de l’idée que la technologie dominante aujourd’hui le restera demain.</p>
+                    <p>L’architecture doit pouvoir évoluer plus vite que nos certitudes.</p>
+                    <h2>Quelle IA voulons-nous réellement ?</h2>
+                    <p>Ce qui m’intéresse finalement le plus dans l’avenir de l’IA n’est pas qu’elle produise toujours davantage à notre place.</p>
+                    <p>J’aimerais qu’elle nous libère de certaines contraintes sans nous éloigner de notre responsabilité.</p>
+                    <p>Qu’elle nous aide à mieux comprendre plutôt qu’à simplement produire plus.</p>
+                    <p>Et, pourquoi pas, qu’elle nous aide un jour à regarder autrement le monde vivant auquel nous appartenons : animaux, végétaux, écosystèmes et toutes ces formes d’organisation dont notre vision très humaine ne perçoit probablement qu’une petite partie.</p>
+                    <p>C’est peut-être idéaliste.</p>
+                    <p>Cela me convient.</p>
+                    <p>Je préfère cette perspective à celle d’une course infinie consistant simplement à générer davantage de contenu, de code, de décisions ou de consommation.</p>
+                    <p>La question des prochaines années ne sera donc peut-être pas seulement :</p>
+                    <p><strong>jusqu’où l’intelligence artificielle peut-elle aller ?</strong></p>
+                    <p>Elle pourrait devenir beaucoup plus personnelle :</p>
+                    <p><strong>jusqu’où voulons-nous lui donner mandat d’aller à notre place, et de quoi voulons-nous rester responsables ?</strong></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <nav class="article-navigation" aria-label="Navigation des articles">
+            <div class="content-container">
+                <a href="../index.html#articles">← Revenir au journal Zang.AI</a>
+            </div>
+        </nav>
+    </main>
+</body>
+</html>

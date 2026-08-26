@@ -1,0 +1,1720 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+
+    <!--
+        Le viewport est la zone visible de la page dans le navigateur.
+        Cette ligne demande aux smartphones d'utiliser leur vraie largeur.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Zang.AI — Portfolio de Fred Zanghi, ingénieur Data &amp; IA : RAG, NLP, automatisation, Data Engineering et systèmes IA appliqués."
+    >
+
+    <link rel="canonical" href="https://zang-iaconsulting.com/">
+
+    <!--
+        Open Graph contrôle l'aperçu du portfolio lorsqu'une URL est
+        partagée sur LinkedIn et sur les services compatibles.
+    -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Zang.AI">
+    <meta
+        property="og:title"
+        content="Zang.AI — Ingénierie Data &amp; IA"
+    >
+    <meta
+        property="og:description"
+        content="Portfolio de Fred Zanghi : architectures RAG, NLP, Data Engineering, automatisation et systèmes IA conçus pour des usages concrets."
+    >
+    <meta property="og:url" content="https://zang-iaconsulting.com/">
+    <meta property="og:image" content="https://zang-iaconsulting.com/assets/images/backgrounds/home-ambient.webp">
+    <meta
+        property="og:image:alt"
+        content="Univers visuel du portfolio Zang.AI consacré à la Data, à l'intelligence artificielle et à l'automatisation."
+    >
+
+    <!--
+        Ces balises complètent Open Graph pour les plateformes qui
+        utilisent le format de carte sociale à grande image.
+    -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+        name="twitter:title"
+        content="Zang.AI — Ingénierie Data &amp; IA"
+    >
+    <meta
+        name="twitter:description"
+        content="Portfolio de Fred Zanghi : RAG, NLP, Data Engineering, automatisation et systèmes IA appliqués."
+    >
+    <meta name="twitter:image" content="https://zang-iaconsulting.com/assets/images/backgrounds/home-ambient.webp">
+
+    <title>Zang.AI — Portfolio Data &amp; IA</title>
+
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="any">
+
+    <!-- La feuille CSS contient la présentation visuelle. -->
+    <link rel="stylesheet" href="styles.css?v=1.0.0">
+
+    <!--
+        defer charge le JavaScript sans bloquer la lecture du HTML.
+        Le script sera exécuté lorsque la structure de la page sera prête.
+    -->
+    <script src="script.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <!--
+        Ce lien d'évitement devient visible avec la touche Tab.
+        Il permet de rejoindre directement le contenu principal.
+    -->
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <!-- En-tête visible uniquement sur mobile et tablette. -->
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+        </a>
+
+        <!--
+            aria-expanded indique si le menu est ouvert.
+            aria-controls relie ce bouton au panneau menu-mobile.
+        -->
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <!-- Voile sombre affiché derrière le menu mobile. -->
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <!--
+        Panneau mobile.
+        tabindex="-1" permet au JavaScript de lui donner le focus.
+    -->
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="#accueil" data-menu-link>
+                <span class="brand__name">
+                    Zang<span class="brand__accent">.AI</span>
+                </span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Fermer le menu principal"
+            >
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="#accueil"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Accueil
+                </a>
+            </li>
+            <li><a class="navigation-link" href="#projets" data-menu-link>Projets</a></li>
+            <li><a class="navigation-link" href="#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="#contact" data-menu-link>Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu__secondary">
+            <!--
+                target="_blank" ouvre GitHub et LinkedIn dans un nouvel onglet.
+
+                rel="noopener noreferrer" évite que la page externe puisse
+                manipuler directement la page Zang.AI ayant ouvert l'onglet.
+            -->
+            <a
+                href="https://github.com/Fred-Zang/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-menu-link
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-menu-link
+            >
+                LinkedIn
+            </a>
+
+            <!--
+                download indique au navigateur que le PDF doit être
+                proposé au téléchargement plutôt qu'utilisé comme navigation.
+            -->
+            <a
+                href="assets/documents/CV_Fred_Zanghi_2026.pdf"
+                download
+                data-menu-link
+            >
+                Télécharger le CV
+            </a>
+
+            <!--
+                Les informations légales restent internes à la page.
+            -->
+            <a href="#mentions-legales" data-menu-link>
+                Mentions légales
+            </a>
+
+            <a href="#confidentialite" data-menu-link>
+                Politique de confidentialité
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sidebar permanente sur desktop, masquée sur mobile. -->
+    <aside class="sidebar">
+        <a class="brand" href="#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li>
+                    <a
+                        class="navigation-link navigation-link--active"
+                        href="#accueil"
+                        aria-current="page"
+                    >
+                        Accueil
+                    </a>
+                </li>
+                <li><a class="navigation-link" href="#projets">Projets</a></li>
+                <li><a class="navigation-link" href="#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="#articles">Articles</a></li>
+                <li><a class="navigation-link" href="#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <!--
+                Liens professionnels réels.
+            -->
+            <a
+                href="https://github.com/Fred-Zang/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <!--
+                Le chemin est relatif au fichier index.html.
+            -->
+            <a
+                href="assets/documents/CV_Fred_Zanghi_2026.pdf"
+                download
+            >
+                Télécharger le CV
+            </a>
+
+            <a href="#mentions-legales">
+                Mentions légales
+            </a>
+
+            <a href="#confidentialite">
+                Politique de confidentialité
+            </a>
+        </div>
+    </aside>
+
+    <!-- Contenu principal ciblé par le lien d'évitement. -->
+    <main class="main-content" id="contenu-principal">
+        <section class="hero" id="accueil" aria-labelledby="hero-title">
+            <div class="content-container">
+                <div class="hero__layout">
+                    <!--
+                        Le portrait donne une présence plus humaine à l'accueil
+                        tout en restant cohérent avec la palette sombre du site.
+                    -->
+                    <figure class="hero__portrait">
+                        <img
+                            class="hero__brand-logo"
+                            src="assets/images/branding/brand-zangai.png"
+                            alt="Zang.AI"
+                        >
+
+                        <img
+                            class="hero__portrait-image"
+                            src="assets/images/hero/fred-portrait.png"
+                            alt="Portrait professionnel de Fred Zanghi"
+                            width="1254"
+                            height="1254"
+                        >
+                    </figure>
+
+                    <div class="hero__content">
+                        <p class="eyebrow">
+                            INGÉNIEUR DATA &amp; IA · FREELANCE
+                        </p>
+
+                        <h1 class="hero__title" id="hero-title">
+                            Ingénierie Data &amp; IA au service de solutions concrètes.
+                        </h1>
+
+                        <p class="hero__description">
+                            Je conçois des solutions intelligentes, automatisées
+                            et robustes pour l’analyse documentaire, les
+                            architectures RAG, les workflows métiers et les
+                            systèmes pilotés par la donnée.
+                        </p>
+
+                        <div class="hero__actions">
+                            <a class="button button--primary" href="#projets">
+                                Voir les projets
+                            </a>
+
+                            <a class="button button--secondary" href="#competences">
+                                Voir les compétences
+                            </a>
+                        </div>
+
+                        <ul class="hero__topics" aria-label="Domaines principaux">
+                            <li>RAG &amp; NLP</li>
+                            <li>Data engineering</li>
+                            <li>Automatisation</li>
+                        </ul>
+                    </div>
+
+                    <!-- Carte secondaire placée sous le texte sur mobile. -->
+                    <aside class="availability-card" aria-label="Informations professionnelles">
+                        <p class="availability-card__label">Disponible pour</p>
+
+                        <p class="availability-card__value">
+                            Missions IA, Data et automatisation
+                        </p>
+
+                        <dl class="availability-card__details">
+                            <div>
+                                <dt>Localisation</dt>
+                                <dd>France · Remote</dd>
+                            </div>
+
+                            <div>
+                                <dt>Approche</dt>
+                                <dd>Robuste · Traçable · Exploitable</dd>
+                            </div>
+
+                            <div>
+                                <dt>Portfolio</dt>
+                                <dd>Projets, articles &amp; réalisations</dd>
+                            </div>
+                        </dl>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            SECTION PROJETS — 8 RÉALISATIONS
+
+            Les huit cartes utilisent toutes la même structure afin de faciliter
+            leur lecture et leur future transformation en contenus WordPress.
+
+            Le champ project-card__code est un repère visuel court :
+            il identifie le domaine ou le contexte du projet sans dupliquer
+            les technologies déjà présentées dans project-tags.
+
+            La grille reste responsive :
+            - 1 colonne sur petit mobile ;
+            - 2 colonnes lorsque l'espace le permet ;
+            - 3 colonnes sur grand écran.
+        -->
+        <section class="projects-section" id="projets" aria-labelledby="projects-title">
+            <div class="content-container">
+                <div class="section-heading">
+                    <div class="section-heading__title-group">
+                        <p class="eyebrow">PROJETS SÉLECTIONNÉS</p>
+
+                        <h2 class="section-title" id="projects-title">
+                            Projets récents
+                        </h2>
+                    </div>
+
+                    <p class="section-description">
+                        Huit réalisations qui illustrent plusieurs facettes de notre
+                        travail : IA générative, recherche documentaire, Data,
+                        automatisation, transmission, optimisation métier,
+                        agents IA et développement web.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- ======================================================
+                         PROJET 01 — RAG JURIDIQUE
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">01</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Analyse documentaire
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo" aria-hidden="true">
+                            <img
+                                class="project-card__logo"
+                                src="assets/images/projects/rag-juridique/brand-legifrance.png"
+                                alt=""
+                            >
+
+
+                            <span class="project-card__code">RAG / LEGAL</span>
+
+                            <span class="project-card__signal">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                RAG juridique auditable
+                            </h3>
+
+                            <p class="project-card__description">
+                                Architecture de recherche et question-réponse sur
+                                corpus Légifrance intégrant datalake structuré,
+                                retrieval sparse, dense et hybride, API et observabilité.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Produire des réponses sourcées, reproductibles
+                                    et contrôlables.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Technologies du projet RAG juridique"
+                            >
+                                <li>Python</li>
+                                <li>BM25</li>
+                                <li>Embeddings</li>
+                                <li>FastAPI</li>
+                                <li>LangChain</li>
+                                <li>Langfuse</li>
+                            </ul>
+
+                            <!--
+                                La fiche détaillée sera reliée dans une prochaine brique.
+                                Le texte est déjà préparé sans créer de faux lien.
+                            -->
+                            <a
+                                class="project-card__link"
+                                href="projects/rag-juridique.html"
+                            >
+                                Détails du projet
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 02 — RWA / COMPLIANCE
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">02</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Mission internationale
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo" aria-hidden="true">
+                            <img
+                                class="project-card__logo"
+                                src="assets/images/projects/rwa-compliance/brand-vara.png"
+                                alt=""
+                            >
+
+
+                            <span class="project-card__code">RWA / COMPLIANCE</span>
+
+                            <span class="project-card__signal project-card__signal--middle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                VARA — Conformité réglementaire RWA
+                            </h3>
+
+                            <p class="project-card__description">
+                                Pipeline backend d’analyse automatisée de whitepapers,
+                                intégré à l’application ARIA et orienté conformité
+                                dans le cadre VARA (autorité de régulation des actifs virtuels à Dubaï).
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Accélérer et fiabiliser l’analyse tout en conservant
+                                    la traçabilité des preuves et des traitements.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Technologies du projet RWA Compliance"
+                            >
+                                <li>Python</li>
+                                <li>OCR</li>
+                                <li>LLM</li>
+                                <li>OpenAI</li>
+                                <li>Gemini</li>
+                                <li>Docker</li>
+                            </ul>
+
+                            <a
+                                class="project-card__link"
+                                href="projects/rwa-compliance.html"
+                            >
+                                Détails du projet
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 03 — AJC / DATA
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">03</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Data · NLP · Business Intelligence
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo" aria-hidden="true">
+                            <img
+                                class="project-card__logo"
+                                src="assets/images/projects/ajc-data/brand-ajc-ingenierie.png"
+                                alt=""
+                            >
+
+
+                            <span class="project-card__code">AJC / DATA</span>
+
+                            <span class="project-card__signal project-card__signal--end">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                AJC — Data, matching &amp; Power BI
+                            </h3>
+
+                            <p class="project-card__description">
+                                Système Data/NLP combinant traitement de plus de
+                                56&nbsp;000 CV en production, matching explicable,
+                                consolidation multi-source et dashboards Power BI.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Réduire les traitements manuels et fournir
+                                    aux équipes des outils de sélection et de
+                                    pilotage directement exploitables.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Technologies du projet AJC Data matching et Power BI"
+                            >
+                                <li>Python</li>
+                                <li>OCR</li>
+                                <li>NLP</li>
+                                <li>Power BI</li>
+                                <li>Docker</li>
+                                <li>pandas</li>
+                            </ul>
+
+                            <a
+                                class="project-card__link"
+                                href="projects/ajc-data.html"
+                            >
+                                Détails du projet
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 04 — ARIA / NEWS
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">04</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Automatisation en production
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo" aria-hidden="true">
+                            <img
+                                class="project-card__logo"
+                                src="assets/images/projects/aria-news/brand-aria.png"
+                                alt=""
+                            >
+
+
+                            <span class="project-card__code">ARIA / NEWS</span>
+
+                            <span class="project-card__signal project-card__signal--aria">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                ARIA — Crypto-News &amp; automatisation
+                            </h3>
+
+                            <p class="project-card__description">
+                                Écosystème Python automatisant la collecte et
+                                l’enrichissement de crypto-news, la détection
+                                de Hot News, leur consolidation par LLM et
+                                l’alimentation de données marché et blockchain.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Transformer en continu des flux d’actualités
+                                    et de données crypto en informations structurées
+                                    directement exploitables par la plateforme ARIA.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Technologies du projet ARIA News"
+                            >
+                                <li>Python</li>
+                                <li>Scraping</li>
+                                <li>NLP</li>
+                                <li>LLM</li>
+                                <li>REST API</li>
+                                <li>Docker</li>
+                            </ul>
+
+                            <a
+                                class="project-card__link"
+                                href="projects/aria-news.html"
+                            >
+                                Détails du projet
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 05 — AJC : FORMATION IA, DATA & PYTHON
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">05</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Transmission &amp; expertise
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo" aria-hidden="true">
+                            <img
+                                class="project-card__logo"
+                                src="assets/images/projects/ajc-training/brand-ajc-formation.png"
+                                alt=""
+                            >
+
+
+                            <span class="project-card__code">AJC / TRAINING</span>
+
+                            <span class="project-card__signal">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                AJC — Formation IA, Data &amp; Python
+                            </h3>
+
+                            <p class="project-card__description">
+                                Conception et animation de formations pour adultes
+                                en IA, Machine Learning, Python, Data et Deep Learning,
+                                avec exercices pratiques accessibles directement dans Colab.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Transformer des concepts techniques complexes
+                                    en compétences concrètes sans imposer d’installation
+                                    locale aux apprenants.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Domaines de formation AJC"
+                            >
+                                <li>Python</li>
+                                <li>Machine Learning</li>
+                                <li>Big Data</li>
+                                <li>Deep Learning</li>
+                                <li>Colab</li>
+                            </ul>
+
+                            <a
+                                class="project-card__link"
+                                href="projects/ajc-training.html"
+                            >
+                                Détails de la mission
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 06 — LE POMMIER
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">06</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Système métier déployé
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo project-card__visual--pommier" aria-hidden="true">
+                            <img
+                                class="project-card__logo project-card__logo--pommier"
+                                src="assets/images/projects/le-pommier/brand-le-pommier.png"
+                                alt=""
+                            >
+
+                            <span class="project-card__code">OPS / PILOT</span>
+
+                            <span class="project-card__signal project-card__signal--ops">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                Le Pommier — Intranet &amp; pilotage opérationnel
+                            </h3>
+
+                            <p class="project-card__description">
+                                Conception d’un intranet PHP centralisant RH,
+                                achats, ventes, comptabilité, HACCP et télémétrie
+                                pour le pilotage quotidien d’un site touristique 5 étoiles.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Centraliser la traçabilité métier pour accélérer
+                                    les validations, le reporting et la prise de décision.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Domaines techniques du projet Le Pommier"
+                            >
+                                <li>PHP</li>
+                                <li>Intranet</li>
+                                <li>Data</li>
+                                <li>Excel</li>
+                                <li>Quadratus</li>
+                                <li>BI</li>
+                            </ul>
+
+                            <a
+                                class="project-card__link"
+                                href="projects/le-pommier.html"
+                            >
+                                Détails du projet
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 07 — OUTILS IA PERSONNELS
+
+                         Cette carte assume volontairement le statut expérimental
+                         des agents IA et de MCP afin de ne pas présenter
+                         l'apprentissage en cours comme une expertise acquise.
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">07</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Laboratoire personnel
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo project-card__visual--agents" aria-hidden="true">
+                            <img
+                                class="project-card__logo project-card__logo--agents"
+                                src="assets/images/projects/ai-agents/brand-ai-agents-lab.png"
+                                alt=""
+                            >
+
+                            <span class="project-card__code">AI / AGENTS</span>
+
+                            <span class="project-card__signal project-card__signal--agents">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                Agents &amp; outils IA personnels
+                            </h3>
+
+                            <p class="project-card__description">
+                                Expérimentations autour d’assistants spécialisés :
+                                traduction, interprétation conversationnelle,
+                                agents outillés et connexions à des services externes.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Explorer des usages IA construits à partir
+                                    de besoins concrets.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Domaines techniques des outils IA personnels"
+                            >
+                                <li>LLM</li>
+                                <li>Agents IA</li>
+                                <li>MCP</li>
+                                <li>Speech</li>
+                                <li>API</li>
+                                <li>Python</li>
+                            </ul>
+
+                            <span class="project-card__link">
+                                Découvrir les expérimentations · bientôt
+                            </span>
+                        </div>
+                    </article>
+
+                    <!-- ======================================================
+                         PROJET 08 — ZANG.AI / WORDPRESS LAB
+                         ====================================================== -->
+                    <article class="project-card">
+                        <header class="project-card__header">
+                            <span class="project-card__index" aria-hidden="true">08</span>
+
+                            <span class="project-status">
+                                <span class="project-status__dot" aria-hidden="true"></span>
+                                Projet fil rouge
+                            </span>
+                        </header>
+
+                        <div class="project-card__visual project-card__visual--logo project-card__visual--zangai" aria-hidden="true">
+                            <img
+                                class="project-card__logo project-card__logo--zangai"
+                                src="assets/images/branding/brand-zangai.png"
+                                alt=""
+                            >
+
+                            <span class="project-card__code">WEB / WP</span>
+
+                            <span class="project-card__signal project-card__signal--end">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">
+                                Zang.AI — Portfolio &amp; WordPress Lab
+                            </h3>
+
+                            <p class="project-card__description">
+                                Construction progressive d’un portfolio professionnel,
+                                d’abord en HTML/CSS/JavaScript puis préparé pour évoluer
+                                vers WordPress et PHP.
+                            </p>
+
+                            <div class="project-card__benefit">
+                                <p class="project-card__benefit-label">
+                                    Bénéfice principal
+                                </p>
+                                <p>
+                                    Transformer l’apprentissage web et WordPress en
+                                    réalisation concrète, documentée et évolutive.
+                                </p>
+                            </div>
+
+                            <ul
+                                class="project-tags"
+                                aria-label="Technologies du portfolio Zang.AI"
+                            >
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>PHP</li>
+                                <li>WordPress</li>
+                                <li>REST API</li>
+                            </ul>
+
+                            <a
+                                class="project-card__link"
+                                href="projects/zangai-wordpress-lab.html"
+                            >
+                                Détails du projet
+                                <span aria-hidden="true">→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             COMPÉTENCES
+
+             Six familles principales présentent les compétences consolidées.
+             Le développement Web / WordPress reste volontairement séparé
+             afin d'assumer clairement son statut de compétence en progression.
+             ============================================================== -->
+        <section class="content-section" id="competences" aria-labelledby="skills-title">
+            <div class="content-container">
+                <header class="section-heading">
+                    <div>
+                        <p class="eyebrow">COMPÉTENCES</p>
+                        <h2 class="section-heading__title" id="skills-title">
+                            Du socle scientifique aux systèmes IA exploitables.
+                        </h2>
+                    </div>
+
+                    <p class="section-heading__description">
+                        Les compétences sont regroupées par familles et reliées à une
+                        même démarche : comprendre les données, construire les modèles,
+                        mesurer leurs limites puis les intégrer à des usages réels.
+                    </p>
+                </header>
+
+                <!--
+                    Ce visuel rappelle le fil conducteur scientifique du portfolio.
+                    Il ne remplace pas les six cartes : il les relie entre elles.
+                -->
+                <div class="skills-foundation">
+                    <div class="skills-foundation__content">
+                        <p class="eyebrow">FIL CONDUCTEUR</p>
+
+                        <h3>Maths → Stats → Data → ML → Évaluation</h3>
+
+                        <p>
+                            Un même raisonnement traverse les projets : partir des fondements,
+                            comprendre la donnée, préparer les variables, choisir une approche
+                            de modélisation puis vérifier objectivement ses performances.
+                        </p>
+
+                        <p class="skills-foundation__note">
+                            <strong>Socle scientifique &amp; transmission :</strong>
+                            6 ans d’enseignement des mathématiques, puis conception et animation
+                            de formations professionnelles Data / IA.
+                        </p>
+                    </div>
+
+                    <figure class="skills-foundation__visual">
+                        <img
+                            src="assets/images/skills/maths-stats-data-ml-evaluation.png"
+                            alt="Progression du socle scientifique : Maths, Stats, Data, Machine Learning puis Évaluation"
+                        >
+                    </figure>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="info-card">
+                        <p class="info-card__index">01</p>
+                        <h3>Machine Learning &amp; IA</h3>
+                        <p>
+                            Modèles supervisés, non supervisés et réseaux de neurones
+                            pour classifier, prédire, segmenter et analyser des données
+                            avec des résultats comparables et mesurables.
+                        </p>
+                        <ul class="tag-list" aria-label="Compétences en Machine Learning et intelligence artificielle">
+                            <li>Régression</li>
+                            <li>Classification</li>
+                            <li>Clustering</li>
+                            <li>Trees / Ensembles</li>
+                            <li>SVM / KNN</li>
+                            <li>Neural Networks</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <p class="info-card__index">02</p>
+                        <h3>Statistiques, probabilités &amp; inférence</h3>
+                        <p>
+                            Étudier distributions et relations entre variables,
+                            formuler des hypothèses et quantifier l’incertitude avant
+                            de transformer une observation en conclusion défendable.
+                        </p>
+                        <ul class="tag-list" aria-label="Compétences en statistiques, probabilités et inférence">
+                            <li>EDA</li>
+                            <li>Probabilités</li>
+                            <li>Tests statistiques</li>
+                            <li>Inférence</li>
+                            <li>Corrélations</li>
+                            <li>Intervalles de confiance</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <p class="info-card__index">03</p>
+                        <h3>Data preparation &amp; Feature Engineering</h3>
+                        <p>
+                            Nettoyer, transformer et sélectionner les données afin de
+                            construire des variables pertinentes et des pipelines de
+                            préparation reproductibles avant la modélisation.
+                        </p>
+                        <ul class="tag-list" aria-label="Compétences en préparation des données et feature engineering">
+                            <li>Preprocessing</li>
+                            <li>Feature Engineering</li>
+                            <li>Feature Selection</li>
+                            <li>Pipelines</li>
+                            <li>Scikit-learn</li>
+                            <li>Data Quality</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <p class="info-card__index">04</p>
+                        <h3>Évaluation &amp; diagnostic des modèles</h3>
+                        <p>
+                            Mesurer, comparer et optimiser sans biaiser l’analyse :
+                            validation croisée, métriques adaptées, diagnostic
+                            over/underfitting et quantification de l’incertitude.
+                        </p>
+                        <ul class="tag-list" aria-label="Compétences en évaluation et diagnostic des modèles">
+                            <li>Cross-validation</li>
+                            <li>Metrics</li>
+                            <li>Over / Underfit</li>
+                            <li>GridSearch</li>
+                            <li>Diagnostic</li>
+                            <li>Incertitude</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <p class="info-card__index">05</p>
+                        <h3>LLM, NLP &amp; Document AI</h3>
+                        <p>
+                            Exploiter textes et documents avec OCR, NLP, embeddings,
+                            retrieval, RAG et LLM pour construire des systèmes
+                            documentaires sourcés et automatisés.
+                        </p>
+                        <ul class="tag-list" aria-label="Compétences en LLM, NLP et Document AI">
+                            <li>NLP</li>
+                            <li>OCR</li>
+                            <li>Embeddings</li>
+                            <li>RAG</li>
+                            <li>LLM</li>
+                            <li>Agents IA</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <p class="info-card__index">06</p>
+                        <h3>Back-end &amp; industrialisation</h3>
+                        <p>
+                            Transformer les traitements Data / IA en services intégrables,
+                            reproductibles et observables, sans surévaluer une expérience
+                            Cloud encore volontairement secondaire.
+                        </p>
+                        <ul class="tag-list" aria-label="Compétences en back-end et industrialisation">
+                            <li>FastAPI</li>
+                            <li>Flask</li>
+                            <li>REST</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <!--
+                    WordPress reste visible mais séparé des compétences consolidées.
+                    Le bandeau pourra évoluer au fil du projet Zang.AI.
+                -->
+                <article class="skills-progress" aria-labelledby="skills-progress-title">
+                    <div class="skills-progress__content">
+                        <p class="eyebrow">EN PROGRESSION</p>
+
+                        <h3 id="skills-progress-title">
+                            Développement Web &amp; WordPress
+                        </h3>
+
+                        <p>
+                            Consolidation pratique de WordPress, PHP, JavaScript,
+                            HTML et CSS à travers la construction progressive de Zang.AI.
+                        </p>
+                    </div>
+
+                    <ul class="tag-list" aria-label="Compétences Web et WordPress en progression">
+                        <li>WordPress</li>
+                        <li>PHP</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             ARTICLES
+             ============================================================== -->
+        <section class="content-section" id="articles" aria-labelledby="articles-title">
+            <div class="content-container">
+                <header class="section-heading">
+                    <div>
+                        <p class="eyebrow">ARTICLES</p>
+                        <h2 class="section-heading__title" id="articles-title">
+                            Journal technique et retours d’expérience.
+                        </h2>
+                    </div>
+
+                    <p class="section-heading__description">
+                        Les articles expliquent les choix techniques, les problèmes rencontrés et les solutions mises en œuvre.
+                    </p>
+                </header>
+
+                <div class="articles-grid">
+                    <!-- ======================================================
+                         ARTICLE 01 — VALEUR DU TRAVAIL
+                         La page HTML est publiée et accessible depuis la carte.
+                         ====================================================== -->
+                    <article class="article-card article-card--published">
+                        <p class="article-card__meta">TRAVAIL · VALEUR · RESPONSABILITÉ</p>
+
+                        <h3>
+                            <a
+                                class="article-card__title-link"
+                                href="articles/article-01-valeur-du-travail.html"
+                            >
+                                Le temps passé mesure-t-il encore la valeur du travail ?
+                            </a>
+                        </h3>
+
+                        <p>
+                            Une réflexion issue de trente années d’expériences sur
+                            le résultat attendu, la responsabilité, le forfait et
+                            quelques « frictions plaisantes ».
+                        </p>
+
+                        <a
+                            class="article-card__reading article-card__reading--link"
+                            href="articles/article-01-valeur-du-travail.html"
+                            aria-label="Lire l’article : Le temps passé mesure-t-il encore la valeur du travail ?"
+                        >
+                            Lire l’article · ≈ 6 min
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <!-- ======================================================
+                         ARTICLE 02 — RAG EN 2026
+                         La page HTML est publiée et accessible depuis la carte.
+                         ====================================================== -->
+                    <article class="article-card article-card--published">
+                        <p class="article-card__meta">RAG · EXPERT MÉTIER · ÉVALUATION</p>
+
+                        <h3>
+                            <a
+                                class="article-card__title-link"
+                                href="articles/article-02-rag-en-2026.html"
+                            >
+                                RAG en 2026 : faut-il encore construire toute la chaîne soi-même ?
+                            </a>
+                        </h3>
+
+                        <p>
+                            Retour d’expérience sur les experts métier, les qrels,
+                            l’UI, les benchmarks et la décision parfois plus utile
+                            de ne pas construire.
+                        </p>
+
+                        <a
+                            class="article-card__reading article-card__reading--link"
+                            href="articles/article-02-rag-en-2026.html"
+                            aria-label="Lire l’article : RAG en 2026 : faut-il encore construire toute la chaîne soi-même ?"
+                        >
+                            Lire l’article · ≈ 6 min
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <!-- ======================================================
+                         ARTICLE 03 — WEB & WORDPRESS
+                         La page HTML est publiée et accessible depuis la carte.
+                         ====================================================== -->
+                    <article class="article-card article-card--published">
+                        <p class="article-card__meta">WEB · WORDPRESS · ARCHITECTURE</p>
+
+                        <h3>
+                            <a
+                                class="article-card__title-link"
+                                href="articles/article-03-data-ia-web-wordpress.html"
+                            >
+                                Pourquoi un ingénieur Data &amp; IA se met à apprendre le Web et WordPress
+                            </a>
+                        </h3>
+
+                        <p>
+                            De Streamlit au Web : comprendre comment l’interface,
+                            la supervision et l’expérience utilisateur finissent
+                            par influencer l’architecture IA elle-même.
+                        </p>
+
+                        <a
+                            class="article-card__reading article-card__reading--link"
+                            href="articles/article-03-data-ia-web-wordpress.html"
+                            aria-label="Lire l’article : Pourquoi un ingénieur Data &amp; IA se met à apprendre le Web et WordPress"
+                        >
+                            Lire l’article · ≈ 6 min
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+
+                    <!-- ======================================================
+                         ARTICLE 04 — APRÈS LES LLM
+                         Cette page HTML existe déjà et peut être ouverte.
+                         ====================================================== -->
+                    <article class="article-card article-card--published">
+                        <p class="article-card__meta">IA · AGENTS · RESPONSABILITÉ</p>
+
+                        <h3>
+                            <a
+                                class="article-card__title-link"
+                                href="articles/article-04-apres-llm.html"
+                            >
+                                Après la course aux LLM : quelle IA voulons-nous vraiment ?
+                            </a>
+                        </h3>
+
+                        <p>
+                            De l’assistant qui répond à l’agent qui agit :
+                            mandat, supervision, vérification, souveraineté
+                            et responsabilité humaine.
+                        </p>
+
+                        <a
+                            class="article-card__reading article-card__reading--link"
+                            href="articles/article-04-apres-llm.html"
+                            aria-label="Lire l’article : Après la course aux LLM : quelle IA voulons-nous vraiment ?"
+                        >
+                            Lire l’article · ≈ 9 min
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             PARCOURS
+             ============================================================== -->
+        <section class="content-section content-section--tinted" id="parcours" aria-labelledby="career-title">
+            <div class="content-container">
+                <header class="section-heading">
+                    <div>
+                        <p class="eyebrow">PARCOURS</p>
+                        <h2 class="section-heading__title" id="career-title">
+                            Des mathématiques au pilotage, puis de la Data à l’IA.
+                        </h2>
+                    </div>
+
+                    <p class="section-heading__description">
+                        Une trajectoire qui relie socle scientifique, enseignement,
+                        management, systèmes métiers, Data Science et intelligence artificielle.
+                    </p>
+                </header>
+
+                <ol class="timeline">
+                    <li class="timeline__item">
+                        <span class="timeline__marker" aria-hidden="true">01</span>
+                        <div>
+                            <p class="timeline__period">Fondations</p>
+                            <h3>Mathématiques, enseignement &amp; informatique</h3>
+                            <p>
+                                Formation scientifique en mathématiques, puis enseignement
+                                en collèges, lycées et BTS, avec un socle durable en
+                                raisonnement logique, algorithmique et transmission.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item">
+                        <span class="timeline__marker" aria-hidden="true">02</span>
+                        <div>
+                            <p class="timeline__period">Management</p>
+                            <h3>Direction &amp; gestion métier</h3>
+                            <p>
+                                Direction d’activités et d’équipes, gestion financière,
+                                RH, fournisseurs, infrastructures et prise de décision
+                                dans des environnements complexes.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item">
+                        <span class="timeline__marker" aria-hidden="true">03</span>
+                        <div>
+                            <p class="timeline__period">Systèmes &amp; pilotage</p>
+                            <h3>Pilotage &amp; systèmes internes</h3>
+                            <p>
+                                Reporting, KPI, automatisation des flux et conception
+                                d’outils métiers, jusqu’au développement d’un intranet PHP
+                                de pilotage opérationnel.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item">
+                        <span class="timeline__marker" aria-hidden="true">04</span>
+                        <div>
+                            <p class="timeline__period">Data &amp; IA</p>
+                            <h3>De la Data Science aux systèmes IA</h3>
+                            <p>
+                                Modélisation statistique et Machine Learning, pipelines Data,
+                                évaluation des modèles, puis NLP, RAG, IA générative et
+                                automatisation de solutions métier.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item">
+                        <span class="timeline__marker" aria-hidden="true">05</span>
+                        <div>
+                            <p class="timeline__period">En progression</p>
+                            <h3>Web &amp; WordPress</h3>
+                            <p>
+                                Consolidation du développement web à travers Zang.AI :
+                                HTML, CSS, JavaScript et PHP, avec une évolution progressive
+                                vers WordPress.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             CONTACT
+
+             Le site statique ne collecte aucune donnée via un formulaire.
+             Les prises de contact passent directement par e-mail ou LinkedIn.
+             ============================================================== -->
+        <section class="content-section contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="content-container">
+                <header class="section-heading">
+                    <div>
+                        <p class="eyebrow">CONTACT</p>
+                        <h2 class="section-heading__title" id="contact-title">
+                            Un besoin à structurer ?
+                        </h2>
+                    </div>
+
+                    <p class="section-heading__description">
+                        Présentons le contexte, les contraintes et le résultat
+                        attendu avant de parler outils.
+                    </p>
+                </header>
+
+                <div class="contact-layout">
+                    <aside class="contact-panel">
+                        <p class="contact-panel__label">Types de besoins</p>
+
+                        <ul class="contact-needs">
+                            <li>Mission IA</li>
+                            <li>Analyse documentaire</li>
+                            <li>Architecture RAG</li>
+                            <li>Automatisation</li>
+                            <li>API &amp; intégration</li>
+                            <li>Collaboration</li>
+                        </ul>
+
+                        <div class="contact-panel__note">
+                            <p>Approche</p>
+                            <strong>Comprendre → cadrer → construire → mesurer</strong>
+                        </div>
+                    </aside>
+
+                    <section class="contact-form" aria-labelledby="contact-direct-title">
+                        <p class="eyebrow">CONTACT DIRECT</p>
+
+                        <h3 id="contact-direct-title">
+                            Parlons du besoin
+                        </h3>
+
+                        <p>
+                            Pour une mission, une collaboration ou un échange autour
+                            d’un projet Data, IA ou automatisation, le moyen le plus
+                            simple est de nous écrire directement.
+                        </p>
+
+                        <div class="hero__actions">
+                            <a
+                                class="button button--primary"
+                                href="mailto:contact.fredzang@gmail.com"
+                            >
+                                Écrire par e-mail
+                            </a>
+
+                            <a
+                                class="button button--secondary"
+                                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="contact-panel__note">
+                            <p>Adresse de contact</p>
+                            <strong>
+                                <a href="mailto:contact.fredzang@gmail.com">
+                                    contact.fredzang@gmail.com
+                                </a>
+                            </strong>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==============================================================
+         FOOTER
+
+         Le footer regroupe :
+         - les ressources professionnelles ;
+         - les informations légales ;
+         - la signature finale du site.
+
+         Les URL GitHub / LinkedIn et le PDF du CV sont directement
+         accessibles depuis cette version publique du portfolio.
+         ============================================================== -->
+    <footer class="site-footer">
+        <div class="content-container">
+            <div class="site-footer__intro">
+                <div>
+                    <a class="brand" href="#accueil" aria-label="Retour à l'accueil Zang.AI">
+                        <span class="brand__name">
+                            Zang<span class="brand__accent">.AI</span>
+                        </span>
+                        <span class="brand__tagline">AI · Data · Automation</span>
+                    </a>
+                </div>
+
+                <p>
+                    Portfolio professionnel autour de la donnée, de l’intelligence
+                    artificielle et de l’automatisation.
+                </p>
+            </div>
+
+            <!--
+                Trois ressources professionnelles.
+
+                Nous utilisons des cartes non cliquables tant que leur
+                destination réelle n'a pas été renseignée.
+            -->
+            <section
+                class="footer-resources"
+                id="liens-professionnels"
+                aria-labelledby="footer-resources-title"
+            >
+                <div class="footer-section-heading">
+                    <p class="eyebrow">RESSOURCES</p>
+                    <h2 id="footer-resources-title">Liens professionnels</h2>
+                </div>
+
+                <div class="footer-resources__grid">
+                    <article class="footer-resource" id="github">
+                        <p class="footer-resource__type">CODE &amp; PROJETS</p>
+                        <h3>GitHub</h3>
+                        <p>
+                            Dépôts techniques, expérimentations et projets publics.
+                        </p>
+
+                        <a
+                            class="footer-resource__link"
+                            href="https://github.com/Fred-Zang/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Voir GitHub →
+                        </a>
+                    </article>
+
+                    <article class="footer-resource" id="linkedin">
+                        <p class="footer-resource__type">PROFIL PROFESSIONNEL</p>
+                        <h3>LinkedIn</h3>
+                        <p>
+                            Parcours, expériences et échanges professionnels.
+                        </p>
+
+                        <a
+                            class="footer-resource__link"
+                            href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Voir LinkedIn →
+                        </a>
+                    </article>
+
+                    <article class="footer-resource" id="cv">
+                        <p class="footer-resource__type">DOCUMENT</p>
+                        <h3>Curriculum vitae</h3>
+                        <p>
+                            Version PDF du parcours professionnel et technique.
+                        </p>
+
+                        <a
+                            class="footer-resource__link"
+                            href="assets/documents/CV_Fred_Zanghi_2026.pdf"
+                            download
+                        >
+                            Télécharger le CV →
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!--
+                <details> est un composant HTML natif.
+
+                Un clic sur <summary> ouvre ou ferme le contenu.
+                Aucun JavaScript n'est nécessaire.
+            -->
+            <section class="footer-legal" aria-label="Informations légales">
+                <details class="legal-panel" id="mentions-legales">
+                    <summary>
+                        <span>Mentions légales</span>
+                        <span class="legal-panel__hint">Ouvrir</span>
+                    </summary>
+
+                    <div class="legal-panel__content">
+                        <h2>Mentions légales</h2>
+
+                        <p>
+                            Le site Zang.AI est un portfolio professionnel présentant
+                            des réalisations, compétences, articles et retours d’expérience
+                            autour de la Data, de l’intelligence artificielle et de
+                            l’automatisation.
+                        </p>
+
+                        <dl class="legal-list">
+                            <div>
+                                <dt>Éditeur du site</dt>
+                                <dd>Fred Zanghi</dd>
+                            </div>
+
+                            <div>
+                                <dt>Responsable de publication</dt>
+                                <dd>Fred Zanghi</dd>
+                            </div>
+
+                            <div>
+                                <dt>Nom du site</dt>
+                                <dd>Zang.AI</dd>
+                            </div>
+
+                            <div>
+                                <dt>Nom de domaine</dt>
+                                <dd>zang-iaconsulting.com</dd>
+                            </div>
+
+                            <div>
+                                <dt>Contact</dt>
+                                <dd>
+                                    <a href="mailto:contact.fredzang@gmail.com">
+                                        contact.fredzang@gmail.com
+                                    </a>
+                                </dd>
+                            </div>
+
+                            <div>
+                                <dt>Hébergement</dt>
+                                <dd>
+                                    GitHub Pages — GitHub, Inc.,
+                                    88 Colin P. Kelly Jr. St.,
+                                    San Francisco, CA 94107, États-Unis.
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </details>
+
+                <details class="legal-panel" id="confidentialite">
+                    <summary>
+                        <span>Politique de confidentialité</span>
+                        <span class="legal-panel__hint">Ouvrir</span>
+                    </summary>
+
+                    <div class="legal-panel__content">
+                        <h2>Politique de confidentialité</h2>
+
+                        <p>
+                            Cette version du site est statique. Elle ne comporte
+                            aucun compte utilisateur, aucune publicité et aucun
+                            outil d’analyse d’audience installé par Zang.AI.
+                        </p>
+
+                        <p>
+                            Aucun formulaire de contact n’est utilisé sur le site.
+                            Les prises de contact s’effectuent directement par e-mail
+                            ou via les services externes proposés, notamment LinkedIn
+                            et GitHub.
+                        </p>
+
+                        <p>
+                            Le site ne stocke donc aucune donnée personnelle saisie
+                            par un visiteur dans une base de données ou un système
+                            applicatif propre à Zang.AI.
+                        </p>
+
+                        <p>
+                            Les services externes accessibles depuis ce portfolio
+                            appliquent leurs propres politiques de confidentialité
+                            et conditions d’utilisation.
+                        </p>
+                    </div>
+                </details>
+            </section>
+
+            <div class="site-footer__bottom">
+                <p>
+                    © 2026 Zang.AI
+                </p>
+
+                <p>
+                    HTML · CSS · JavaScript — évolution WordPress prévue
+                </p>
+
+                <a href="#accueil">
+                    Retour en haut ↑
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

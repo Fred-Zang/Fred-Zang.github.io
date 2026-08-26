@@ -1,0 +1,805 @@
+/*
+    ================================================================
+    FICHES PROJETS — Zang.AI
+
+    Cette feuille complète styles.css sans modifier les composants
+    généraux déjà utilisés par la page d'accueil.
+    ================================================================
+*/
+
+.project-page {
+    --project-border: var(--color-border, rgba(148, 163, 184, 0.22));
+    --project-panel: var(--color-surface, rgba(17, 24, 39, 0.72));
+    --project-panel-strong: var(--color-surface-strong, rgba(15, 23, 42, 0.96));
+    --project-text: var(--color-text, #e5edf7);
+    --project-muted: var(--color-text-muted, #9aa9bc);
+    --project-accent: var(--color-accent, #63d7ff);
+    color: var(--project-text);
+}
+
+.project-hero,
+.project-section,
+.project-navigation {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.project-hero {
+    border-bottom: 1px solid var(--project-border);
+}
+
+.project-back-link {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: center;
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    color: var(--project-muted);
+    text-decoration: none;
+}
+
+.project-back-link:hover,
+.project-back-link:focus-visible {
+    color: var(--project-accent);
+}
+
+.project-hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.65fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+}
+
+.project-hero__title {
+    max-width: 16ch;
+    margin: 0.5rem 0 1.25rem;
+    font-size: clamp(2.5rem, 6vw, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.project-hero__summary {
+    max-width: 68ch;
+    margin: 0;
+    color: var(--project-muted);
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    line-height: 1.75;
+}
+
+.project-tags--hero {
+    margin-top: 2rem;
+}
+
+.project-meta {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    border: 1px solid var(--project-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--project-panel);
+}
+
+.project-meta div {
+    padding: 1rem 1.1rem;
+}
+
+.project-meta div + div {
+    border-top: 1px solid var(--project-border);
+}
+
+.project-meta dt {
+    margin-bottom: 0.25rem;
+    color: var(--project-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.project-meta dd {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project-section {
+    border-bottom: 1px solid var(--project-border);
+}
+
+.project-section--media,
+.project-section--technical {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(99, 215, 255, 0.035),
+            rgba(99, 215, 255, 0)
+        );
+}
+
+.project-section__heading {
+    max-width: 72rem;
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.project-section__heading h2 {
+    max-width: 30ch;
+    margin: 0.45rem 0 0;
+    font-size: clamp(1.65rem, 2.4vw, 2.45rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+}
+
+.project-section__intro {
+    max-width: 70ch;
+    margin: 1.2rem 0 0;
+    color: var(--project-muted);
+    line-height: 1.75;
+}
+
+.project-overview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-overview__item,
+.project-detail,
+.project-result {
+    border: 1px solid var(--project-border);
+    border-radius: 1rem;
+    background: var(--project-panel);
+}
+
+.project-overview__item {
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.project-overview__index {
+    margin: 0 0 1rem;
+    color: var(--project-accent);
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.project-overview__item h3 {
+    margin: 0 0 0.75rem;
+}
+
+.project-overview__item p:last-child {
+    margin-bottom: 0;
+    color: var(--project-muted);
+    line-height: 1.7;
+}
+
+.project-media {
+    margin: 0;
+}
+
+.project-media__zoom {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--project-border);
+    border-radius: 1rem;
+    background: #0b0f17;
+    cursor: zoom-in;
+}
+
+.project-media__zoom img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project-media__zoom:focus-visible {
+    outline: 2px solid var(--project-accent);
+    outline-offset: 4px;
+}
+
+.project-media__actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.75rem;
+}
+
+.project-media__open {
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--project-accent);
+    font: inherit;
+    font-size: 0.86rem;
+    cursor: pointer;
+}
+
+.project-media__open:hover,
+.project-media__open:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+}
+
+.project-media__open:focus-visible {
+    outline: 2px solid var(--project-accent);
+    outline-offset: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.project-media figcaption {
+    margin-top: 0.55rem;
+    color: var(--project-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.project-results {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-result {
+    display: grid;
+    gap: 0.55rem;
+    padding: 1.25rem;
+}
+
+.project-result strong {
+    color: var(--project-accent);
+    font-size: 1rem;
+}
+
+.project-result span {
+    color: var(--project-muted);
+    line-height: 1.55;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-detail {
+    padding: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+.project-detail__label {
+    margin: 0 0 0.65rem;
+    color: var(--project-accent);
+    font-family: monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+}
+
+.project-detail h3 {
+    margin: 0 0 1.1rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+}
+
+.project-detail__list {
+    display: grid;
+    gap: 0.85rem;
+    margin: 0;
+    padding-left: 1.15rem;
+    color: var(--project-muted);
+    line-height: 1.65;
+}
+
+.project-detail code {
+    padding: 0.12rem 0.3rem;
+    border: 1px solid var(--project-border);
+    border-radius: 0.35rem;
+    background: rgba(148, 163, 184, 0.08);
+    color: var(--project-text);
+    font-size: 0.88em;
+}
+
+.project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-stack li {
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--project-border);
+    border-radius: 999px;
+    background: var(--project-panel);
+    color: var(--project-muted);
+}
+
+.project-navigation {
+    border-top: 1px solid var(--project-border);
+}
+
+.project-navigation__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.project-navigation a {
+    color: var(--project-muted);
+    text-decoration: none;
+}
+
+.project-navigation a:hover,
+.project-navigation a:focus-visible {
+    color: var(--project-accent);
+}
+
+.project-navigation__all {
+    text-align: center;
+}
+
+.project-navigation__next {
+    justify-self: end;
+    text-align: right;
+}
+
+/*
+    La fenêtre dialog est utilisée pour les schémas très larges.
+    Le navigateur gère nativement la touche Échap.
+*/
+.image-dialog {
+    width: min(96vw, 1800px);
+    max-width: none;
+    height: min(92vh, 1100px);
+    max-height: none;
+    padding: 0;
+    border: 1px solid var(--project-border, rgba(148, 163, 184, 0.24));
+    border-radius: 1rem;
+    background: #090d14;
+    color: #f8fafc;
+}
+
+.image-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.84);
+    backdrop-filter: blur(4px);
+}
+
+.image-dialog__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3.5rem;
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.image-dialog__toolbar p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.image-dialog__close {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.image-dialog__close:hover,
+.image-dialog__close:focus-visible {
+    border-color: var(--project-accent, #63d7ff);
+    color: var(--project-accent, #63d7ff);
+}
+
+.image-dialog__viewport {
+    width: 100%;
+    height: calc(100% - 3.5rem);
+    overflow: auto;
+    padding: 1rem;
+}
+
+.image-dialog__viewport img {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0 auto;
+}
+
+/*
+    Les écrans intermédiaires réduisent le nombre de colonnes
+    sans changer la structure sémantique de la page.
+*/
+@media (max-width: 1100px) {
+    .project-results {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/*
+    Sur mobile, tous les blocs passent sur une seule colonne.
+*/
+@media (max-width: 760px) {
+    .project-hero__layout,
+    .project-overview,
+    .project-details,
+    .project-results {
+        grid-template-columns: 1fr;
+    }
+
+    .project-hero__title {
+        max-width: none;
+    }
+
+    .project-navigation__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .project-navigation__placeholder {
+        display: none;
+    }
+
+    .project-navigation__all,
+    .project-navigation__next {
+        justify-self: start;
+        text-align: left;
+    }
+
+    .project-media__actions {
+        justify-content: flex-start;
+    }
+
+    .image-dialog {
+        width: 100vw;
+        height: 100vh;
+        border: 0;
+        border-radius: 0;
+    }
+}
+
+/*
+    Respect des préférences d'accessibilité :
+    aucune transition additionnelle n'est imposée à l'utilisateur.
+*/
+@media (prefers-reduced-motion: reduce) {
+    .project-page *,
+    .image-dialog * {
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/*
+    ================================================================
+    PREUVES PUBLIQUES & CONFIDENTIALITÉ
+    ================================================================
+*/
+
+.project-evidence {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-evidence__card {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: clamp(1.3rem, 2.5vw, 1.8rem);
+    border: 1px solid var(--project-border);
+    border-radius: 1rem;
+    background: var(--project-panel);
+}
+
+.project-evidence__status {
+    display: inline-flex;
+    width: fit-content;
+    margin: 0 0 0.9rem;
+    padding: 0.3rem 0.55rem;
+    border: 1px solid var(--project-border);
+    border-radius: 999px;
+    color: var(--project-accent);
+    font-family: monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.project-evidence__card h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.15rem;
+}
+
+.project-evidence__card p {
+    margin: 0 0 1.2rem;
+    color: var(--project-muted);
+    line-height: 1.65;
+}
+
+.project-evidence__link {
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: center;
+    margin-top: auto;
+    color: var(--project-accent);
+    text-decoration: none;
+}
+
+.project-evidence__link:hover,
+.project-evidence__link:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+}
+
+.project-note {
+    margin-top: 1.2rem;
+    padding: 1rem 1.1rem;
+    border-left: 3px solid var(--project-accent);
+    background: rgba(99, 215, 255, 0.045);
+    color: var(--project-muted);
+    line-height: 1.65;
+}
+
+.project-confidentiality {
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+    border-bottom: 1px solid var(--project-border);
+    background: rgba(148, 163, 184, 0.035);
+}
+
+.project-confidentiality__inner {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.35fr) minmax(0, 1.65fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.project-confidentiality__label {
+    margin: 0;
+    color: var(--project-accent);
+    font-family: monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.project-confidentiality__text {
+    margin: 0;
+    color: var(--project-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 760px) {
+    .project-evidence,
+    .project-confidentiality__inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*
+    ================================================================
+    ZANG.AI — ROADMAP HTML / WORDPRESS
+
+    Ce composant remplace volontairement un schéma image : la progression
+    du projet est exprimée directement en HTML afin de rester responsive,
+    accessible et facile à mettre à jour.
+    ================================================================
+*/
+
+.project-roadmap {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.project-roadmap__step {
+    position: relative;
+    padding: clamp(1.3rem, 2.5vw, 1.8rem);
+    border: 1px solid var(--project-border);
+    border-radius: 1rem;
+    background: var(--project-panel);
+}
+
+.project-roadmap__status {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 1rem;
+    padding: 0.28rem 0.55rem;
+    border: 1px solid var(--project-border);
+    border-radius: 999px;
+    color: var(--project-accent);
+    font-family: monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.project-roadmap__step--future .project-roadmap__status {
+    color: var(--project-muted);
+}
+
+.project-roadmap__step h3 {
+    margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+}
+
+.project-roadmap__step p {
+    margin: 0;
+    color: var(--project-muted);
+    line-height: 1.65;
+}
+
+.project-progress-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--project-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    background: var(--project-panel);
+}
+
+.project-progress-list li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.15rem;
+}
+
+.project-progress-list li + li {
+    border-top: 1px solid var(--project-border);
+}
+
+.project-progress-list__index {
+    color: var(--project-accent);
+    font-family: monospace;
+    font-size: 0.78rem;
+}
+
+.project-progress-list__label {
+    color: var(--project-text);
+}
+
+.project-progress-list__state {
+    color: var(--project-muted);
+    font-family: monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-progress-list__state--done {
+    color: var(--project-accent);
+}
+
+@media (max-width: 900px) {
+    .project-roadmap {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .project-progress-list li {
+        grid-template-columns: auto 1fr;
+    }
+
+    .project-progress-list__state {
+        grid-column: 2;
+    }
+}
+
+
+/*
+    Liens externes utilisés sur certaines fiches projets.
+*/
+.project-resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.4rem;
+}
+
+.project-resource-link {
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: center;
+    padding: 0.72rem 0.9rem;
+    border: 1px solid var(--project-border);
+    border-radius: 0.75rem;
+    background: var(--project-panel);
+    color: var(--project-accent);
+    text-decoration: none;
+}
+
+.project-resource-link:hover,
+.project-resource-link:focus-visible {
+    border-color: var(--project-accent);
+}
+
+.project-media--press {
+    max-width: 46rem;
+}
+
+
+/*
+    ================================================================
+    ZOOM ENRICHI DES SCHÉMAS
+    ================================================================
+*/
+
+.image-dialog__tools {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0.75rem;
+}
+
+.image-dialog__tool {
+    min-width: 2.4rem;
+    height: 2.4rem;
+    padding: 0.4rem 0.7rem;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.9);
+    color: inherit;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.image-dialog__tool--reset {
+    min-width: 4.8rem;
+}
+
+.image-dialog__tool--link {
+    min-width: auto;
+    padding-inline: 0.9rem;
+}
+
+.image-dialog__tool:hover,
+.image-dialog__tool:focus-visible {
+    border-color: var(--project-accent, #63d7ff);
+    color: var(--project-accent, #63d7ff);
+}
+
+.image-dialog__viewport {
+    cursor: grab;
+    overscroll-behavior: contain;
+}
+
+.image-dialog__viewport--dragging {
+    cursor: grabbing;
+}
+
+.image-dialog__viewport img {
+    display: block;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    height: auto;
+    margin: 0;
+}
+
+@media (max-width: 760px) {
+    .image-dialog__toolbar {
+        flex-wrap: wrap;
+        gap: 0.65rem;
+    }
+
+    .image-dialog__tools {
+        order: 3;
+        width: 100%;
+        margin: 0;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}

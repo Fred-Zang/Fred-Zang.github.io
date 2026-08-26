@@ -1,0 +1,119 @@
+/*
+==========================================================================
+ZANG.AI — ARTICLES
+
+Feuille commune aux pages d’articles.
+Elle complète styles.css sans modifier les composants généraux du portfolio.
+==========================================================================
+*/
+
+.article-page {
+    color: var(--color-text);
+}
+
+.article-hero {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.article-back-link {
+    display: inline-flex;
+    gap: 0.55rem;
+    align-items: center;
+    margin-bottom: clamp(2rem, 4vw, 3.5rem);
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.article-back-link:hover,
+.article-back-link:focus-visible {
+    color: var(--color-accent);
+}
+
+.article-hero__title {
+    max-width: 20ch;
+    margin: 0.55rem 0 1.25rem;
+    font-size: clamp(2.35rem, 5.5vw, 4.8rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.article-hero__summary {
+    max-width: 70ch;
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+    line-height: 1.75;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-top: 1.75rem;
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.article-content {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+}
+
+.article-content__inner {
+    max-width: 72ch;
+}
+
+.article-content h2 {
+    margin: clamp(2.75rem, 6vw, 4.5rem) 0 1rem;
+    font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+
+.article-content h2:first-child {
+    margin-top: 0;
+}
+
+.article-content p {
+    margin: 0 0 1.35rem;
+    color: var(--color-text-muted);
+    font-size: clamp(1rem, 1.2vw, 1.08rem);
+    line-height: 1.85;
+}
+
+.article-content strong {
+    color: var(--color-text);
+}
+
+.article-content .article-emphasis {
+    margin-block: 2rem;
+    padding: 1.25rem 1.35rem;
+    border-left: 3px solid var(--color-accent);
+    background: rgb(56 189 248 / 6%);
+    color: var(--color-text);
+    font-size: clamp(1.05rem, 1.5vw, 1.18rem);
+}
+
+.article-navigation {
+    padding-block: 2.5rem 4rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.article-navigation a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+.article-navigation a:hover,
+.article-navigation a:focus-visible {
+    text-decoration: underline;
+}
+
+@media (min-width: 64rem) {
+    .article-content__inner {
+        margin-left: clamp(0rem, 4vw, 4rem);
+    }
+}

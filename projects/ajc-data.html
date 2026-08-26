@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="AJC — Data, matching & Power BI : traitement de plus de 56 000 CV en production, matching explicable, pipeline multi-source et tableaux de bord Power BI."
+    >
+
+    <title>AJC — Data, matching &amp; Power BI — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <!--
+        L'en-tête mobile et la sidebar restent identiques aux autres
+        fiches pour conserver une navigation cohérente dans Zang.AI.
+    -->
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="../index.html#projets"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Projets
+                </a>
+            </li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer" data-menu-link>GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer" data-menu-link>LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download data-menu-link>Télécharger le CV</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+
+        <!-- ==============================================================
+             HERO
+             ============================================================== -->
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+
+                <a class="project-back-link" href="../index.html#projets">
+                    <span aria-hidden="true">←</span>
+                    Retour aux projets
+                </a>
+
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">
+                            AJC / DATA · NLP · BUSINESS INTELLIGENCE
+                        </p>
+
+                        <h1 class="project-hero__title" id="project-title">
+                            AJC — Data, matching &amp; Power BI
+                        </h1>
+
+                        <p class="project-hero__summary">
+                            Mission Data/IA appliquée au recrutement et à la formation :
+                            traitement de plus de 56&nbsp;000 CV en production,
+                            matching explicable par compétences, consolidation de
+                            plusieurs sources métier et restitution dans Power BI.
+                        </p>
+
+                        <ul class="project-tags project-tags--hero" aria-label="Technologies principales du projet">
+                            <li>Python</li>
+                            <li>pandas</li>
+                            <li>OCR</li>
+                            <li>NLP</li>
+                            <li>Power BI</li>
+                            <li>Docker</li>
+                            <li>Beetween</li>
+                        </ul>
+
+                        <!--
+                            Le dépôt public permet de poursuivre la lecture
+                            depuis la présentation visuelle vers le code source.
+                        -->
+                        <div class="project-resource-links">
+                            <a
+                                class="project-resource-link"
+                                href="https://github.com/Fred-Zang/AJC-Data-matching-Power-BI"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir le dépôt public
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <dl class="project-meta" aria-label="Informations principales du projet">
+                        <div>
+                            <dt>Période</dt>
+                            <dd>2023–2024</dd>
+                        </div>
+
+                        <div>
+                            <dt>Type</dt>
+                            <dd>Data · NLP · Business Intelligence</dd>
+                        </div>
+
+                        <div>
+                            <dt>Rôle</dt>
+                            <dd>Conception &amp; développement Data/IA</dd>
+                        </div>
+
+                        <div>
+                            <dt>Contexte</dt>
+                            <dd>Recrutement &amp; formation</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             VUE D'ENSEMBLE
+             ============================================================== -->
+        <section class="project-section" aria-labelledby="overview-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VUE D’ENSEMBLE</p>
+                    <h2 id="overview-title">Comprendre la mission</h2>
+                </header>
+
+                <div class="project-overview">
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">01</p>
+                        <h3>Contexte</h3>
+                        <p>
+                            Les équipes recrutement et formation exploitaient des CV
+                            hétérogènes et plusieurs sources métier distinctes.
+                            L’enjeu était à la fois de faciliter la recherche de profils
+                            et de consolider les données nécessaires au pilotage.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">02</p>
+                        <h3>Objectif</h3>
+                        <p>
+                            Automatiser le traitement des CV, produire un matching
+                            transparent par filière ou compétences et fiabiliser les
+                            données de recrutement avant leur restitution dans
+                            des dashboards Power BI.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">03</p>
+                        <h3>Notre rôle</h3>
+                        <p>
+                            Développer les pipelines Python de préparation et matching,
+                            les traitements OCR/NLP, la consolidation multi-source,
+                            l’automatisation Docker/SSH et la construction ou
+                            l’évolution des rapports Power BI.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">04</p>
+                        <h3>Résultat</h3>
+                        <p>
+                            Une chaîne de traitement utilisée sur plus de
+                            56&nbsp;000 CV en production, complétée par des
+                            outils de scoring explicables et des indicateurs
+                            opérationnels pour les équipes métier.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             VOLET 1 — MATCHING CV
+             ============================================================== -->
+        <section class="project-section project-section--media" aria-labelledby="matching-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VOLET 01 · MATCHING CV</p>
+                    <h2 id="matching-title">Du CV brut au score explicable</h2>
+
+                    <p class="project-section__intro">
+                        Le pipeline transforme des documents hétérogènes en
+                        représentations textuelles normalisées, puis rapproche
+                        chaque CV d’un vocabulaire métier issu des filières et modules.
+                    </p>
+                </header>
+
+                <figure class="project-media">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/ajc-data/matching/architecture-matching-cv.png"
+                        data-image-alt="Schéma du pipeline AJC de traitement et matching de CV : acquisition, OCR, normalisation, tokens, tags, matrices booléennes et scoring pondéré"
+                        aria-haspopup="dialog"
+                    >
+                        <img
+                            src="../assets/images/projects/ajc-data/matching/architecture-matching-cv.png"
+                            alt="Schéma de principe du pipeline de traitement et matching de CV AJC"
+                        >
+                    </button>
+
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/ajc-data/matching/architecture-matching-cv.png"
+                            data-image-alt="Schéma du pipeline AJC de traitement et matching de CV : acquisition, OCR, normalisation, tokens, tags, matrices booléennes et scoring pondéré"
+                        >
+                            Ouvrir le schéma en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+
+                    <figcaption>
+                        Architecture simplifiée du volet Matching CV :
+                        préparation documentaire, normalisation métier,
+                        matrices de présence et scoring pondéré.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             REPÈRES — priorité à la volumétrie réellement fournie pour
+             l'usage production, distincte des benchmarks historiques.
+             ============================================================== -->
+        <section class="project-section" aria-labelledby="markers-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">REPÈRES</p>
+                    <h2 id="markers-title">Une chaîne conçue pour l’usage métier</h2>
+                </header>
+
+                <div class="project-results">
+                    <article class="project-result">
+                        <strong>56&nbsp;000+ CV</strong>
+                        <span>Documents traités dans l’usage production.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>1&nbsp;253 tokens</strong>
+                        <span>État documenté du vocabulaire métier après tagging.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>2 scores</strong>
+                        <span>Matching booléen et scoring pondéré explicable.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>3 sources métier</strong>
+                        <span>Beetween, Quest et NoCRM pour le pilotage Data/BI.</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             DÉTAILS TECHNIQUES
+             ============================================================== -->
+        <section class="project-section project-section--technical" aria-labelledby="technical-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">DÉTAILS TECHNIQUES</p>
+                    <h2 id="technical-title">Architecture et mise en œuvre</h2>
+
+                    <p class="project-section__intro">
+                        Les deux volets partagent une même logique :
+                        transformer des données métier hétérogènes en informations
+                        plus simples à rechercher, comparer et piloter.
+                    </p>
+                </header>
+
+                <div class="project-details">
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">NLP · REFERENTIEL</p>
+                        <h3>Normalisation &amp; matching explicable</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Construction du vocabulaire métier à partir
+                                des filières et modules de formation.
+                            </li>
+                            <li>
+                                Normalisation de la casse, des accents,
+                                caractères spéciaux, fautes connues et stop words.
+                            </li>
+                            <li>
+                                Dictionnaire de variantes permettant de ramener
+                                plusieurs formes vers des tags canoniques.
+                            </li>
+                            <li>
+                                Tokenisation des CV et calcul de fréquences.
+                            </li>
+                            <li>
+                                Matrice booléenne CV × tokens puis application
+                                de poids pour produire un score plus discriminant.
+                            </li>
+                            <li>
+                                Recherche par identifiant de filière ou
+                                directement par liste de mots-clés.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">DOCUMENT · OCR</p>
+                        <h3>Traitement documentaire multi-format</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Prise en charge historique de PDF, images,
+                                DOC et DOCX.
+                            </li>
+                            <li>
+                                OCR avec Tesseract, Pillow et pdf2image.
+                            </li>
+                            <li>
+                                Conversion documentaire en amont lorsque
+                                le contenu n’est pas directement exploitable.
+                            </li>
+                            <li>
+                                Préservation de certains tokens techniques
+                                tels que <code>C++</code> ou <code>.NET</code>.
+                            </li>
+                            <li>
+                                Une migration ultérieure vers LibreOffice/SSH
+                                est documentée, mais son code refactorisé
+                                n’est pas inclus dans le kit analysé.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">DATA · AUTOMATION</p>
+                        <h3>Pipeline multi-source &amp; industrialisation</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Consolidation de données issues de Beetween,
+                                Quest et NoCRM.
+                            </li>
+                            <li>
+                                Traitements Python/pandas pour filtrer,
+                                typer, renommer et préparer les données.
+                            </li>
+                            <li>
+                                Contrôles de structure sur les CSV avant
+                                consommation par la couche BI.
+                            </li>
+                            <li>
+                                Exécution sur serveur SSH et conteneurisation
+                                Docker.
+                            </li>
+                            <li>
+                                Orchestration séquentielle des traitements
+                                Quest, NoCRM puis alimentation de l’écosystème
+                                utilisé par Power BI.
+                            </li>
+                            <li>
+                                Actualisation quotidienne observée dans
+                                les scripts d’orchestration.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">BI · RESTITUTION</p>
+                        <h3>Dashboards &amp; KPI métier</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Reporting Power BI pour le recrutement
+                                par filière et par collaborateur.
+                            </li>
+                            <li>
+                                Suivi du funnel : candidats entrants,
+                                qualifications, entretiens et entrées en formation.
+                            </li>
+                            <li>
+                                Calcul et visualisation de taux de transformation.
+                            </li>
+                            <li>
+                                Tableau de bord commercial autour du
+                                chiffre d’affaires signé et des leads.
+                            </li>
+                            <li>
+                                Segmentation temporelle et filtres métiers
+                                adaptés aux usages opérationnels.
+                            </li>
+                            <li>
+                                Les fichiers PBIX contenant potentiellement
+                                des données internes restent volontairement privés.
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             VOLET 2 — DATA / POWER BI
+             ============================================================== -->
+        <section class="project-section project-section--media" aria-labelledby="powerbi-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VOLET 02 · DATA &amp; POWER BI</p>
+                    <h2 id="powerbi-title">Des sources métier aux KPI de pilotage</h2>
+
+                    <p class="project-section__intro">
+                        Le second volet consolide les données opérationnelles,
+                        contrôle leur qualité et automatise leur préparation
+                        avant restitution dans Power BI.
+                    </p>
+                </header>
+
+                <figure class="project-media">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/ajc-data/powerbi/architecture-data-powerbi.png"
+                        data-image-alt="Schéma du pipeline AJC Data et Power BI : Beetween, Quest, NoCRM, traitements Python, Docker SSH, OneDrive et dashboards Power BI"
+                        aria-haspopup="dialog"
+                    >
+                        <img
+                            src="../assets/images/projects/ajc-data/powerbi/architecture-data-powerbi.png"
+                            alt="Schéma de principe du pipeline Data et Power BI AJC"
+                        >
+                    </button>
+
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/ajc-data/powerbi/architecture-data-powerbi.png"
+                            data-image-alt="Schéma du pipeline AJC Data et Power BI : Beetween, Quest, NoCRM, traitements Python, Docker SSH, OneDrive et dashboards Power BI"
+                        >
+                            Ouvrir le schéma en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+
+                    <figcaption>
+                        Chaîne de collecte, préparation et automatisation
+                        alimentant les usages de pilotage Power BI.
+                    </figcaption>
+                </figure>
+
+                <!--
+                    Les captures de dashboards Power BI ne sont pas ajoutées
+                    tant que des versions explicitement publiables n'ont pas
+                    été fournies. Le gabarit pourra accueillir cette galerie
+                    sans modifier la structure de la fiche.
+                -->
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             STACK
+             ============================================================== -->
+        <section class="project-section" aria-labelledby="stack-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">STACK</p>
+                    <h2 id="stack-title">Technologies utilisées</h2>
+                </header>
+
+                <ul class="project-stack" aria-label="Stack complète du projet AJC Data">
+                    <li>Python</li>
+                    <li>pandas</li>
+                    <li>NumPy</li>
+                    <li>openpyxl</li>
+                    <li>Unidecode</li>
+                    <li>Tesseract OCR</li>
+                    <li>Pillow</li>
+                    <li>pdf2image</li>
+                    <li>requests</li>
+                    <li>Docker</li>
+                    <li>Docker Compose</li>
+                    <li>Beetween</li>
+                    <li>Quest</li>
+                    <li>NoCRM</li>
+                    <li>SQL</li>
+                    <li>OneDrive</li>
+                    <li>Microsoft Power BI</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             CONFIDENTIALITÉ
+             ============================================================== -->
+        <aside class="project-confidentiality" aria-labelledby="confidentiality-title">
+            <div class="content-container project-confidentiality__inner">
+                <p class="project-confidentiality__label" id="confidentiality-title">
+                    Confidentialité
+                </p>
+
+                <p class="project-confidentiality__text">
+                    Aucun CV réel, résultat nominatif, export métier, fichier PBIX
+                    contenant des données, credential, jeton API, adresse interne
+                    ou configuration SSH n’est publié. Les schémas et informations
+                    techniques présentés décrivent l’architecture sans exposer
+                    les données personnelles ou accès du système d’origine.
+                </p>
+            </div>
+        </aside>
+
+        <!-- ==============================================================
+             NAVIGATION
+             ============================================================== -->
+        <nav class="project-navigation" aria-label="Navigation entre les projets">
+            <div class="content-container project-navigation__inner">
+                <a href="rwa-compliance.html">
+                    <span aria-hidden="true">←</span>
+                    Projet précédent : RWA Compliance
+                </a>
+
+                <a class="project-navigation__all" href="../index.html#projets">
+                    Tous les projets
+                </a>
+
+                <a class="project-navigation__next" href="aria-news.html">
+                    Projet suivant : ARIA
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </nav>
+
+    </main>
+
+    <dialog class="image-dialog" data-image-dialog aria-label="Agrandissement du visuel">
+        <div class="image-dialog__toolbar">
+            <p>Vue agrandie</p>
+
+            <button
+                class="image-dialog__close"
+                type="button"
+                data-image-dialog-close
+                aria-label="Fermer l’image agrandie"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="image-dialog__viewport">
+            <img data-image-dialog-img src="" alt="">
+        </div>
+    </dialog>
+</body>
+</html>

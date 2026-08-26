@@ -1,0 +1,2901 @@
+/*
+==========================================================================
+ZANG.AI — BRIQUE 06
+Extension de la section Projets — six cartes responsive
+==========================================================================
+
+Ordre du fichier :
+1. Variables
+2. Réinitialisation
+3. Accessibilité
+4. Éléments communs
+5. Navigation mobile
+6. Sidebar desktop
+7. Hero
+8. Section Projets
+9. Sections temporaires
+10. Responsive
+11. Réduction des animations
+12. Diagnostic
+
+Approche mobile first :
+les règles sans media query concernent d'abord les petits écrans.
+*/
+
+
+/* ==========================================================================
+   1. VARIABLES GLOBALES
+   ========================================================================== */
+
+:root {
+    /* Couleurs validées dans la charte. */
+    --color-background: #111315;
+    --color-sidebar: #15181b;
+    --color-surface: #1b1f23;
+    --color-surface-hover: #22272c;
+    --color-border: #30363d;
+    --color-text: #f2f4f5;
+    --color-text-muted: #b3bbc2;
+    --color-text-subtle: #7f8992;
+    --color-accent: #38bdf8;
+    --color-accent-strong: #0ea5e9;
+    --color-accent-ink: #07151c;
+
+    /*
+     * IBM Plex Sans reste notre premier choix.
+     * Les polices suivantes servent de solutions de repli.
+     */
+    --font-sans:
+        "IBM Plex Sans",
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    --font-mono:
+        "IBM Plex Mono",
+        "Liberation Mono",
+        Consolas,
+        monospace;
+
+    /* Largeurs principales. */
+    --sidebar-width: 16.25rem;
+    /* 16.25 rem × 16 px = environ 260 px. */
+
+    --content-max-width: 90rem;
+    /* 90 rem × 16 px = environ 1440 px. */
+
+    --text-max-width: 65ch;
+    /*
+     * ch représente approximativement une largeur de caractère.
+     * 65ch limite la longueur des lignes de texte.
+     */
+
+    --project-card-min-width: 18rem;
+    /*
+     * 18 rem représentent environ 288 px.
+     * Cette largeur protège la lisibilité des cartes.
+     *
+     * Avec six projets, cette même valeur permet naturellement :
+     * - une colonne lorsque deux cartes ne tiennent pas ;
+     * - deux colonnes sur tablette et petit desktop ;
+     * - trois colonnes lorsque la zone de contenu est assez large.
+     *
+     * Nous ne forçons donc pas une grille 3 × 2 par une largeur fixe :
+     * c'est l'espace réellement disponible qui décide.
+     */
+
+    /* Échelle d'espacement basée sur 4 px. */
+    --space-1: 0.25rem;  /* 4 px */
+    --space-2: 0.5rem;   /* 8 px */
+    --space-3: 0.75rem;  /* 12 px */
+    --space-4: 1rem;     /* 16 px */
+    --space-5: 1.25rem;  /* 20 px */
+    --space-6: 1.5rem;   /* 24 px */
+    --space-8: 2rem;     /* 32 px */
+    --space-10: 2.5rem;  /* 40 px */
+    --space-12: 3rem;    /* 48 px */
+    --space-16: 4rem;    /* 64 px */
+    --space-24: 6rem;    /* 96 px */
+
+    /*
+     * clamp(minimum, valeur fluide, maximum)
+     */
+    --content-padding: clamp(1.25rem, 4vw, 4rem);
+    /* Marge horizontale : 20 px minimum, 64 px maximum. */
+
+    --section-spacing: clamp(4rem, 7vw, 6rem);
+    /* Espace vertical : 64 px minimum, 96 px maximum. */
+
+    --hero-title-size: clamp(2.25rem, 5vw, 3.5rem);
+    /* Titre principal : 36 px minimum, 56 px maximum. */
+
+    --hero-description-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+    /* Texte d'introduction : 17 px minimum, 20 px maximum. */
+
+    /* Formes. */
+    --radius-card: 0.875rem;   /* 14 px */
+    --radius-button: 0.625rem; /* 10 px */
+    --radius-small: 0.5rem;    /* 8 px */
+
+    /* Durées. */
+    --duration-fast: 160ms;
+    --duration-normal: 240ms;
+
+    /* Ombre discrète. */
+    --shadow-card: 0 1rem 2.5rem rgb(0 0 0 / 18%);
+}
+
+
+/* ==========================================================================
+   2. RÉINITIALISATION LÉGÈRE
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    /*
+     * border-box inclut le padding et la bordure
+     * dans la largeur totale de l'élément.
+     */
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    /*
+     * Évite qu'une section ciblée soit cachée
+     * sous l'en-tête mobile sticky.
+     */
+    scroll-padding-top: 5.5rem;
+}
+
+body {
+    margin: 0;
+    min-width: 20rem;
+    /* 20 rem représentent environ 320 px. */
+
+    background:
+        radial-gradient(
+            circle at 60% 8%,
+            rgb(56 189 248 / 8%),
+            transparent 34rem
+        ),
+        var(--color-background);
+
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.menu-is-open {
+    /* Empêche la page de défiler derrière le menu mobile. */
+    overflow: hidden;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.22em;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-block: 0;
+}
+
+ul,
+ol,
+dl,
+dd {
+    margin-block: 0;
+}
+
+ul,
+ol {
+    padding-inline-start: 0;
+}
+
+
+/* ==========================================================================
+   3. ACCESSIBILITÉ
+   ========================================================================== */
+
+:focus-visible {
+    outline: 0.1875rem solid var(--color-accent);
+    outline-offset: 0.1875rem;
+}
+
+.skip-link {
+    position: fixed;
+    z-index: 1000;
+    inset-block-start: var(--space-3);
+    inset-inline-start: var(--space-3);
+    transform: translateY(-200%);
+
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-small);
+
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: transform var(--duration-fast) ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   4. ÉLÉMENTS COMMUNS
+   ========================================================================== */
+
+.content-container {
+    width: 100%;
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--content-padding);
+}
+
+.brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: var(--color-text);
+}
+
+.brand__name {
+    font-size: 1.5rem;
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.brand__accent {
+    color: var(--color-accent);
+}
+
+.brand__tagline {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-2);
+
+    width: 100%;
+    min-height: 2.75rem;
+    /* 2.75 rem correspondent à environ 44 px. */
+
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-button);
+
+    font-weight: 650;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        color var(--duration-fast) ease,
+        background-color var(--duration-fast) ease,
+        border-color var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+}
+
+.button:hover {
+    transform: translateY(-0.125rem);
+    /* -0.125 rem correspondent à environ -2 px. */
+}
+
+.button--primary {
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+}
+
+.button--primary:hover {
+    background: var(--color-accent-strong);
+    color: var(--color-accent-ink);
+}
+
+.button--secondary {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.button--secondary:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+}
+
+
+/* ==========================================================================
+   5. EN-TÊTE ET MENU MOBILE
+   ========================================================================== */
+
+.mobile-header {
+    position: sticky;
+    z-index: 50;
+    inset-block-start: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 4.25rem;
+    padding-inline: var(--content-padding);
+
+    border-bottom: 1px solid rgb(48 54 61 / 80%);
+    background: rgb(17 19 21 / 88%);
+    backdrop-filter: blur(0.875rem);
+}
+
+.brand--mobile .brand__name {
+    font-size: 1.25rem;
+}
+
+.menu-toggle,
+.menu-close {
+    display: inline-grid;
+    place-items: center;
+
+    width: 2.75rem;
+    min-width: 2.75rem;
+    height: 2.75rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-button);
+
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.menu-toggle:hover,
+.menu-close:hover {
+    border-color: var(--color-accent);
+    background: var(--color-surface-hover);
+}
+
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+    display: block;
+    width: 1.125rem;
+    height: 0.125rem;
+    border-radius: 999px;
+    background: currentColor;
+
+    transition:
+        transform var(--duration-normal) ease,
+        opacity var(--duration-normal) ease;
+}
+
+.menu-toggle__icon {
+    position: relative;
+}
+
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+}
+
+.menu-toggle__icon::before {
+    transform: translateY(-0.375rem);
+}
+
+.menu-toggle__icon::after {
+    transform: translateY(0.375rem);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon {
+    background: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::before {
+    transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::after {
+    transform: rotate(-45deg);
+}
+
+.menu-overlay {
+    position: fixed;
+    z-index: 70;
+    inset: 0;
+
+    background: rgb(0 0 0 / 62%);
+    opacity: 0;
+
+    transition: opacity var(--duration-normal) ease;
+}
+
+.menu-overlay.is-visible {
+    opacity: 1;
+}
+
+.mobile-menu {
+    position: fixed;
+    z-index: 80;
+    inset-block: 0;
+    inset-inline-start: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+
+    width: min(88vw, 22.5rem);
+    min-height: 100dvh;
+    padding: var(--space-6);
+
+    border-inline-end: 1px solid var(--color-border);
+    background: var(--color-sidebar);
+    box-shadow: var(--shadow-card);
+
+    transform: translateX(-105%);
+    visibility: hidden;
+
+    transition:
+        transform var(--duration-normal) ease,
+        visibility 0s linear var(--duration-normal);
+}
+
+.mobile-menu.is-open {
+    transform: translateX(0);
+    visibility: visible;
+
+    transition:
+        transform var(--duration-normal) ease,
+        visibility 0s linear 0s;
+}
+
+.mobile-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-4);
+}
+
+.menu-close {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    list-style: none;
+}
+
+.navigation-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 3rem;
+    padding: var(--space-3) var(--space-4);
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-small);
+
+    color: var(--color-text-muted);
+    font-weight: 550;
+    text-decoration: none;
+
+    transition:
+        color var(--duration-fast) ease,
+        background-color var(--duration-fast) ease,
+        border-color var(--duration-fast) ease;
+}
+
+.navigation-link:hover {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.navigation-link--active {
+    border-color: rgb(56 189 248 / 30%);
+    background: rgb(56 189 248 / 10%);
+    color: var(--color-text);
+}
+
+.navigation-link--active::before {
+    content: "";
+    position: absolute;
+    inset-block: 25%;
+    inset-inline-start: 0;
+
+    width: 0.1875rem;
+    border-radius: 999px;
+    background: var(--color-accent);
+}
+
+.mobile-menu__secondary,
+.sidebar__secondary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    margin-block-start: auto;
+    padding-block-start: var(--space-6);
+    border-top: 1px solid var(--color-border);
+
+    color: var(--color-text-subtle);
+    font-size: 0.875rem;
+}
+
+.mobile-menu__secondary a,
+.sidebar__secondary a {
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   6. SIDEBAR ET CONTENU PRINCIPAL
+   ========================================================================== */
+
+.sidebar {
+    display: none;
+}
+
+.main-content {
+    width: 100%;
+}
+
+
+/* ==========================================================================
+   7. HERO
+   ========================================================================== */
+
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    min-height: calc(100dvh - 4.25rem);
+    padding-block: clamp(4rem, 9vw, 7rem);
+
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            rgb(14 165 233 / 10%),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(2 6 23 / 96%),
+            rgb(4 10 18 / 98%)
+        );
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgb(2 6 23 / 74%),
+            rgb(2 6 23 / 28%) 36%,
+            rgb(2 6 23 / 18%) 64%,
+            rgb(2 6 23 / 72%) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(2 6 23 / 58%),
+            rgb(2 6 23 / 82%) 100%
+        ),
+        url("assets/images/backgrounds/home-ambient.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0.52;
+    transform: scale(1.08);
+    filter: saturate(1.08) brightness(1.02) contrast(1.08);
+    animation: heroBackgroundDrift 14s ease-in-out infinite alternate;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgb(56 189 248 / 22%),
+            transparent 22%
+        ),
+        radial-gradient(
+            circle at 65% 56%,
+            rgb(59 130 246 / 16%),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 34% 52%,
+            rgb(14 165 233 / 12%),
+            transparent 20%
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0,
+            transparent calc(3.2rem - 1px),
+            rgb(255 255 255 / 4.8%) calc(3.2rem - 1px),
+            rgb(255 255 255 / 4.8%) 3.2rem
+        ),
+        repeating-linear-gradient(
+            180deg,
+            transparent 0,
+            transparent calc(3.2rem - 1px),
+            rgb(255 255 255 / 4.2%) calc(3.2rem - 1px),
+            rgb(255 255 255 / 4.2%) 3.2rem
+        );
+
+    opacity: 0.40;
+    animation: heroGridFloat 9s ease-in-out infinite;
+}
+
+.hero .content-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-10);
+    align-items: center;
+}
+
+.hero__portrait {
+    position: relative;
+    justify-self: center;
+
+    width: min(100%, 18rem);
+    margin: 0;
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.hero__portrait::before {
+    content: "";
+    position: absolute;
+    inset: 14% 12% 18% 12%;
+    z-index: -1;
+
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgb(56 189 248 / 28%) 0%,
+            rgb(59 130 246 / 14%) 45%,
+            transparent 74%
+        );
+    filter: blur(22px);
+}
+
+.hero__portrait-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    filter: drop-shadow(0 1.5rem 2.8rem rgb(2 6 23 / 46%));
+    animation: heroPortraitFloat 8s ease-in-out infinite;
+}
+
+.hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-6);
+}
+
+.hero__title {
+    max-width: 16ch;
+
+    font-size: var(--hero-title-size);
+    font-weight: 650;
+    letter-spacing: -0.045em;
+    line-height: 1.08;
+    text-wrap: balance;
+}
+
+.hero__description {
+    max-width: var(--text-max-width);
+
+    color: var(--color-text-muted);
+    font-size: var(--hero-description-size);
+    line-height: 1.65;
+}
+
+.hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    width: 100%;
+}
+
+.hero__topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+}
+
+.hero__topics li {
+    padding: 0.45rem 0.75rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    background: rgb(27 31 35 / 72%);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.availability-card {
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgb(56 189 248 / 8%),
+            transparent 45%
+        ),
+        var(--color-surface);
+
+    box-shadow: var(--shadow-card);
+}
+
+.availability-card__label {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.availability-card__value {
+    margin-block-start: var(--space-2);
+
+    font-size: clamp(1.25rem, 3vw, 1.625rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.availability-card__details {
+    display: grid;
+    gap: var(--space-5);
+
+    margin-block-start: var(--space-8);
+}
+
+.availability-card__details div {
+    display: grid;
+    gap: var(--space-1);
+
+    padding-block-start: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.availability-card__details dt {
+    color: var(--color-text-subtle);
+    font-size: 0.8125rem;
+}
+
+.availability-card__details dd {
+    color: var(--color-text-muted);
+}
+
+
+
+@keyframes heroPortraitFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.4rem);
+    }
+}
+
+@keyframes heroBackgroundDrift {
+    0% {
+        transform: scale(1.08) translate3d(-2rem, 0.85rem, 0);
+    }
+
+    50% {
+        transform: scale(1.11) translate3d(0.55rem, -0.9rem, 0);
+    }
+
+    100% {
+        transform: scale(1.09) translate3d(1.75rem, -1.25rem, 0);
+    }
+}
+
+@keyframes heroGridFloat {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.34;
+    }
+
+    50% {
+        transform: translate3d(0.8rem, -0.9rem, 0);
+        opacity: 0.48;
+    }
+}
+
+
+/* ==========================================================================
+   8. SECTION PROJETS
+   ========================================================================== */
+
+.projects-section {
+    /*
+     * padding-block applique le même espace en haut et en bas.
+     * La valeur fluide vient de notre variable globale.
+     */
+    padding-block: var(--section-spacing);
+
+    border-top: 1px solid rgb(48 54 61 / 65%);
+
+    /*
+     * Un léger fond différencie la section du hero,
+     * sans créer une rupture visuelle brutale.
+     */
+    background:
+        linear-gradient(
+            180deg,
+            rgb(21 24 27 / 32%),
+            transparent 22rem
+        );
+}
+
+.section-heading {
+    display: grid;
+    gap: var(--space-5);
+
+    margin-block-end: clamp(2rem, 5vw, 3.5rem);
+}
+
+.section-heading__title-group {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.section-title {
+    max-width: 18ch;
+
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
+    font-weight: 650;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    text-wrap: balance;
+}
+
+.section-description {
+    max-width: 58ch;
+
+    color: var(--color-text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+.projects-grid {
+    display: grid;
+
+    /*
+     * repeat() répète automatiquement les colonnes.
+     *
+     * auto-fit place autant de colonnes que l'espace le permet.
+     *
+     * minmax() donne à chaque carte :
+     * - un minimum lisible ;
+     * - un maximum égal à une fraction de l'espace disponible.
+     *
+     * min(100%, ...) empêche une carte de dépasser la largeur
+     * d'un petit écran lorsque 288 px ne tiennent plus.
+     *
+     * Important : le nombre de cartes n'apparaît nulle part dans cette règle.
+     * Les six projets remplissent simplement les colonnes disponibles :
+     * 1 × 6, 2 × 3 ou 3 × 2 selon la largeur réelle.
+     */
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                min(100%, var(--project-card-min-width)),
+                1fr
+            )
+        );
+
+    gap: clamp(1rem, 2vw, 1.5rem);
+    align-items: stretch;
+}
+
+.project-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: var(--color-surface);
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%);
+
+    transition:
+        transform var(--duration-fast) ease,
+        border-color var(--duration-fast) ease,
+        background-color var(--duration-fast) ease,
+        box-shadow var(--duration-fast) ease;
+}
+
+.project-card:hover .project-card__logo,
+.project-card:focus-within .project-card__logo {
+    transform: scale(1.035);
+    opacity: 1;
+}
+
+.project-card:focus-within {
+    /*
+     * focus-within s'active lorsqu'un lien situé dans la carte
+     * reçoit le focus clavier.
+     */
+    border-color: var(--color-accent);
+}
+
+.project-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-card__index {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+.project-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.045em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.project-status__dot {
+    width: 0.4375rem;
+    height: 0.4375rem;
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 0.25rem rgb(56 189 248 / 10%);
+}
+
+.project-card__visual {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    min-height: 8.5rem;
+    padding: var(--space-5);
+
+    border-bottom: 1px solid var(--color-border);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgb(56 189 248 / 12%),
+            transparent 56%
+        ),
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(2rem - 1px),
+            rgb(255 255 255 / 3%) calc(2rem - 1px),
+            rgb(255 255 255 / 3%) 2rem
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(2rem - 1px),
+            rgb(255 255 255 / 3%) calc(2rem - 1px),
+            rgb(255 255 255 / 3%) 2rem
+        ),
+        #171b1f;
+}
+
+.project-card__visual--logo {
+    min-height: 9.5rem;
+}
+
+/*
+ * Le logo est maintenant un élément indépendant de l'arrière-plan.
+ * Il reste volontairement sous le libellé métier afin de garder
+ * une hiérarchie identique sur toutes les cartes.
+ */
+.project-card__logo {
+    position: absolute;
+    z-index: 0;
+    inset-inline: var(--space-5);
+    inset-block-end: 1rem;
+
+    width: calc(100% - (2 * var(--space-5)));
+    height: 4.75rem;
+
+    object-fit: contain;
+    object-position: left center;
+
+    opacity: 0.96;
+    transform: scale(1);
+    transform-origin: left center;
+    filter: drop-shadow(0 0.35rem 0.9rem rgb(2 6 23 / 32%));
+
+    transition:
+        transform var(--duration-medium) ease,
+        opacity var(--duration-medium) ease;
+}
+
+.project-card__visual::after {
+    content: "";
+    position: absolute;
+    inset-inline-end: -2.5rem;
+    inset-block-end: -3.5rem;
+
+    width: 9rem;
+    height: 9rem;
+
+    border: 1px solid rgb(56 189 248 / 22%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 1.5rem rgb(56 189 248 / 4%),
+        0 0 0 3rem rgb(56 189 248 / 2%);
+}
+
+.project-card__code {
+    position: relative;
+    z-index: 1;
+
+    padding: 0.35rem 0.55rem;
+    border: 1px solid rgb(56 189 248 / 25%);
+    border-radius: 999px;
+
+    background: rgb(17 19 21 / 74%);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    box-shadow: 0 0.25rem 0.75rem rgb(2 6 23 / 28%);
+}
+
+.project-card__signal {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+
+    height: 3rem;
+    filter: drop-shadow(0 0.25rem 0.75rem rgb(2 6 23 / 36%));
+}
+
+.project-card__signal span {
+    display: block;
+    width: 0.3125rem;
+    border-radius: 999px;
+    background: var(--color-accent);
+    opacity: 0.72;
+}
+
+.project-card__signal span:nth-child(1) {
+    height: 38%;
+}
+
+.project-card__signal span:nth-child(2) {
+    height: 82%;
+}
+
+.project-card__signal span:nth-child(3) {
+    height: 58%;
+}
+
+.project-card__signal--middle span:nth-child(1) {
+    height: 72%;
+}
+
+.project-card__signal--middle span:nth-child(2) {
+    height: 46%;
+}
+
+.project-card__signal--middle span:nth-child(3) {
+    height: 92%;
+}
+
+.project-card__signal--end span:nth-child(1) {
+    height: 48%;
+}
+
+.project-card__signal--end span:nth-child(2) {
+    height: 66%;
+}
+
+.project-card__signal--end span:nth-child(3) {
+    height: 34%;
+}
+
+
+/*
+ * Les trois variantes suivantes ne changent que la hauteur des barres
+ * décoratives des projets 04, 05 et 06.
+ *
+ * Elles permettent d'identifier visuellement chaque carte sans ajouter
+ * d'image, de fichier SVG ou de JavaScript supplémentaire.
+ */
+.project-card__signal--aria span:nth-child(1) {
+    height: 88%;
+}
+
+.project-card__signal--aria span:nth-child(2) {
+    height: 54%;
+}
+
+.project-card__signal--aria span:nth-child(3) {
+    height: 74%;
+}
+
+.project-card__signal--ops span:nth-child(1) {
+    height: 62%;
+}
+
+.project-card__signal--ops span:nth-child(2) {
+    height: 94%;
+}
+
+.project-card__signal--ops span:nth-child(3) {
+    height: 42%;
+}
+
+.project-card__signal--agents span:nth-child(1) {
+    height: 78%;
+}
+
+.project-card__signal--agents span:nth-child(2) {
+    height: 38%;
+}
+
+.project-card__signal--agents span:nth-child(3) {
+    height: 100%;
+}
+
+.project-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: var(--space-6);
+}
+
+.project-card__title {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 620;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    text-wrap: balance;
+}
+
+.project-card__description {
+    margin-block-start: var(--space-4);
+
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.project-card__benefit {
+    width: 100%;
+    margin-block-start: var(--space-5);
+    padding: var(--space-4);
+
+    border-inline-start: 0.1875rem solid var(--color-accent);
+    border-radius: 0 var(--radius-small) var(--radius-small) 0;
+
+    background: rgb(56 189 248 / 6%);
+    color: var(--color-text-muted);
+}
+
+.project-card__benefit-label {
+    margin-block-end: var(--space-1);
+
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    margin-block-start: var(--space-5);
+    list-style: none;
+}
+
+.project-tags li {
+    padding: 0.35rem 0.625rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    background: rgb(17 19 21 / 48%);
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+}
+
+.project-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    margin-block-start: auto;
+    padding-block-start: var(--space-6);
+
+    color: var(--color-text);
+    font-weight: 620;
+    text-decoration: none;
+}
+
+.project-card__link span {
+    color: var(--color-accent);
+    transition: transform var(--duration-fast) ease;
+}
+
+.project-card__link:hover span,
+.project-card__link:focus-visible span {
+    transform: translateX(0.25rem);
+}
+
+/*
+ * Les effets de survol ne sont appliqués que sur un appareil
+ * disposant réellement d'un pointeur précis, comme une souris.
+ * Ils ne deviennent donc pas des informations indispensables sur mobile.
+ */
+@media (hover: hover) and (pointer: fine) {
+    .project-card:hover {
+        transform: translateY(-0.125rem);
+        border-color: rgb(56 189 248 / 55%);
+        background: var(--color-surface-hover);
+        box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 18%);
+    }
+}
+
+
+/* ==========================================================================
+   8.1 FONDS D'AMBIANCE DES GRANDES SECTIONS
+   ========================================================================== */
+
+/*
+ * Les fonds d'ambiance vivent derrière les contenus et ne traversent jamais
+ * les cartes. Une même mécanique de zoom/dérive est utilisée partout afin de
+ * donner au site une signature dynamique cohérente sans JavaScript.
+ */
+.projects-section,
+#competences,
+#articles,
+#parcours,
+#contact {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background-color: rgb(7 11 16);
+}
+
+.projects-section > .content-container,
+#competences > .content-container,
+#articles > .content-container,
+#parcours > .content-container,
+#contact > .content-container {
+    position: relative;
+    z-index: 2;
+}
+
+.projects-section::before,
+#competences::before,
+#articles::before,
+#parcours::before,
+#contact::before {
+    content: "";
+    position: absolute;
+    inset: -5%;
+    z-index: 0;
+    pointer-events: none;
+
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    opacity: var(--ambient-opacity, 0.44);
+    filter: var(--ambient-filter, saturate(1) brightness(0.95) contrast(1.08));
+    transform: scale(1.07);
+    animation: sectionBackgroundDrift var(--ambient-duration, 15s) ease-in-out infinite alternate;
+    animation-delay: var(--ambient-delay, 0s);
+}
+
+.projects-section::after,
+#competences::after,
+#articles::after,
+#parcours::after,
+#contact::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at var(--ambient-glow-x, 55%) var(--ambient-glow-y, 34%),
+            rgb(var(--ambient-rgb) / 18%),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(var(--ambient-rgb) / 11%) 0%,
+            rgb(5 8 12 / 34%) 30%,
+            rgb(5 8 12 / 78%) 100%
+        );
+}
+
+/* Projets : bleu pétrole / turquoise. */
+.projects-section {
+    --ambient-rgb: 20 184 166;
+    --ambient-opacity: 0.48;
+    --ambient-filter: hue-rotate(330deg) saturate(1.15) brightness(0.96) contrast(1.1);
+    --ambient-duration: 14s;
+    --ambient-delay: -2s;
+    --ambient-glow-x: 58%;
+    --ambient-glow-y: 24%;
+}
+
+.projects-section::before {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgb(3 12 16 / 72%),
+            rgb(3 12 16 / 16%) 38%,
+            rgb(3 12 16 / 28%) 76%,
+            rgb(3 12 16 / 76%)
+        ),
+        url("assets/images/backgrounds/projects-ambient.webp");
+    background-size: max(118rem, 138vw) auto;
+    background-position: center 2rem;
+}
+
+/* Compétences : violet nuit. */
+#competences {
+    --ambient-rgb: 139 92 246;
+    --ambient-opacity: 0.50;
+    --ambient-filter: hue-rotate(58deg) saturate(1.15) brightness(0.92) contrast(1.1);
+    --ambient-duration: 15s;
+    --ambient-delay: -6s;
+    --ambient-glow-x: 38%;
+    --ambient-glow-y: 36%;
+}
+
+#competences::before {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgb(11 5 24 / 74%),
+            rgb(11 5 24 / 18%) 42%,
+            rgb(11 5 24 / 32%) 76%,
+            rgb(11 5 24 / 76%)
+        ),
+        url("assets/images/backgrounds/skills-ambient.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Articles : ambre / cuivre discret. */
+#articles {
+    --ambient-rgb: 217 119 6;
+    --ambient-opacity: 0.46;
+    --ambient-filter: hue-rotate(184deg) saturate(0.88) brightness(0.92) contrast(1.12);
+    --ambient-duration: 16s;
+    --ambient-delay: -9s;
+    --ambient-glow-x: 64%;
+    --ambient-glow-y: 34%;
+}
+
+#articles::before {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgb(22 12 5 / 76%),
+            rgb(22 12 5 / 18%) 40%,
+            rgb(22 12 5 / 30%) 74%,
+            rgb(22 12 5 / 78%)
+        ),
+        url("assets/images/backgrounds/articles-ambient.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Parcours : vert profond / kaki bleuté. */
+#parcours {
+    --ambient-rgb: 104 126 74;
+    --ambient-opacity: 0.48;
+    --ambient-filter: hue-rotate(248deg) saturate(0.72) brightness(0.88) contrast(1.1);
+    --ambient-duration: 15s;
+    --ambient-delay: -4s;
+    --ambient-glow-x: 42%;
+    --ambient-glow-y: 30%;
+
+    background-color: rgb(8 13 11);
+}
+
+#parcours::before {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgb(8 16 11 / 76%),
+            rgb(8 16 11 / 18%) 42%,
+            rgb(8 16 11 / 34%) 76%,
+            rgb(8 16 11 / 80%)
+        ),
+        url("assets/images/backgrounds/career-ambient.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contact : bleu gris / ardoise chaude. */
+#contact {
+    --ambient-rgb: 116 128 145;
+    --ambient-opacity: 0.43;
+    --ambient-filter: saturate(0.58) brightness(0.88) contrast(1.08);
+    --ambient-duration: 17s;
+    --ambient-delay: -11s;
+    --ambient-glow-x: 62%;
+    --ambient-glow-y: 38%;
+
+    background-color: rgb(10 12 15);
+}
+
+#contact::before {
+    background-image:
+        linear-gradient(
+            90deg,
+            rgb(12 13 16 / 78%),
+            rgb(12 13 16 / 20%) 40%,
+            rgb(43 31 26 / 18%) 72%,
+            rgb(18 16 15 / 82%)
+        ),
+        url("assets/images/backgrounds/contact-ambient.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+#contact::after {
+    background:
+        radial-gradient(
+            circle at 68% 34%,
+            rgb(148 113 90 / 13%),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 42% 48%,
+            rgb(116 128 145 / 15%),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            rgb(116 128 145 / 7%),
+            rgb(10 12 15 / 80%) 100%
+        );
+}
+
+@keyframes sectionBackgroundDrift {
+    0% {
+        transform: scale(1.07) translate3d(-1.8rem, 0.7rem, 0);
+    }
+
+    50% {
+        transform: scale(1.105) translate3d(0.55rem, -0.85rem, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate3d(1.65rem, -1.15rem, 0);
+    }
+}
+
+
+/* ==========================================================================
+   9. SECTIONS DE CONTENU
+   ========================================================================== */
+
+.content-section {
+    /*
+     * Toutes les grandes sections utilisent le même rythme vertical.
+     * Le padding est interne : le fond de section s'étend donc
+     * jusqu'aux limites visuelles de cette zone.
+     */
+    padding-block: var(--section-spacing);
+    border-top: 1px solid rgb(48 54 61 / 65%);
+}
+
+.content-section--tinted {
+    /*
+     * tinted signifie ici "légèrement teinté".
+     * Cette variante alterne les grandes zones sans rupture brutale.
+     */
+    background: transparent;
+}
+
+.skills-grid,
+.lab-grid,
+.articles-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--card-gap);
+    margin-block-start: var(--space-10);
+}
+
+
+/* --------------------------------------------------------------------------
+   9.1 COMPÉTENCES
+   -------------------------------------------------------------------------- */
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    min-height: 18rem;
+    padding: var(--space-6);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: var(--color-surface);
+}
+
+.info-card--progress {
+    /*
+     * Halo discret pour signaler la compétence Web en progression.
+     */
+    background:
+        linear-gradient(
+            145deg,
+            rgb(56 189 248 / 8%),
+            transparent 52%
+        ),
+        var(--color-surface);
+}
+
+.info-card__index {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.info-card h3,
+.lab-card h3,
+.article-card h3,
+.timeline h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.info-card > p:not(.info-card__index),
+.lab-card > p:not(.lab-card__status),
+.article-card > p:not(.article-card__meta),
+.timeline__item p:last-child {
+    color: var(--color-text-muted);
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    margin-block-start: auto;
+    list-style: none;
+}
+
+.tag-list li {
+    padding: 0.4rem 0.65rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   9.2 LABORATOIRE IA
+   -------------------------------------------------------------------------- */
+
+.lab-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    padding: var(--space-6);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background:
+        linear-gradient(
+            160deg,
+            rgb(56 189 248 / 7%),
+            transparent 40%
+        ),
+        var(--color-surface);
+}
+
+.lab-card__icon {
+    display: inline-grid;
+    place-items: center;
+
+    width: 3rem;
+    height: 3rem;
+
+    border: 1px solid rgb(56 189 248 / 35%);
+    border-radius: var(--radius-small);
+
+    background: rgb(56 189 248 / 8%);
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+}
+
+.lab-card__status {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.mini-flow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-2);
+
+    margin-block-start: auto;
+    padding: 0;
+
+    list-style-position: inside;
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+}
+
+.mini-flow li {
+    padding: var(--space-2);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+
+    background: rgb(17 19 21 / 45%);
+}
+
+
+/* --------------------------------------------------------------------------
+   9.3 ARTICLES
+   -------------------------------------------------------------------------- */
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    min-height: 17rem;
+    padding: var(--space-6);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: var(--color-surface);
+}
+
+.article-card__meta,
+.article-card__reading {
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+}
+
+.article-card__meta {
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.article-card__reading {
+    margin-block-start: auto;
+    padding-block-start: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* --------------------------------------------------------------------------
+   9.4 PARCOURS / TIMELINE
+   -------------------------------------------------------------------------- */
+
+.timeline {
+    position: relative;
+
+    display: grid;
+    gap: 0;
+
+    max-width: 56rem;
+    margin-block-start: var(--space-10);
+    padding: 0;
+
+    list-style: none;
+}
+
+.timeline::before {
+    /*
+     * Ligne verticale reliant les étapes.
+     */
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 1.125rem;
+
+    width: 1px;
+    background: linear-gradient(
+        to bottom,
+        var(--color-accent),
+        rgb(48 54 61 / 45%)
+    );
+}
+
+.timeline__item {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: var(--space-5);
+
+    padding-block: var(--space-5);
+}
+
+.timeline__marker {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+
+    width: 2.25rem;
+    height: 2.25rem;
+
+    border: 1px solid rgb(56 189 248 / 45%);
+    border-radius: 50%;
+
+    background: var(--color-background);
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+}
+
+.timeline__period {
+    margin-block-end: var(--space-1);
+
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.timeline__item h3 {
+    margin-block-end: var(--space-2);
+}
+
+
+/* --------------------------------------------------------------------------
+   9.5 CONTACT
+   -------------------------------------------------------------------------- */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--card-gap);
+
+    margin-block-start: var(--space-10);
+}
+
+.contact-panel,
+.contact-form {
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: var(--color-surface);
+}
+
+.contact-panel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgb(56 189 248 / 9%),
+            transparent 48%
+        ),
+        var(--color-surface);
+}
+
+.contact-panel__label {
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.contact-needs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    list-style: none;
+}
+
+.contact-needs li {
+    padding: 0.5rem 0.75rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+}
+
+.contact-panel__note {
+    margin-block-start: auto;
+    padding-block-start: var(--space-6);
+    border-top: 1px solid var(--color-border);
+}
+
+.contact-panel__note p {
+    margin-block-end: var(--space-2);
+
+    color: var(--color-text-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+}
+
+.contact-panel__note strong {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+}
+
+.form-field {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.form-field label {
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font: inherit;
+
+    transition:
+        border-color var(--duration-fast) ease,
+        box-shadow var(--duration-fast) ease;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 9rem;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: var(--color-text-subtle);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+
+    box-shadow: 0 0 0 0.1875rem rgb(56 189 248 / 12%);
+}
+
+.contact-form__footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+
+    margin-block-start: var(--space-6);
+    padding-block-start: var(--space-6);
+
+    border-top: 1px solid var(--color-border);
+}
+
+.contact-form__footer p {
+    color: var(--color-text-subtle);
+    font-size: 0.75rem;
+}
+
+
+
+/* ==========================================================================
+   10. FOOTER ET LIENS PROFESSIONNELS
+   ========================================================================== */
+
+.site-footer {
+    /*
+     * Le footer est séparé du contenu principal par une bordure
+     * et utilise un fond légèrement différent.
+     */
+    width: 100%;
+    padding-block: clamp(3rem, 7vw, 5rem);
+
+    border-top: 1px solid var(--color-border);
+
+    background:
+        radial-gradient(
+            circle at 15% 0%,
+            rgb(56 189 248 / 7%),
+            transparent 28rem
+        ),
+        var(--color-sidebar);
+}
+
+.site-footer__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+
+    padding-block-end: var(--space-10);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-footer__intro > p {
+    max-width: 42rem;
+
+    color: var(--color-text-muted);
+}
+
+.footer-resources {
+    padding-block: var(--space-10);
+}
+
+.footer-section-heading {
+    display: grid;
+    gap: var(--space-2);
+
+    margin-block-end: var(--space-6);
+}
+
+.footer-section-heading h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.footer-resources__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--card-gap);
+}
+
+.footer-resource {
+    /*
+     * scroll-margin-top laisse un peu d'air lorsqu'un lien de la
+     * sidebar fait défiler la page directement vers cette ressource.
+     */
+    scroll-margin-top: 6rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    min-height: 13rem;
+    padding: var(--space-6);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: rgb(27 31 35 / 72%);
+}
+
+.footer-resource__type {
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+}
+
+.footer-resource h3 {
+    font-size: 1.25rem;
+}
+
+.footer-resource > p:not(.footer-resource__type) {
+    color: var(--color-text-muted);
+}
+
+.footer-resource__pending {
+    align-self: flex-start;
+
+    margin-block-start: auto;
+    padding: 0.45rem 0.7rem;
+
+    border: 1px dashed var(--color-border);
+    border-radius: 999px;
+
+    color: var(--color-text-subtle);
+
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+}
+
+.footer-resource__link {
+    /*
+     * margin-block-start: auto pousse le lien en bas de la carte,
+     * quelle que soit la longueur du texte situé au-dessus.
+     */
+    margin-block-start: auto;
+
+    /*
+     * Le lien n'occupe que la largeur nécessaire.
+     */
+    align-self: flex-start;
+
+    /*
+     * La couleur cyan indique clairement qu'il s'agit
+     * désormais d'une action disponible.
+     */
+    color: var(--color-accent);
+
+    font-weight: 650;
+    text-decoration: none;
+
+    /*
+     * Petite transition visuelle lors du survol.
+     */
+    transition:
+        color var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+}
+
+.footer-resource__link:hover {
+    color: var(--color-text);
+
+    /*
+     * Déplacement horizontal très léger pour renforcer
+     * l'impression de lien d'action.
+     */
+    transform: translateX(0.1875rem);
+}
+
+/*
+ * Les liens de la sidebar pointent vers ces identifiants.
+ * :target s'active lorsque l'URL contient, par exemple, #github.
+ *
+ * Cela permet de repérer visuellement la ressource atteinte.
+ */
+.footer-resource:target,
+.legal-panel:target {
+    border-color: var(--color-accent);
+
+    box-shadow: 0 0 0 0.1875rem rgb(56 189 248 / 10%);
+}
+
+
+/* --------------------------------------------------------------------------
+   10.1 INFORMATIONS LÉGALES
+   -------------------------------------------------------------------------- */
+
+.footer-legal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+
+    padding-block: var(--space-8);
+
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.legal-panel {
+    scroll-margin-top: 6rem;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background: rgb(17 19 21 / 55%);
+}
+
+.legal-panel summary {
+    /*
+     * summary est l'en-tête cliquable natif de <details>.
+     */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    min-height: 3.5rem;
+    padding: var(--space-4) var(--space-5);
+
+    cursor: pointer;
+    list-style: none;
+
+    font-weight: 650;
+}
+
+.legal-panel summary::-webkit-details-marker {
+    /*
+     * Chrome ajoute normalement son propre petit triangle.
+     * Nous le masquons afin de garder une apparence homogène.
+     */
+    display: none;
+}
+
+.legal-panel__hint {
+    color: var(--color-accent);
+
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+}
+
+.legal-panel[open] .legal-panel__hint {
+    /*
+     * Le texte change uniquement visuellement grâce au CSS.
+     * Le contenu textuel HTML reste "Ouvrir", donc ce changement
+     * n'est pas indispensable à la compréhension.
+     */
+    opacity: 0.55;
+}
+
+.legal-panel__content {
+    display: grid;
+    gap: var(--space-5);
+
+    padding:
+        0
+        var(--space-5)
+        var(--space-6);
+
+    color: var(--color-text-muted);
+}
+
+.legal-panel__content h2 {
+    color: var(--color-text);
+    font-size: 1.125rem;
+}
+
+.legal-list {
+    display: grid;
+    gap: var(--space-4);
+}
+
+.legal-list div {
+    display: grid;
+    gap: var(--space-1);
+
+    padding-block-start: var(--space-3);
+    border-top: 1px solid var(--color-border);
+}
+
+.legal-list dt {
+    color: var(--color-text-subtle);
+
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+}
+
+.legal-list dd {
+    color: var(--color-text-muted);
+}
+
+.legal-panel__warning {
+    padding: var(--space-4);
+
+    border-inline-start: 0.1875rem solid var(--color-accent);
+
+    background: rgb(56 189 248 / 6%);
+    color: var(--color-text-muted);
+}
+
+
+/* --------------------------------------------------------------------------
+   10.2 BARRE FINALE
+   -------------------------------------------------------------------------- */
+
+.site-footer__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    padding-block-start: var(--space-6);
+
+    color: var(--color-text-subtle);
+    font-size: 0.75rem;
+}
+
+.site-footer__bottom a {
+    align-self: flex-start;
+
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.site-footer__bottom a:hover {
+    color: var(--color-accent);
+}
+
+
+/* ==========================================================================
+   11. RESPONSIVE TABLETTE
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+    /*
+     * 48 rem × 16 px = environ 768 px.
+     */
+
+    .section-heading {
+        grid-template-columns: minmax(0, 0.85fr) minmax(18rem, 1.15fr);
+        align-items: end;
+        gap: clamp(2rem, 5vw, 5rem);
+    }
+
+    /*
+     * Les grilles se densifient progressivement à partir de la tablette.
+     */
+    .skills-grid,
+    .articles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lab-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-field--full {
+        /*
+         * 1 / -1 signifie : de la première à la dernière ligne
+         * verticale de la grille.
+         */
+        grid-column: 1 / -1;
+    }
+
+    .contact-form__footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-footer__intro {
+        grid-template-columns:
+            minmax(12rem, 0.7fr)
+            minmax(0, 1.3fr);
+        align-items: end;
+    }
+
+    .footer-resources__grid {
+        /*
+         * Sur tablette, les trois ressources occupent trois colonnes
+         * si l'espace est suffisant.
+         */
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .footer-legal {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .site-footer__bottom a {
+        align-self: auto;
+    }
+
+    .hero__actions {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .button {
+        width: auto;
+    }
+
+    .availability-card__details {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================================================
+   12. RESPONSIVE DESKTOP
+   ========================================================================== */
+
+@media (min-width: 64rem) {
+    /*
+     * 64 rem × 16 px = environ 1024 px.
+     */
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    .mobile-header,
+    .mobile-menu,
+    .menu-overlay {
+        display: none;
+    }
+
+    body.menu-is-open {
+        overflow: auto;
+    }
+
+    .sidebar {
+        position: fixed;
+        z-index: 40;
+        inset-block: 0;
+        inset-inline-start: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        width: var(--sidebar-width);
+        min-height: 100dvh;
+        padding: var(--space-8) var(--space-6);
+
+        border-inline-end: 1px solid var(--color-border);
+        background: var(--color-sidebar);
+    }
+
+    .sidebar__navigation {
+        margin-block-start: var(--space-12);
+    }
+
+    .main-content {
+        width: calc(100% - var(--sidebar-width));
+        margin-inline-start: var(--sidebar-width);
+    }
+
+    .site-footer {
+        /*
+         * Sur desktop, le footer utilise la même largeur et le même
+         * décalage que le contenu principal afin de ne pas passer
+         * sous la sidebar fixe.
+         */
+        width: calc(100% - var(--sidebar-width));
+        margin-inline-start: var(--sidebar-width);
+    }
+
+    .hero {
+        min-height: 100dvh;
+    }
+
+    .hero__layout {
+        /*
+         * Le hero s'organise en trois zones : portrait, texte, disponibilité.
+         * La colonne centrale reste prioritaire pour préserver la lisibilité.
+         */
+        grid-template-columns:
+            minmax(14rem, 0.8fr)
+            minmax(0, 1.2fr)
+            minmax(18rem, 0.82fr);
+
+        gap: clamp(2.5rem, 5vw, 5rem);
+    }
+
+    .hero__portrait {
+        align-self: end;
+        justify-self: start;
+        width: min(100%, 20rem);
+        padding: 0;
+    }
+
+    .availability-card__details {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-layout {
+        /*
+         * Le formulaire reçoit plus de largeur que le panneau de gauche.
+         */
+        grid-template-columns:
+            minmax(16rem, 0.72fr)
+            minmax(0, 1.28fr);
+        align-items: stretch;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   8.2 HARMONISATION DES LOGOS DE PROJETS ET SIGNATURE DU HERO
+   ========================================================================== */
+
+/*
+ * ARIA est naturellement plus haut et plus compact que les autres marques.
+ * Une largeur légèrement réduite évite qu'il domine visuellement la rangée.
+ */
+.project-card__visual:has(.project-card__logo[src*="aria-news"]) .project-card__logo {
+    width: 82%;
+    inset-inline-end: auto;
+}
+
+/*
+ * Les trois nouvelles cartes utilisent le même gabarit que les logos déjà
+ * validés. Les variantes servent uniquement à corriger leurs proportions.
+ */
+.project-card__logo--pommier {
+    width: 88%;
+    inset-inline-end: auto;
+}
+
+.project-card__logo--agents {
+    width: 82%;
+    inset-inline-end: auto;
+}
+
+.project-card__logo--zangai {
+    width: 80%;
+    inset-inline-end: auto;
+}
+
+/*
+ * Le logo Zang.AI accompagne le portrait comme une signature. Il reste plus
+ * discret que le titre principal et ne modifie pas la largeur de la colonne.
+ */
+.hero__portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__brand-logo {
+    width: min(82%, 15rem);
+    max-height: 5.25rem;
+    margin-inline: auto;
+    margin-block-end: clamp(0.5rem, 1.4vw, 1rem);
+    object-fit: contain;
+    filter: drop-shadow(0 0.45rem 1.2rem rgb(2 6 23 / 42%));
+}
+
+@media (min-width: 64rem) {
+    .hero__portrait {
+        align-items: flex-start;
+    }
+
+    .hero__brand-logo {
+        width: min(88%, 15rem);
+        margin-inline: 0;
+    }
+}
+
+
+/* ==========================================================================
+   13. RÉDUCTION DES ANIMATIONS
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero__portrait-image {
+        animation: none;
+    }
+
+    .hero::before,
+    .hero::after,
+    .projects-section::before,
+    #competences::before,
+    #articles::before,
+    #parcours::before,
+    #contact::before {
+        animation: none;
+    }
+
+
+    .project-card__logo {
+        transition: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* ==========================================================================
+   14. OUTILS TEMPORAIRES DE DIAGNOSTIC
+   ========================================================================== */
+
+/*
+ * Ajouter class="debug" à la balise body
+ * pour afficher temporairement toutes les boîtes.
+ */
+.debug *,
+.debug *::before,
+.debug *::after {
+    outline: 1px solid rgb(255 80 80 / 28%);
+}
+
+/*
+ * Ajouter aussi debug-grid pour afficher une grille de 8 px.
+ */
+.debug-grid {
+    background-image:
+        linear-gradient(
+            to right,
+            rgb(56 189 248 / 8%) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgb(56 189 248 / 8%) 1px,
+            transparent 1px
+        );
+
+    background-size: 0.5rem 0.5rem;
+}
+
+
+/* ==========================================================================
+   9.1 BIS — COMPÉTENCES : SOCLE SCIENTIFIQUE & WEB EN PROGRESSION
+   ========================================================================== */
+
+.skills-foundation {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+    align-items: center;
+
+    margin-block-start: var(--space-10);
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgb(56 189 248 / 8%),
+            transparent 46%
+        ),
+        var(--color-surface);
+}
+
+.skills-foundation__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.skills-foundation__content h3 {
+    font-size: clamp(1.4rem, 2.7vw, 2rem);
+    line-height: 1.2;
+}
+
+.skills-foundation__content > p:not(.eyebrow) {
+    color: var(--color-text-muted);
+}
+
+.skills-foundation__note {
+    padding-block-start: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.skills-foundation__note strong {
+    color: var(--color-text);
+}
+
+.skills-foundation__visual {
+    margin: 0;
+    overflow: hidden;
+
+    border: 1px solid rgb(56 189 248 / 20%);
+    border-radius: calc(var(--radius-card) - 0.2rem);
+    background: #061225;
+}
+
+.skills-foundation__visual img {
+    width: 100%;
+    height: auto;
+}
+
+/*
+ * Six cartes produisent naturellement une grille 3 × 2 sur desktop
+ * grâce à la règle responsive déjà présente plus bas dans ce fichier.
+ */
+.skills-grid {
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.skills-grid .info-card {
+    min-height: 20rem;
+}
+
+.skills-progress {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: center;
+
+    margin-block-start: var(--space-10);
+    padding: clamp(1.25rem, 3vw, 2rem);
+
+    border: 1px solid rgb(56 189 248 / 30%);
+    border-radius: var(--radius-card);
+
+    background:
+        linear-gradient(
+            110deg,
+            rgb(56 189 248 / 10%),
+            transparent 58%
+        ),
+        var(--color-surface);
+}
+
+.skills-progress__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.skills-progress__content h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+.skills-progress__content > p:not(.eyebrow) {
+    color: var(--color-text-muted);
+}
+
+.skills-progress .tag-list {
+    margin-block-start: 0;
+}
+
+@media (min-width: 48rem) {
+    .skills-foundation {
+        grid-template-columns:
+            minmax(17rem, 0.72fr)
+            minmax(0, 1.28fr);
+    }
+
+    .skills-progress {
+        grid-template-columns:
+            minmax(0, 1.2fr)
+            minmax(18rem, 0.8fr);
+    }
+
+    .skills-progress .tag-list {
+        justify-content: flex-end;
+    }
+}
+
+
+
+/* ==========================================================================
+   9.3 BIS — ARTICLES PUBLIÉS ET LIENS DE LECTURE
+   ========================================================================== */
+
+/*
+ * Une carte publiée conserve exactement le même gabarit que les cartes
+ * en attente. La bordure légèrement accentuée indique simplement
+ * qu'une action de lecture est désormais disponible.
+ */
+.article-card--published {
+    border-color: rgb(56 189 248 / 32%);
+}
+
+/*
+ * Le titre devient un lien sans perdre le style typographique de la carte.
+ */
+.article-card__title-link {
+    color: var(--color-text);
+    text-decoration: none;
+
+    transition: color var(--duration-fast) ease;
+}
+
+.article-card__title-link:hover,
+.article-card__title-link:focus-visible {
+    color: var(--color-accent);
+}
+
+/*
+ * La zone de lecture publiée reste placée en bas de la carte grâce
+ * au margin-block-start déjà défini sur article-card__reading.
+ */
+.article-card__reading--link {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-3);
+
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.article-card__reading--link span {
+    transition: transform var(--duration-fast) ease;
+}
+
+.article-card__reading--link:hover,
+.article-card__reading--link:focus-visible {
+    color: var(--color-text);
+}
+
+.article-card__reading--link:hover span,
+.article-card__reading--link:focus-visible span {
+    transform: translateX(0.25rem);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .article-card--published {
+        transition:
+            transform var(--duration-fast) ease,
+            border-color var(--duration-fast) ease,
+            background-color var(--duration-fast) ease;
+    }
+
+    .article-card--published:hover {
+        transform: translateY(-0.125rem);
+        border-color: rgb(56 189 248 / 55%);
+        background: var(--color-surface-hover);
+    }
+}

@@ -1,0 +1,130 @@
+digraph ARIA_NEWS_V2 {
+  graph [
+    rankdir=LR,
+    bgcolor="#061225",
+    pad="0.28",
+    nodesep="0.38",
+    ranksep="0.78",
+    splines=ortho,
+    outputorder=edgesfirst,
+    fontname="Inter",
+    labeljust="c",
+    labelloc="t",
+    label=<
+      <FONT COLOR="#F3F7FF" POINT-SIZE="26"><B>ARIA / NEWS — vue de principe</B></FONT><BR/>
+      <FONT COLOR="#A7B7D8" POINT-SIZE="12">Collecte crypto-news, détection Hot News, consolidation LLM et services de données auxiliaires</FONT>
+    >
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fontname="Inter",
+    fontsize=10.5,
+    margin="0.12,0.07",
+    penwidth=1.4,
+    color="#A1B4D8",
+    fontcolor="#F5F8FF",
+    fillcolor="#0D1B35"
+  ];
+
+  edge [
+    color="#8FA7D8",
+    penwidth=1.15,
+    arrowsize=0.7,
+    fontname="Inter",
+    fontsize=9.5,
+    fontcolor="#CBD7F2"
+  ];
+
+  subgraph cluster_in {
+    label="ENTRÉES";
+    color="#17335A";
+    fontcolor="#9DB1D9";
+    penwidth=1.15;
+    style="rounded,dashed";
+    rss [label="Sources RSS\nclassiques", fillcolor="#0F2C46", color="#58C7FF"];
+    special [label="Sources spéciales\nHTTP · Selenium", fillcolor="#0F2C46", color="#58C7FF"];
+    refs [label="Référentiels\ncatégories · coins · titres", fillcolor="#261544", color="#C784FF"];
+    api_refs [label="API ARIA\nnews récentes · coinlist ERC-20", fillcolor="#261544", color="#C784FF"];
+  }
+
+  subgraph cluster_core {
+    label="NEWSBLOTTER V8";
+    color="#17335A";
+    fontcolor="#9DB1D9";
+    penwidth=1.15;
+    style="rounded,dashed";
+
+    orchestrator [label="Orchestrateur\ncycle 5 min\nlogs · CPU/RAM", fillcolor="#123250", color="#58C7FF"];
+    collect [label="Collecte & extraction\nfull text · dates UTC", fillcolor="#133B31", color="#3DDD92"];
+    enrich [label="Enrichissement\ncatégories · coins", fillcolor="#133B31", color="#3DDD92"];
+    dedup [label="Contrôles éditoriaux\n10 000 titres · fuzzy 90%", fillcolor="#133B31", color="#3DDD92"];
+    hot [label="Hot News detection\nActor · TradFi · Action · Crypto", fillcolor="#4A3513", color="#F7B64B"];
+    publish [label="Publication API\nJSON news enrichi", fillcolor="#472043", color="#FF7CDA"];
+  }
+
+  subgraph cluster_llm {
+    label="HOT NEWS / LLM";
+    color="#17335A";
+    fontcolor="#9DB1D9";
+    penwidth=1.15;
+    style="rounded,dashed";
+
+    regroup [label="Regroupement thématique\n≥ 2 tokens communs", fillcolor="#133B31", color="#3DDD92"];
+    llm [label="Consolidation LLM\nGPT-4o-mini\narticle + résumé court", fillcolor="#4A3513", color="#F7B64B"];
+    republish [label="Publication / mise à jour\nHot News dans ARIA", fillcolor="#472043", color="#FF7CDA"];
+  }
+
+  subgraph cluster_aux {
+    label="SERVICES DATA AUXILIAIRES";
+    color="#17335A";
+    fontcolor="#9DB1D9";
+    penwidth=1.15;
+    style="rounded,dashed";
+
+    cmc [label="CoinMarketCap V2\nexchanges · source-score", fillcolor="#4A3513", color="#F7B64B"];
+    erc20 [label="Blockchain Explorer V8\nERC-20 · holders · supply", fillcolor="#0F2C46", color="#58C7FF"];
+  }
+
+  subgraph cluster_out {
+    label="RESTITUTION";
+    color="#17335A";
+    fontcolor="#9DB1D9";
+    penwidth=1.15;
+    style="rounded,dashed";
+
+    aria [label="Plateforme ARIA\nnews · Hot News · marché\nmetrics blockchain", fillcolor="#0A1830", color="#E9EEF9", penwidth=1.6];
+  }
+
+  // Core flow
+  rss -> orchestrator [label="sources"];
+  special -> orchestrator [label="sources"];
+  orchestrator -> collect;
+  collect -> enrich;
+  refs -> enrich [style=dashed, color="#BC91FF"];
+  api_refs -> enrich [style=dashed, color="#BC91FF", label="réf. coins"];
+  enrich -> dedup;
+  dedup -> hot;
+  hot -> publish;
+  publish -> aria [label="API ARIA"];
+
+  // Hot news flow
+  hot -> regroup [label="si hot news", color="#F7B64B"];
+  refs -> regroup [style=dashed, color="#BC91FF", label="tokens"];
+  api_refs -> regroup [style=dashed, color="#BC91FF", label="news récentes"];
+  regroup -> llm;
+  llm -> republish;
+  republish -> aria [label="API ARIA"];
+
+  // Auxiliary data flow
+  api_refs -> cmc [style=dashed, color="#BC91FF", label="référentiels"];
+  api_refs -> erc20 [style=dashed, color="#BC91FF", label="coinlist"];
+  cmc -> aria [label="source-score"];
+  erc20 -> aria [label="métriques token"];
+
+  {rank=same; rss; special; refs; api_refs}
+  {rank=same; collect; enrich; dedup; hot; publish}
+  {rank=same; regroup; llm; republish}
+  {rank=same; cmc; erc20}
+}

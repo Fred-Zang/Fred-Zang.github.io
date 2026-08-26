@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="Zang.AI — Portfolio & WordPress Lab : construction progressive d’un portfolio professionnel en HTML, CSS et JavaScript, préparé pour évoluer vers WordPress et PHP."
+    >
+    <title>Zang.AI — Portfolio &amp; WordPress Lab</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#contenu-principal">Aller directement au contenu</a>
+
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu principal">
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav class="mobile-menu" id="menu-mobile" aria-label="Navigation principale mobile" aria-hidden="true" tabindex="-1">
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal"><span aria-hidden="true">×</span></button>
+        </div>
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page" data-menu-link>Projets</a></li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+        <div class="mobile-menu__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer" data-menu-link>GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer" data-menu-link>LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download data-menu-link>Télécharger le CV</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+                <a class="project-back-link" href="../index.html#projets"><span aria-hidden="true">←</span>Retour aux projets</a>
+
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">WEB / WP · PROJET FIL ROUGE</p>
+                        <h1 class="project-hero__title" id="project-title">Zang.AI — Portfolio &amp; WordPress Lab</h1>
+                        <p class="project-hero__summary">
+                            Construction progressive d’un portfolio professionnel servant aussi de laboratoire d’apprentissage :
+                            une première version statique en HTML/CSS/JavaScript, puis une architecture pensée pour évoluer
+                            vers WordPress, PHP et une gestion de contenu plus structurée.
+                        </p>
+                        <ul class="project-tags project-tags--hero" aria-label="Technologies principales du projet">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>PHP</li>
+                            <li>WordPress</li>
+                            <li>REST API</li>
+                        </ul>
+                    </div>
+
+                    <dl class="project-meta" aria-label="Informations principales du projet">
+                        <div><dt>Période</dt><dd>2026 · en cours</dd></div>
+                        <div><dt>Type</dt><dd>Portfolio · laboratoire web</dd></div>
+                        <div><dt>Rôle</dt><dd>Conception · intégration · développement</dd></div>
+                        <div><dt>Statut</dt><dd>Version statique opérationnelle · évolution WordPress préparée</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="overview-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VUE D’ENSEMBLE</p>
+                    <h2 id="overview-title">Comprendre le projet</h2>
+                </header>
+
+                <div class="project-overview">
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">01</p>
+                        <h3>Contexte</h3>
+                        <p>
+                            Le CV a été volontairement ramené à une page. Le portfolio devient donc l’espace où les projets,
+                            architectures, visuels, preuves publiques et détails techniques peuvent être développés sans alourdir le CV.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">02</p>
+                        <h3>Objectif</h3>
+                        <p>
+                            Proposer deux niveaux de lecture : une découverte rapide pour un visiteur non technique,
+                            puis des fiches détaillées permettant à un recruteur ou client d’examiner la conception et la stack.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">03</p>
+                        <h3>Notre rôle</h3>
+                        <p>
+                            Concevoir l’architecture du contenu, l’interface responsive, la navigation, les composants projet,
+                            les fiches détaillées, le système de zoom des visuels et la future transition vers WordPress.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">04</p>
+                        <h3>Résultat</h3>
+                        <p>
+                            Une maquette statique fonctionnelle avec huit projets, navigation desktop/mobile, CV téléchargeable,
+                            liens externes et un gabarit de fiche projet désormais réutilisable sur l’ensemble du portfolio.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="roadmap-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">ÉVOLUTION</p>
+                    <h2 id="roadmap-title">Du prototype statique au WordPress Lab</h2>
+                    <p class="project-section__intro">
+                        Le projet est volontairement construit par étapes : comprendre d’abord le fonctionnement du front-end,
+                        stabiliser l’expérience et les contenus, puis migrer progressivement vers une architecture WordPress.
+                    </p>
+                </header>
+
+                <div class="project-roadmap">
+                    <article class="project-roadmap__step">
+                        <span class="project-roadmap__status">Réalisé</span>
+                        <h3>01 · HTML / CSS / JavaScript</h3>
+                        <p>
+                            Construction de la maquette, sidebar desktop, menu mobile, sections du portfolio,
+                            responsive design et comportements JavaScript nécessaires à la navigation.
+                        </p>
+                    </article>
+
+                    <article class="project-roadmap__step">
+                        <span class="project-roadmap__status">Réalisé</span>
+                        <h3>02 · Système de fiches projets</h3>
+                        <p>
+                            Passage à huit cartes, création d’un gabarit détaillé commun, double niveau de lecture,
+                            navigation entre projets et agrandissement des schémas techniques.
+                        </p>
+                    </article>
+
+                    <article class="project-roadmap__step project-roadmap__step--future">
+                        <span class="project-roadmap__status">Étape suivante</span>
+                        <h3>03 · WordPress / PHP</h3>
+                        <p>
+                            Transformer progressivement la maquette en contenus administrables dans WordPress,
+                            en conservant le design, la structure des projets et la logique éditoriale déjà validée.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="markers-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">REPÈRES</p>
+                    <h2 id="markers-title">Les choix structurants</h2>
+                </header>
+
+                <div class="project-results">
+                    <article class="project-result"><strong>8 projets</strong><span>Une grille commune pour des réalisations très différentes.</span></article>
+                    <article class="project-result"><strong>2 niveaux</strong><span>Lecture rapide puis exploration technique détaillée.</span></article>
+                    <article class="project-result"><strong>Responsive</strong><span>Navigation et contenus adaptés au desktop comme au mobile.</span></article>
+                    <article class="project-result"><strong>1 gabarit</strong><span>Une structure de fiche réutilisable avant migration WordPress.</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--technical" aria-labelledby="technical-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">DÉTAILS TECHNIQUES</p>
+                    <h2 id="technical-title">Architecture et mise en œuvre</h2>
+                    <p class="project-section__intro">
+                        Le projet sert autant de vitrine professionnelle que de support d’apprentissage : chaque choix technique
+                        est volontairement visible, compréhensible et réutilisable dans la future version WordPress.
+                    </p>
+                </header>
+
+                <div class="project-details">
+                    <article class="project-detail">
+                        <p class="project-detail__label">CONTENT · ARCHITECTURE</p>
+                        <h3>CV synthétique &amp; portfolio détaillé</h3>
+                        <ul class="project-detail__list">
+                            <li>CV recentré sur une page pour conserver une lecture immédiate.</li>
+                            <li>Huit projets servant de points d’entrée vers les preuves et détails techniques.</li>
+                            <li>Réutilisation des anciennes annexes du CV comme matière pour les fiches projets.</li>
+                            <li>Séparation claire entre projets, compétences, parcours et contenus éditoriaux.</li>
+                            <li>Gestion au cas par cas des liens publics, repos, captures et contraintes de confidentialité.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">FRONTEND · UX</p>
+                        <h3>Interface responsive &amp; accessible</h3>
+                        <ul class="project-detail__list">
+                            <li>Structure HTML sémantique avec titres hiérarchisés et navigation cohérente.</li>
+                            <li>Sidebar persistante sur desktop et menu dédié sur mobile.</li>
+                            <li>Lien d’évitement permettant d’aller directement au contenu avec le clavier.</li>
+                            <li>Gestion des états de focus et navigation au clavier.</li>
+                            <li>Composant natif <code>&lt;dialog&gt;</code> pour agrandir les schémas techniques.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">COMPONENTS · PROJECTS</p>
+                        <h3>Gabarit de fiche réutilisable</h3>
+                        <ul class="project-detail__list">
+                            <li>Hero projet avec statut, résumé, métadonnées et stack courte.</li>
+                            <li>Bloc « Comprendre le projet » conçu pour les visiteurs non techniques.</li>
+                            <li>Repères techniques et métriques pour donner une lecture intermédiaire.</li>
+                            <li>Détails techniques structurés en rubriques plutôt qu’en longs paragraphes.</li>
+                            <li>Blocs facultatifs pour galerie, ressources publiques et confidentialité.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">NEXT · WORDPRESS</p>
+                        <h3>Migration progressive vers le CMS</h3>
+                        <ul class="project-detail__list">
+                            <li>Conserver la maquette statique comme référence visuelle et fonctionnelle.</li>
+                            <li>Transformer progressivement les contenus en éléments administrables dans WordPress.</li>
+                            <li>Approfondir PHP et la logique de templates pendant la migration.</li>
+                            <li>Étudier une structuration dédiée des projets afin d’éviter la duplication manuelle des fiches.</li>
+                            <li>Préserver les principes responsive, accessibilité et double niveau de lecture dans la version CMS.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="progress-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">ÉTAT DU PROJET</p>
+                    <h2 id="progress-title">Une construction documentée par étapes</h2>
+                </header>
+
+                <ul class="project-progress-list">
+                    <li>
+                        <span class="project-progress-list__index">01</span>
+                        <span class="project-progress-list__label">Maquette HTML / CSS / JavaScript</span>
+                        <span class="project-progress-list__state project-progress-list__state--done">réalisé</span>
+                    </li>
+                    <li>
+                        <span class="project-progress-list__index">02</span>
+                        <span class="project-progress-list__label">Responsive desktop / mobile &amp; navigation</span>
+                        <span class="project-progress-list__state project-progress-list__state--done">réalisé</span>
+                    </li>
+                    <li>
+                        <span class="project-progress-list__index">03</span>
+                        <span class="project-progress-list__label">Refonte CV une page &amp; harmonisation des contenus</span>
+                        <span class="project-progress-list__state project-progress-list__state--done">réalisé</span>
+                    </li>
+                    <li>
+                        <span class="project-progress-list__index">04</span>
+                        <span class="project-progress-list__label">Passage à 8 cartes projets</span>
+                        <span class="project-progress-list__state project-progress-list__state--done">réalisé</span>
+                    </li>
+                    <li>
+                        <span class="project-progress-list__index">05</span>
+                        <span class="project-progress-list__label">Gabarit des fiches projets &amp; zoom des visuels</span>
+                        <span class="project-progress-list__state project-progress-list__state--done">réalisé</span>
+                    </li>
+                    <li>
+                        <span class="project-progress-list__index">06</span>
+                        <span class="project-progress-list__label">Fiches détaillées des projets publiés</span>
+                        <span class="project-progress-list__state project-progress-list__state--done">réalisé</span>
+                    </li>
+                    <li>
+                        <span class="project-progress-list__index">07</span>
+                        <span class="project-progress-list__label">Migration et intégration WordPress / PHP</span>
+                        <span class="project-progress-list__state">à venir</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="stack-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">STACK</p>
+                    <h2 id="stack-title">Technologies &amp; apprentissages</h2>
+                </header>
+
+                <ul class="project-stack" aria-label="Stack du projet Zang.AI">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
+                    <li>Accessibilité web</li>
+                    <li>Git / GitHub</li>
+                    <li>PHP</li>
+                    <li>WordPress</li>
+                    <li>MySQL</li>
+                    <li>phpMyAdmin</li>
+                    <li>REST API</li>
+                </ul>
+            </div>
+        </section>
+
+        <aside class="project-confidentiality" aria-labelledby="positioning-title">
+            <div class="content-container project-confidentiality__inner">
+                <p class="project-confidentiality__label" id="positioning-title">Positionnement</p>
+                <p class="project-confidentiality__text">
+                    La version HTML/CSS/JavaScript constitue la réalisation actuellement opérationnelle.
+                    WordPress, PHP, MySQL et les évolutions associées sont présentés ici comme la suite du laboratoire
+                    et de l’apprentissage, sans les présenter comme une migration déjà terminée.
+                </p>
+            </div>
+        </aside>
+
+        <nav class="project-navigation" aria-label="Navigation entre les projets">
+            <div class="content-container project-navigation__inner">
+                <span class="project-navigation__placeholder" aria-hidden="true"></span>
+                <a class="project-navigation__all" href="../index.html#projets">Tous les projets</a>
+                <span class="project-navigation__placeholder" aria-hidden="true"></span>
+            </div>
+        </nav>
+    </main>
+</body>
+</html>

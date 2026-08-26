@@ -1,0 +1,136 @@
+digraph POMMIER_INTRANET {
+  graph [
+    rankdir=LR,
+    bgcolor="#061225",
+    pad="0.34",
+    nodesep="0.34",
+    ranksep="0.72",
+    splines=ortho,
+    outputorder=edgesfirst,
+    fontname="Inter",
+    labelloc="t",
+    labeljust="c",
+    label=<
+      <FONT COLOR="#F3F7FF" POINT-SIZE="25"><B>LE POMMIER — intranet métier &amp; pilotage opérationnel</B></FONT><BR/>
+      <FONT COLOR="#A7B7D8" POINT-SIZE="12">Reconstruction fonctionnelle du système déployé — RH, ventes, achats, HACCP et télémétrie</FONT>
+    >
+  ];
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fontname="Inter",
+    fontsize=10.5,
+    margin="0.13,0.08",
+    penwidth=1.4,
+    color="#A1B4D8",
+    fontcolor="#F5F8FF",
+    fillcolor="#0D1B35"
+  ];
+
+  edge [
+    color="#8FA7D8",
+    penwidth=1.15,
+    arrowsize=0.7,
+    fontname="Inter",
+    fontsize=9,
+    fontcolor="#CBD7F2"
+  ];
+
+  subgraph cluster_inputs {
+    label="ENTRÉES MÉTIER";
+    color="#1B3D68";
+    fontcolor="#9DB1D9";
+    penwidth=1.2;
+    style="rounded,dashed";
+    margin=16;
+
+    rh [label="RH & plannings\npointages · horaires · notes", fillcolor="#0F2C46", color="#58C7FF"];
+    sales [label="15 départements / ventes\nCA · HT · TVA · affectations", fillcolor="#0F2C46", color="#58C7FF"];
+    purchase [label="Achats & fournisseurs\ncommandes · articles · stocks", fillcolor="#4A3513", color="#F7B64B"];
+    haccp [label="Traçabilité HACCP\nphotos · DLC", fillcolor="#133B31", color="#3DDD92"];
+    telemetry [label="Télémétrie technique\neau potable · réservoir · Wi-Fi", fillcolor="#261544", color="#C784FF"];
+
+    rh -> sales -> purchase -> haccp -> telemetry [style=invis, weight=20];
+  }
+
+  subgraph cluster_core {
+    label="CŒUR DU SYSTÈME";
+    color="#1B3D68";
+    fontcolor="#9DB1D9";
+    penwidth=1.2;
+    style="rounded,dashed";
+    margin=18;
+
+    intranet [
+      label="Intranet PHP\ninterface PC · tablette · téléphone",
+      fillcolor="#123250",
+      color="#58C7FF",
+      penwidth=1.7
+    ];
+
+    db [
+      label="Base de données métier\nfournisseurs · codes achats\ndépartements · comptes · plannings",
+      fillcolor="#261544",
+      color="#C784FF",
+      penwidth=1.7
+    ];
+
+    intranet -> db [dir=both, arrowtail=none];
+  }
+
+  subgraph cluster_modules {
+    label="MODULES DE PILOTAGE";
+    color="#1B3D68";
+    fontcolor="#9DB1D9";
+    penwidth=1.2;
+    style="rounded,dashed";
+    margin=16;
+
+    attendance [label="RH / présence\ndouble validation\nsalarié + responsable", fillcolor="#133B31", color="#3DDD92"];
+    accounting [label="Ventes / comptabilité\nreporting CA · TVA\nliaison Quadratus", fillcolor="#472043", color="#FF7CDA"];
+    procurement [label="Achats / stocks\nprécommande Excel\nvalidation → bon PDF", fillcolor="#4A3513", color="#F7B64B"];
+    compliance [label="Conformité / technique\nHACCP · réseaux\ntraçabilité & alertes", fillcolor="#0F2C46", color="#58C7FF"];
+
+    attendance -> accounting -> procurement -> compliance [style=invis, weight=20];
+  }
+
+  subgraph cluster_outputs {
+    label="RESTITUTION";
+    color="#1B3D68";
+    fontcolor="#9DB1D9";
+    penwidth=1.2;
+    style="rounded,dashed";
+    margin=16;
+
+    dashboard [label="Pilotage temps réel\nKPI · contrôles · décisions", fillcolor="#0A1830", color="#E9EEF9", penwidth=1.6];
+    quadratus [label="Quadratus\ncomptabilité · TVA", fillcolor="#472043", color="#FF7CDA"];
+    suppliers [label="Fournisseurs\nbon de commande PDF\ntransmission e-mail", fillcolor="#4A3513", color="#F7B64B"];
+    archive [label="Historique & traçabilité\nRH · achats · HACCP · réseaux", fillcolor="#133B31", color="#3DDD92"];
+
+    dashboard -> quadratus -> suppliers -> archive [style=invis, weight=20];
+  }
+
+  rh -> intranet;
+  sales -> intranet;
+  purchase -> intranet;
+  haccp -> intranet;
+  telemetry -> intranet;
+
+  db -> attendance;
+  db -> accounting;
+  db -> procurement;
+  db -> compliance;
+
+  attendance -> dashboard;
+  accounting -> dashboard;
+  procurement -> dashboard;
+  compliance -> dashboard;
+
+  accounting -> quadratus;
+  procurement -> suppliers;
+  attendance -> archive;
+  accounting -> archive;
+  procurement -> archive;
+  compliance -> archive;
+}

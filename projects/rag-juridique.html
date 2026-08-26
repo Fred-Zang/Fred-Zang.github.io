@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+
+    <!--
+        Le viewport conserve une mise en page adaptée aux smartphones
+        et aux écrans de bureau.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="RAG juridique auditable — architecture de retrieval et question-réponse sur corpus juridique, avec datalake Bronze/Silver/Gold, benchmarks IR, API FastAPI et observabilité."
+    >
+
+    <title>RAG juridique auditable — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <!--
+        La feuille principale conserve l'identité visuelle de Zang.AI.
+        project.css?v=1.0.0 contient uniquement les composants propres aux fiches projets.
+    -->
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <!--
+        script.js?v=1.0.0 conserve la navigation mobile du site.
+        project.js?v=1.0.0 gère uniquement l'agrandissement des visuels techniques.
+    -->
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <!--
+        En-tête mobile identique à celui de la page d'accueil.
+        Tous les liens remontent d'un dossier grâce à ../
+    -->
+    <header class="mobile-header">
+        <a
+            class="brand brand--mobile"
+            href="../index.html#accueil"
+            aria-label="Accueil Zang.AI"
+        >
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">
+                    Zang<span class="brand__accent">.AI</span>
+                </span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Fermer le menu principal"
+            >
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="../index.html#projets"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Projets
+                </a>
+            </li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu__secondary">
+            <a
+                href="https://github.com/Fred-Zang/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-menu-link
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-menu-link
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="../assets/documents/CV_Fred_Zanghi_2026.pdf"
+                download
+                data-menu-link
+            >
+                Télécharger le CV
+            </a>
+        </div>
+    </nav>
+
+    <!--
+        Sidebar desktop conservée pour que la fiche reste immédiatement
+        identifiable comme une page du même portfolio.
+    -->
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li>
+                    <a
+                        class="navigation-link navigation-link--active"
+                        href="../index.html#projets"
+                        aria-current="page"
+                    >
+                        Projets
+                    </a>
+                </li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a
+                href="https://github.com/Fred-Zang/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>
+                Télécharger le CV
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+
+        <!-- ==============================================================
+             HERO PROJET
+
+             Premier niveau de lecture :
+             le visiteur comprend le projet sans entrer dans les détails.
+             ============================================================== -->
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+
+                <a class="project-back-link" href="../index.html#projets">
+                    <span aria-hidden="true">←</span>
+                    Retour aux projets
+                </a>
+
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">
+                            RAG / LEGAL · ANALYSE DOCUMENTAIRE
+                        </p>
+
+                        <h1 class="project-hero__title" id="project-title">
+                            RAG juridique auditable
+                        </h1>
+
+                        <p class="project-hero__summary">
+                            Moteur de retrieval et de question-réponse sur corpus
+                            juridique, conçu pour associer recherche reproductible,
+                            réponses sourcées, temporalité et observabilité.
+                        </p>
+
+                        <ul
+                            class="project-tags project-tags--hero"
+                            aria-label="Technologies principales du projet"
+                        >
+                            <li>Python</li>
+                            <li>PySpark</li>
+                            <li>BM25</li>
+                            <li>Embeddings</li>
+                            <li>FastAPI</li>
+                            <li>LangChain</li>
+                            <li>Langfuse</li>
+                        </ul>
+
+                        <!--
+                            Le dépôt public permet de poursuivre la lecture
+                            depuis la présentation visuelle vers le code source.
+                        -->
+                        <div class="project-resource-links">
+                            <a
+                                class="project-resource-link"
+                                href="https://github.com/Fred-Zang/rag_juridique_codes"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir le dépôt public
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <dl class="project-meta" aria-label="Informations principales du projet">
+                        <div>
+                            <dt>Période</dt>
+                            <dd>2025–2026</dd>
+                        </div>
+
+                        <div>
+                            <dt>Type</dt>
+                            <dd>Architecture RAG &amp; benchmark IR</dd>
+                        </div>
+
+                        <div>
+                            <dt>Rôle</dt>
+                            <dd>Conception &amp; développement</dd>
+                        </div>
+
+                        <div>
+                            <dt>Corpus</dt>
+                            <dd>Juridique · structure type Légifrance</dd>
+                        </div>
+                    </dl>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             VUE D'ENSEMBLE
+
+             Lecture courte destinée également aux visiteurs non techniques.
+             ============================================================== -->
+        <section class="project-section" aria-labelledby="overview-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VUE D’ENSEMBLE</p>
+                    <h2 id="overview-title">Comprendre le projet</h2>
+                </header>
+
+                <div class="project-overview">
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">01</p>
+                        <h3>Contexte</h3>
+                        <p>
+                            Les corpus juridiques associent texte, versions,
+                            statuts et dates. Une recherche utile doit donc retrouver
+                            le bon contenu tout en conservant la provenance et
+                            le contexte juridique de chaque extrait.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">02</p>
+                        <h3>Objectif</h3>
+                        <p>
+                            Construire une chaîne RAG dont le retrieval peut être
+                            mesuré et comparé, puis servir un contexte ou une réponse
+                            avec sources, scores et informations de diagnostic.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">03</p>
+                        <h3>Notre rôle</h3>
+                        <p>
+                            Concevoir le pipeline de données Bronze → Silver → Gold,
+                            les benchmarks sparse/dense/hybride, le runtime FastAPI,
+                            l’orchestration LangChain et l’observabilité Langfuse.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">04</p>
+                        <h3>Résultat</h3>
+                        <p>
+                            Une architecture modulaire permettant de comparer les
+                            stratégies de retrieval et de produire des réponses
+                            traçables, avec une politique de non-réponse lorsque
+                            le contexte est insuffisant.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             VISUEL PRINCIPAL
+
+             L'image fournie est affichée dans la page puis peut être ouverte
+             dans une fenêtre de zoom pour inspecter les petits détails.
+             ============================================================== -->
+        <section
+            class="project-section project-section--media"
+            aria-labelledby="architecture-title"
+        >
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">ARCHITECTURE</p>
+                    <h2 id="architecture-title">Du corpus brut au RAG servi par API</h2>
+
+                    <p class="project-section__intro">
+                        Le schéma synthétise les trois couches de données
+                        Bronze / Silver / Gold, la construction des index,
+                        l’évaluation du retrieval et le runtime RAG.
+                    </p>
+                </header>
+
+                <figure class="project-media">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/rag-juridique/pipeline-rag-juridique.png"
+                        data-image-alt="Schéma du pipeline RAG juridique : sources, datalake Bronze Silver Gold, index BM25 et vectoriel, benchmark et runtime LangChain"
+                        aria-haspopup="dialog"
+                    >
+                        <img
+                            src="../assets/images/projects/rag-juridique/pipeline-rag-juridique.png"
+                            alt="Schéma simplifié du pipeline RAG juridique, des sources au runtime LangChain"
+                        >
+                    </button>
+
+                    <!--
+                        Le bouton de zoom est placé sous l'image afin de ne
+                        jamais masquer une information du schéma.
+                        L'image reste également cliquable pour conserver
+                        un comportement intuitif.
+                    -->
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/rag-juridique/pipeline-rag-juridique.png"
+                            data-image-alt="Schéma du pipeline RAG juridique : sources, datalake Bronze Silver Gold, index BM25 et vectoriel, benchmark et runtime LangChain"
+                        >
+                            Ouvrir le schéma en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+
+                    <figcaption>
+                        Vue d’architecture simplifiée du pipeline RAG juridique.
+                        Les blocs distinguent les composants réalisés,
+                        les composants prévus et les flux de données.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             POINTS DE REPÈRE
+
+             Ces indicateurs donnent une lecture intermédiaire avant
+             d'entrer dans les détails techniques.
+             ============================================================== -->
+        <section class="project-section" aria-labelledby="markers-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">REPÈRES TECHNIQUES</p>
+                    <h2 id="markers-title">Les éléments structurants</h2>
+                </header>
+
+                <div class="project-results">
+                    <article class="project-result">
+                        <strong>Bronze → Silver → Gold</strong>
+                        <span>Pipeline de données déterministe et traçable.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>3 stratégies</strong>
+                        <span>BM25, retrieval dense et fusion hybride RRF.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>3 métriques IR</strong>
+                        <span>Recall@k, MRR et nDCG@k pour comparer les runs.</span>
+                    </article>
+
+                    <article class="project-result">
+                        <strong>API + traces</strong>
+                        <span>FastAPI, request_id, timings et spans Langfuse.</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             DÉTAILS TECHNIQUES
+
+             Le contenu de l'ancienne annexe du CV est réorganisé en
+             rubriques lisibles au lieu d'être reproduit comme un pavé.
+             ============================================================== -->
+        <section
+            class="project-section project-section--technical"
+            aria-labelledby="technical-title"
+        >
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">DÉTAILS TECHNIQUES</p>
+                    <h2 id="technical-title">Architecture et mise en œuvre</h2>
+
+                    <p class="project-section__intro">
+                        Cette partie s’adresse aux visiteurs souhaitant examiner
+                        plus précisément la conception Data/IR, le runtime
+                        et les mécanismes de qualité du projet.
+                    </p>
+                </header>
+
+                <div class="project-details">
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">OFFLINE · DATA / IR</p>
+                        <h3>Datalake &amp; Gold data</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Pipeline déterministe Bronze → Silver → Gold sur
+                                corpus juridique XML : catalogage, parsing,
+                                normalisation et extraction des identifiants,
+                                dates et statuts.
+                            </li>
+                            <li>
+                                Chunking contrôlé avec propagation complète des
+                                métadonnées afin de préserver la relation entre
+                                les extraits et leurs sources.
+                            </li>
+                            <li>
+                                Production de Parquet pour les benchmarks et
+                                analyses, ainsi que de JSONL shardé pour
+                                l’indexation et les benchmarks externes.
+                            </li>
+                            <li>
+                                Mapping dédié pour assurer la traçabilité
+                                chunk ↔ source.
+                            </li>
+                            <li>
+                                Socle Gold orienté évaluation avec qrels versionnés
+                                en YAML et workflow de génération / validation.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">RETRIEVAL · ÉVALUATION</p>
+                        <h3>Benchmarks sparse, dense &amp; hybride</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Comparaison reproductible d’un BM25 in-memory,
+                                d’un retrieval dense par embeddings et d’une
+                                approche hybride utilisant une fusion RRF.
+                            </li>
+                            <li>
+                                Gestion de caches pour les embeddings et les
+                                artefacts afin de limiter les recalculs.
+                            </li>
+                            <li>
+                                Analyse de la sensibilité à la volumétrie et
+                                à l’empreinte mémoire.
+                            </li>
+                            <li>
+                                Calcul de Recall@k, MRR et nDCG@k, complété par
+                                des outils de validation et de diagnostic des runs.
+                            </li>
+                            <li>
+                                Benchmarks Elasticsearch pour comparer une solution
+                                indexée externe aux approches in-memory.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">ONLINE · RUNTIME</p>
+                        <h3>FastAPI, LangChain &amp; observabilité</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Service FastAPI exposant notamment
+                                <code>POST /rag/invoke</code> pour la chaîne complète
+                                et <code>POST /rag/context</code> pour le retrieval
+                                et la construction du contexte.
+                            </li>
+                            <li>
+                                Endpoints complémentaires de diagnostic :
+                                <code>/health</code>, <code>/corpora</code> et documentation API.
+                            </li>
+                            <li>
+                                Orchestration LangChain LCEL :
+                                retrieve → déduplication / context builder →
+                                politique no-answer → génération LLM optionnelle →
+                                post-traitement des sources et timings.
+                            </li>
+                            <li>
+                                Configuration par YAML et variables d’environnement :
+                                corpus, paramètres <code>k</code>, type de retriever
+                                et filtres peuvent être adaptés sans modifier la chaîne.
+                            </li>
+                            <li>
+                                Cache en mémoire des chaînes et retrievers pour
+                                limiter les rechargements Parquet, reconstructions
+                                BM25 et cold starts.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">QUALITÉ · SÛRETÉ</p>
+                        <h3>Temporalité, sources &amp; politique de non-réponse</h3>
+
+                        <ul class="project-detail__list">
+                            <li>
+                                Gestion de la temporalité avec filtre
+                                <code>as_of</code> et des statuts juridiques via
+                                <code>status_in</code>.
+                            </li>
+                            <li>
+                                Cohérence des versions servies et règles de
+                                comparabilité entre les benchmarks.
+                            </li>
+                            <li>
+                                Politique <em>no-answer</em> lorsqu’un contexte
+                                est jugé insuffisant afin de limiter les réponses
+                                non étayées.
+                            </li>
+                            <li>
+                                Réponses structurées conservant les sources,
+                                les chunks et leurs scores.
+                            </li>
+                            <li>
+                                Observabilité Langfuse avec traces/spans
+                                retrieve, dedup, no-answer et LLM, corrélées
+                                par <code>request_id</code> et complétées par
+                                les temps d’exécution.
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             STACK COMPLÈTE
+
+             Cette liste conserve les technologies mentionnées dans
+             la réalisation technique d'origine.
+             ============================================================== -->
+        <section class="project-section" aria-labelledby="stack-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">STACK</p>
+                    <h2 id="stack-title">Technologies utilisées</h2>
+                </header>
+
+                <ul class="project-stack" aria-label="Stack complète du projet RAG juridique">
+                    <li>Python</li>
+                    <li>PySpark</li>
+                    <li>Parquet</li>
+                    <li>JSONL</li>
+                    <li>BM25</li>
+                    <li>Sentence-Transformers</li>
+                    <li>RRF</li>
+                    <li>Elasticsearch</li>
+                    <li>FastAPI</li>
+                    <li>LangChain LCEL</li>
+                    <li>Langfuse</li>
+                    <li>YAML / ENV</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ==============================================================
+             NAVIGATION ENTRE PROJETS
+
+             Le projet suivant est VARA / RWA Compliance.
+             Le lien ouvre directement sa fiche détaillée.
+             ============================================================== -->
+        <nav class="project-navigation" aria-label="Navigation entre les projets">
+            <div class="content-container project-navigation__inner">
+                <span class="project-navigation__placeholder" aria-hidden="true"></span>
+
+                <a class="project-navigation__all" href="../index.html#projets">
+                    Tous les projets
+                </a>
+
+                <a class="project-navigation__next" href="rwa-compliance.html">
+                    Projet suivant : VARA
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </nav>
+
+    </main>
+
+    <!--
+        Fenêtre native de zoom.
+        Le JavaScript injecte dans cette image la source du visuel sélectionné.
+    -->
+    <dialog class="image-dialog" data-image-dialog aria-label="Agrandissement du visuel">
+        <div class="image-dialog__toolbar">
+            <p>Vue agrandie</p>
+
+            <button
+                class="image-dialog__close"
+                type="button"
+                data-image-dialog-close
+                aria-label="Fermer l’image agrandie"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="image-dialog__viewport">
+            <img data-image-dialog-img src="" alt="">
+        </div>
+    </dialog>
+
+</body>
+</html>

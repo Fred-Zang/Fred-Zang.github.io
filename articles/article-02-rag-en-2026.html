@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Retour d’expérience sur un RAG juridique : experts métier, interface, benchmarks, arbitrage build or buy et responsabilité humaine dans les systèmes IA."
+    >
+
+    <title>RAG en 2026 : faut-il encore construire toute la chaîne soi-même ? — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="article.css?v=1.0.0">
+    <script src="../script.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">
+                    Zang<span class="brand__accent">.AI</span>
+                </span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li><a class="navigation-link" href="../index.html#projets" data-menu-link>Projets</a></li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#laboratoire" data-menu-link>Laboratoire IA</a></li>
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="../index.html#articles"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Articles
+                </a>
+            </li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link" href="../index.html#projets">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#laboratoire">Laboratoire IA</a></li>
+                <li>
+                    <a
+                        class="navigation-link navigation-link--active"
+                        href="../index.html#articles"
+                        aria-current="page"
+                    >
+                        Articles
+                    </a>
+                </li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content article-page" id="contenu-principal">
+        <article>
+            <header class="article-hero" aria-labelledby="article-title">
+                <div class="content-container">
+                    <a class="article-back-link" href="../index.html#articles">
+                        <span aria-hidden="true">←</span>
+                        Retour aux articles
+                    </a>
+
+                    <p class="eyebrow">RAG · IA · PRODUIT</p>
+
+                    <h1 class="article-hero__title" id="article-title">
+                        RAG en 2026 : faut-il encore construire toute la chaîne soi-même ?
+                    </h1>
+
+                    <p class="article-hero__summary">
+                        Ce que mon expérience d’un RAG juridique m’a appris sur les experts métier, l’UI, les benchmarks… et le moment où il vaut mieux ne plus coder.
+                    </p>
+
+                    <div class="article-meta" aria-label="Informations de lecture">
+                        <span>IA &amp; retour d’expérience</span>
+                        <span>≈ 6 min de lecture</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="article-content">
+                <div class="content-container">
+                    <div class="article-content__inner">
+                    <p>Lorsque j’ai commencé à travailler sur un RAG juridique, je pensais que la difficulté principale serait le benchmark.</p>
+                    <p>Je voulais comparer rapidement embeddings, rerankers, modèles de réponse, qualité des citations et performances, tout en reproduisant les mêmes tests à la demande.</p>
+                    <p>Finalement, le benchmark a été relativement rapide à construire.</p>
+                    <p>Le vrai problème était ailleurs.</p>
+                    <p>Il fallait d’abord savoir ce qu’était une bonne réponse.</p>
+                    <p>Et cela, aucun framework ne pouvait le décider à notre place.</p>
+                    <h2>Le benchmark ne vaut que par sa vérité terrain</h2>
+                    <p>Pour évaluer sérieusement notre système, nous avions besoin de qrels : des jeux de questions associés aux réponses et documents pertinents servant de vérité terrain.</p>
+                    <p>Les premiers jeux transmis par les experts métier étaient trop peu exigeants.</p>
+                    <p>Les résultats étaient presque trop bons. Plusieurs configurations très différentes obtenaient des scores élevés, au point qu’il devenait difficile de distinguer sérieusement les embeddings, les modèles de langage ou les stratégies de reranking.</p>
+                    <p>Techniquement, notre benchmark fonctionnait.</p>
+                    <p>Mais il mesurait une vérité terrain trop faible pour être vraiment utile.</p>
+                    <p>Lorsque les qrels sont devenus plus précis et plus difficiles, les écarts entre les systèmes sont enfin apparus.</p>
+                    <p>Cette expérience m’a appris quelque chose de simple :</p>
+                    <p><strong>un benchmark parfaitement reproductible peut reproduire parfaitement une mauvaise vérité terrain.</strong></p>
+                    <p>Dans un projet de ce type, l’expert métier n’est donc pas une personne que l’on consulte occasionnellement.</p>
+                    <p>Il est au cœur du produit.</p>
+                    <h2>L’expert métier avant le modèle</h2>
+                    <p>Si je devais aujourd’hui classer les trois éléments les plus critiques d’un RAG métier, je placerais d’abord les experts métier, puis l’interface utilisateur, et seulement ensuite le benchmark.</p>
+                    <p>Un modèle peut avoir ingéré énormément de droit et produire des réponses impressionnantes, sans posséder l’expérience située des juristes qui l’utiliseront : leurs contraintes, leurs risques et leurs critères de confiance.</p>
+                    <p>Sans eux, nous pouvons fabriquer quelque chose de techniquement réussi et fonctionnellement inutile.</p>
+                    <p>Je considère même qu’une entreprise qui ne peut pas dégager suffisamment de temps à ses experts métier n’est probablement pas encore prête pour son projet IA.</p>
+                    <p>Elle peut avoir le budget, les développeurs et les meilleurs modèles disponibles. Si personne ne peut réellement expliquer ce qu’est une bonne réponse, examiner les erreurs et préciser les cas difficiles, nous automatisons quelque chose que nous n’avons pas suffisamment défini.</p>
+                    <h2>L’UI n’est pas la décoration finale</h2>
+                    <p>L’autre grande découverte concernait l’interface.</p>
+                    <p>Au départ, j’avais tendance à la considérer comme une couche relativement tardive : une fois le moteur solide, nous déciderions comment présenter les réponses.</p>
+                    <p>C’était une erreur.</p>
+                    <p>Les juristes ne voulaient pas simplement un chatbot affichant quelques textes de loi proches d’une question. Leurs besoins variaient selon leur secteur, leur expérience et leur manière de travailler.</p>
+                    <p>L’interface révélait donc le véritable besoin.</p>
+                    <p>Et lorsque cette réflexion arrivait tard, certaines décisions prises plus bas dans la chaîne devaient parfois être revues.</p>
+                    <p>Quels champs conserver ? Quelles métadonnées extraire ? Comment relier des documents entre eux ? Comment harmoniser des millions de documents issus de sources très différentes ?</p>
+                    <p>Avec du HTML structuré, comme certaines sources de Légifrance, le problème restait maîtrisable. Avec d’autres supports, différents codes ou des textes européens, l’architecture documentaire devenait elle-même une question métier.</p>
+                    <p>Transformer un document en texte n’était donc qu’une petite partie du problème.</p>
+                    <p>La vraie question devenait :</p>
+                    <p><strong>quelles informations devons-nous préserver aujourd’hui pour permettre les usages de demain ?</strong></p>
+                    <h2>Savoir construire… puis savoir arrêter</h2>
+                    <p>Le projet a finalement connu une conclusion que je considère comme l’un de ses meilleurs enseignements.</p>
+                    <p>Nous avons arrêté de le développer.</p>
+                    <p>Nos clients avaient découvert entre-temps une solution juridique clé en main proposant déjà des fonctionnalités auxquelles ils n’avaient pas pensé au début du projet.</p>
+                    <p>Nous avons alors comparé le développement restant, son coût, le prix des licences et les avantages de notre approche interne.</p>
+                    <p>Le coût du développement était trop élevé face à la solution existante.</p>
+                    <p>Continuer aurait surtout permis de dire que nous avions terminé notre propre RAG.</p>
+                    <p>Ce n’était pas un objectif suffisant.</p>
+                    <p>Je ne considère donc pas cet arrêt comme un échec.</p>
+                    <p><strong>Le meilleur résultat d’un projet technique peut parfois être de décider de ne pas terminer le produit technique.</strong></p>
+                    <h2>Ce que je ferais aujourd’hui</h2>
+                    <p>Si un client revenait avec un projet similaire, ma première proposition ne serait probablement pas de développer.</p>
+                    <p>Je commencerais par demander suffisamment de disponibilité aux experts métier pour construire une roadmap aussi exhaustive que possible de leurs besoins et de l’usage final attendu.</p>
+                    <p>Ensuite, je testerais les solutions existantes et comparerais leurs capacités et leurs coûts.</p>
+                    <p>Puis j’examinerais les contraintes spécifiques : souveraineté, confidentialité, corpus propriétaires, auditabilité, fonctionnalités particulières, coûts à grande échelle ou exigences de sécurité.</p>
+                    <p>Mon premier livrable serait probablement une étude comparant trois scénarios :</p>
+                    <p><strong>acheter, construire, ou combiner les deux.</strong></p>
+                    <p>Et je demanderais volontiers un forfait uniquement pour ce travail.</p>
+                    <p>Si la meilleure conclusion est d’acheter quelques licences plutôt que de financer plusieurs mois de développement, alors cette mission aura parfaitement rempli son rôle.</p>
+                    <p>Je ne cherche pas à remplir des journées de développement.</p>
+                    <p>Je cherche d’abord une solution satisfaisante pour le client dans la durée.</p>
+                    <h2>L’abandon conscient</h2>
+                    <p>La question devient encore plus intéressante avec les agents IA.</p>
+                    <p>Imaginons qu’un agent open source puisse demain ingérer les documents, proposer un chunking, créer les embeddings, indexer, reranker, tester plusieurs modèles, produire les citations et générer une interface acceptable.</p>
+                    <p>Je serais ravi de lui abandonner une grande partie de ces tâches.</p>
+                    <p>Mais ce serait un <strong>abandon conscient</strong>.</p>
+                    <p>Automatiser l’exécution ne signifie pas abandonner le contrôle.</p>
+                    <p>Je conserverais mes propres mesures, mes benchmarks et une traçabilité complète, quitte à confier à d’autres agents une partie de la surveillance.</p>
+                    <p>Puis je chercherais encore où placer l’humain dans la boucle.</p>
+                    <p>Développeurs et experts métier devraient pouvoir reprendre la main lorsqu’un système dérive, qu’un usage change ou qu’une décision engage une responsabilité importante.</p>
+                    <p>La question n’est donc plus seulement :</p>
+                    <p><strong>humain ou IA ?</strong></p>
+                    <p>Elle devient :</p>
+                    <p><strong>quelles tâches pouvons-nous abandonner consciemment à la machine, et où devons-nous conserver une responsabilité humaine ?</strong></p>
+                    <h2>Et si je me trompais ?</h2>
+                    <p>Il existe évidemment de très bonnes raisons de continuer à construire des RAG sur mesure.</p>
+                    <p>Une organisation peut avoir de fortes contraintes de souveraineté, des données sensibles, un corpus très spécifique ou un besoin d’auditabilité absent des solutions existantes.</p>
+                    <p>Dans ces cas, la maîtrise de la chaîne complète reste précieuse.</p>
+                    <p>Je ne pense donc pas que le RAG soit devenu inutile, ni qu’un agent puisse aujourd’hui remplacer toute l’expertise nécessaire à un système métier critique.</p>
+                    <p>Je pense plutôt que la question économique et technique doit être reposée régulièrement.</p>
+                    <p>Ce qui nécessitait hier plusieurs semaines de développement peut devenir demain une fonctionnalité disponible localement en quelques minutes.</p>
+                    <p>Et lorsqu’une brique devient une commodité, continuer à la reconstruire par habitude n’est pas nécessairement une preuve de maîtrise.</p>
+                    <h2>Qui doit juger la machine ?</h2>
+                    <p>La même prudence s’applique à l’évaluation automatisée.</p>
+                    <p>Utiliser un LLM pour juger les réponses d’un autre LLM peut être pertinent dans certains contextes.</p>
+                    <p>Pour des tâches peu critiques, cela peut faire gagner énormément de temps.</p>
+                    <p>Dans le juridique, le médical ou d’autres domaines où une erreur peut avoir des conséquences importantes, je suis beaucoup plus réservé.</p>
+                    <p>Même si un jour un système dépasse statistiquement les meilleurs experts humains dans un domaine, cela ne répondra pas automatiquement à cette question :</p>
+                    <p><strong>qui accepte les conséquences lorsque la décision est mauvaise ?</strong></p>
+                    <p>Performance et responsabilité ne sont pas la même chose.</p>
+                    <p>Pour moi, l’IA doit rester un complément de l’humain avant de devenir, par défaut, son remplaçant.</p>
+                    <p>Alors, faut-il encore construire toute la chaîne RAG soi-même ?</p>
+                    <p>Parfois oui.</p>
+                    <p>Parfois non.</p>
+                    <p>Mais je crois aujourd’hui que la meilleure compétence n’est peut-être plus de savoir tout construire.</p>
+                    <p>Elle consiste aussi à savoir quoi automatiser, quoi mesurer, quoi confier à l’humain… et quand décider de ne rien construire du tout.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <nav class="article-navigation" aria-label="Navigation des articles">
+            <div class="content-container">
+                <a href="../index.html#articles">← Revenir au journal Zang.AI</a>
+            </div>
+        </nav>
+    </main>
+</body>
+</html>

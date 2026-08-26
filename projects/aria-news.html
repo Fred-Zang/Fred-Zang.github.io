@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+        name="description"
+        content="ARIA — Crypto-News & automatisation : collecte de news, détection de Hot News, consolidation LLM et services de données auxiliaires marché et blockchain."
+    >
+    <title>ARIA — Crypto-News &amp; automatisation — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#contenu-principal">Aller directement au contenu</a>
+
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu principal">
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav class="mobile-menu" id="menu-mobile" aria-label="Navigation principale mobile" aria-hidden="true" tabindex="-1">
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal"><span aria-hidden="true">×</span></button>
+        </div>
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page" data-menu-link>Projets</a></li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+        <div class="mobile-menu__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer" data-menu-link>GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer" data-menu-link>LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download data-menu-link>Télécharger le CV</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+                <a class="project-back-link" href="../index.html#projets"><span aria-hidden="true">←</span>Retour aux projets</a>
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">ARIA / NEWS · NLP · AUTOMATION</p>
+                        <h1 class="project-hero__title" id="project-title">ARIA — Crypto-News &amp; automatisation</h1>
+                        <p class="project-hero__summary">
+                            Écosystème Python automatisant la collecte et l’enrichissement de crypto-news,
+                            la détection de Hot News, leur consolidation par LLM et l’alimentation continue
+                            de données marché et blockchain dans la plateforme ARIA.
+                        </p>
+                        <ul class="project-tags project-tags--hero" aria-label="Technologies principales du projet">
+                            <li>Python</li>
+                            <li>Scraping</li>
+                            <li>NLP</li>
+                            <li>OpenAI</li>
+                            <li>REST API</li>
+                            <li>Docker</li>
+                            <li>Selenium</li>
+                        </ul>
+
+                        <!--
+                            Le dépôt public permet de poursuivre la lecture
+                            depuis la présentation visuelle vers le code source.
+                        -->
+                        <div class="project-resource-links">
+                            <a
+                                class="project-resource-link"
+                                href="https://github.com/Fred-Zang/ARIA_NEWSBLOTTER_ANALYSE_CRYPTO"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir le dépôt public
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                    <dl class="project-meta" aria-label="Informations principales du projet">
+                        <div><dt>Période</dt><dd>2023–2025</dd></div>
+                        <div><dt>Type</dt><dd>Veille crypto · automatisation Data/IA</dd></div>
+                        <div><dt>Rôle</dt><dd>Conception &amp; développement des workers Python</dd></div>
+                        <div><dt>Contexte</dt><dd>Plateforme ARIA</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="overview-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VUE D’ENSEMBLE</p>
+                    <h2 id="overview-title">Comprendre le projet</h2>
+                </header>
+                <div class="project-overview">
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">01</p>
+                        <h3>Contexte</h3>
+                        <p>
+                            ARIA doit agréger et structurer en continu des informations issues de l’écosystème crypto :
+                            actualités, signaux de marché et métriques blockchain, avec une restitution exploitable dans la plateforme.
+                        </p>
+                    </article>
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">02</p>
+                        <h3>Objectif</h3>
+                        <p>
+                            Transformer des flux hétérogènes en objets éditorialisés : news enrichies, Hot News consolidées,
+                            scores de marché et métriques token, tous publiés automatiquement via API.
+                        </p>
+                    </article>
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">03</p>
+                        <h3>Notre rôle</h3>
+                        <p>
+                            Concevoir les workers Docker/Python, la collecte RSS et web, la catégorisation métier,
+                            la détection de doublons, le regroupement thématique et l’intégration LLM pour les Hot News.
+                        </p>
+                    </article>
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">04</p>
+                        <h3>Résultat</h3>
+                        <p>
+                            Une architecture de services automatisés articulée autour de quatre workers complémentaires :
+                            Newsblotter, Hot News / LLM, CoinMarketCap Data et Blockchain Explorer.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--media" aria-labelledby="architecture-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">ARCHITECTURE</p>
+                    <h2 id="architecture-title">Une chaîne éditoriale et Data en 4 workers</h2>
+                    <p class="project-section__intro">
+                        Ce schéma synthétise l’orchestration du Newsblotter principal, la chaîne Hot News enrichie par LLM,
+                        puis deux services de données auxiliaires dédiés au marché et aux métriques blockchain.
+                    </p>
+                </header>
+                <figure class="project-media">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/aria-news/architecture-aria-news-v2.png"
+                        data-image-alt="Schéma premium ARIA News : entrées RSS et spéciales, Newsblotter V8, Hot News LLM, CoinMarketCap Data, Blockchain Explorer et restitution dans ARIA"
+                        aria-haspopup="dialog"
+                    >
+                        <img src="../assets/images/projects/aria-news/architecture-aria-news-v2.png" alt="Schéma de principe premium du projet ARIA News">
+                    </button>
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/aria-news/architecture-aria-news-v2.png"
+                            data-image-alt="Schéma premium ARIA News : entrées RSS et spéciales, Newsblotter V8, Hot News LLM, CoinMarketCap Data, Blockchain Explorer et restitution dans ARIA"
+                        >
+                            Ouvrir le schéma en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+                    <figcaption>
+                        Vue de principe destinée au portfolio. Le schéma met l’accent sur les flux métier et services clés,
+                        sans exposer les paramètres internes ni les secrets de déploiement.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="markers-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">REPÈRES TECHNIQUES</p>
+                    <h2 id="markers-title">Les éléments structurants</h2>
+                </header>
+                <div class="project-results">
+                    <article class="project-result"><strong>4 workers</strong><span>Newsblotter, Hot News, Market Data, Blockchain.</span></article>
+                    <article class="project-result"><strong>5 min</strong><span>Cycle principal du Newsblotter V8.</span></article>
+                    <article class="project-result"><strong>10 000 titres</strong><span>Fenêtre utilisée pour la détection des doublons.</span></article>
+                    <article class="project-result"><strong>5 catégories</strong><span>Tokenomics, Risks, Adoption, Governance, Investment Analytics.</span></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--technical" aria-labelledby="technical-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">DÉTAILS TECHNIQUES</p>
+                    <h2 id="technical-title">Architecture et mise en œuvre</h2>
+                    <p class="project-section__intro">
+                        Le cœur du projet repose sur une logique d’ingestion éditoriale en continu, enrichie par du NLP,
+                        du regroupement thématique et des services spécialisés pour les données marché et blockchain.
+                    </p>
+                </header>
+                <div class="project-details">
+                    <article class="project-detail">
+                        <p class="project-detail__label">NEWSBLOTTER · INGESTION</p>
+                        <h3>Collecte RSS et scraping hybride</h3>
+                        <ul class="project-detail__list">
+                            <li>Orchestrateur Python cyclique exécuté dans Docker, avec journalisation et surveillance CPU/RAM.</li>
+                            <li>Deux canaux de collecte : RSS classiques et sources spéciales nécessitant un scraping dédié.</li>
+                            <li>Extraction du texte complet des articles, normalisation des dates en UTC et préparation des objets news.</li>
+                            <li>Usage combiné de <code>requests</code>, BeautifulSoup, Selenium et Chrome headless selon les sources.</li>
+                            <li>Publication des news enrichies vers ARIA via un worker API dédié.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">NLP · ENRICHISSEMENT</p>
+                        <h3>Catégorisation, coins et dédoublonnage</h3>
+                        <ul class="project-detail__list">
+                            <li>Catégorisation du contenu autour de cinq axes métier : Tokenomics, Risks, Adoption, Governance et Investment Analytics.</li>
+                            <li>Détection des cryptos concernées à partir de référentiels de tickers et noms de tokens.</li>
+                            <li>Contrôle des doublons de titres sur une fenêtre de 10 000 news, avec similarité FuzzyWuzzy et seuil de 90 %.</li>
+                            <li>Détection des Hot News à partir d’un référentiel orienté Actor, TradFi, Action et Crypto.</li>
+                            <li>Production d’un JSON enrichi prêt à être publié et exploité dans la plateforme.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">HOT NEWS · LLM</p>
+                        <h3>Regroupement thématique et consolidation éditoriale</h3>
+                        <ul class="project-detail__list">
+                            <li>Déclenchement conditionnel lorsqu’une news est identifiée comme Hot News.</li>
+                            <li>Regroupement des articles similaires sur la base d’au moins 2 tokens communs.</li>
+                            <li>Consolidation par LLM avec <code>gpt-4o-mini</code> pour générer un article de synthèse et un résumé court.</li>
+                            <li>Mise à jour ou republication de la Hot News dans ARIA, tout en marquant les contenus déjà traités.</li>
+                            <li>Chaîne conçue pour enrichir la couche éditoriale sans interrompre la collecte principale.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">DATA AUXILIAIRE · MARCHÉ</p>
+                        <h3>CoinMarketCap et indicateurs de marché</h3>
+                        <ul class="project-detail__list">
+                            <li>Worker Selenium dédié à la récupération d’informations de classement et d’exchanges sur CoinMarketCap.</li>
+                            <li>Préparation d’un JSON intermédiaire puis envoi vers l’API ARIA.</li>
+                            <li>Gestion de timeouts, de tentatives multiples et d’un rythme d’exécution quotidien.</li>
+                            <li>Contribution à la base interne <em>source-score</em> utilisée dans la plateforme.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">DATA AUXILIAIRE · BLOCKCHAIN</p>
+                        <h3>Analyse ERC-20 et métriques token</h3>
+                        <ul class="project-detail__list">
+                            <li>Récupération de la coinlist ARIA puis filtrage des actifs sur le réseau ERC-20.</li>
+                            <li>Interrogation d’Etherscan pour consolider les contract addresses, les decimals, les holders et les données de supply.</li>
+                            <li>Calcul de métriques publiées dans ARIA : significant holders, circulating supply, total supply, écarts et nombres de pages explorées.</li>
+                            <li>Service indépendant destiné à enrichir la couche analytique blockchain de la plateforme.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="stack-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">STACK</p>
+                    <h2 id="stack-title">Technologies utilisées</h2>
+                </header>
+                <ul class="project-stack" aria-label="Stack complète du projet ARIA News">
+                    <li>Python</li>
+                    <li>pandas</li>
+                    <li>NumPy</li>
+                    <li>requests</li>
+                    <li>BeautifulSoup</li>
+                    <li>Selenium</li>
+                    <li>Chrome headless</li>
+                    <li>FuzzyWuzzy</li>
+                    <li>Levenshtein</li>
+                    <li>Regex</li>
+                    <li>OpenAI API</li>
+                    <li>GPT-4o-mini</li>
+                    <li>JSON</li>
+                    <li>Docker</li>
+                    <li>Docker Compose</li>
+                    <li>REST API</li>
+                    <li>Etherscan API</li>
+                    <li>CoinMarketCap</li>
+                </ul>
+            </div>
+        </section>
+
+        <aside class="project-confidentiality" aria-labelledby="confidentiality-title">
+            <div class="content-container project-confidentiality__inner">
+                <p class="project-confidentiality__label" id="confidentiality-title">Confidentialité</p>
+                <p class="project-confidentiality__text">
+                    Les clés d’API, variables d’environnement, paramètres de déploiement, identifiants techniques,
+                    historiques complets de news, exports internes et scripts archivés non nécessaires ne sont pas publiés.
+                    La présente fiche décrit le fonctionnement d’ensemble sans exposer les secrets opérationnels de la plateforme.
+                </p>
+            </div>
+        </aside>
+
+        <nav class="project-navigation" aria-label="Navigation entre les projets">
+            <div class="content-container project-navigation__inner">
+                <a href="ajc-data.html"><span aria-hidden="true">←</span>Projet précédent : AJC Data</a>
+                <a class="project-navigation__all" href="../index.html#projets">Tous les projets</a>
+                <a class="project-navigation__next" href="ajc-training.html">Projet suivant : AJC Training<span aria-hidden="true">→</span></a>
+            </div>
+        </nav>
+    </main>
+
+    <dialog class="image-dialog" data-image-dialog aria-label="Agrandissement du visuel">
+        <div class="image-dialog__toolbar">
+            <p>Vue agrandie</p>
+            <button class="image-dialog__close" type="button" data-image-dialog-close aria-label="Fermer l’image agrandie">×</button>
+        </div>
+        <div class="image-dialog__viewport">
+            <img data-image-dialog-img src="" alt="">
+        </div>
+    </dialog>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="Plateforme IA d’analyse réglementaire RWA — pipeline backend intégré à ARIA, avec OCR, trois agents IA, OpenAI/Gemini, traçabilité, contrôles qualité et publication API."
+    >
+
+    <title>Plateforme IA d’analyse réglementaire RWA — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <link rel="stylesheet" href="../styles.css?v=1.0.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <header class="mobile-header">
+        <a class="brand brand--mobile" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button class="menu-close" type="button" aria-label="Fermer le menu principal">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="../index.html#projets"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Projets
+                </a>
+            </li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer" data-menu-link>GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer" data-menu-link>LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download data-menu-link>Télécharger le CV</a>
+        </div>
+    </nav>
+
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">Zang<span class="brand__accent">.AI</span></span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li><a class="navigation-link navigation-link--active" href="../index.html#projets" aria-current="page">Projets</a></li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a href="https://github.com/Fred-Zang/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/fred-zanghi-89a01390/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>Télécharger le CV</a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+
+                <a class="project-back-link" href="../index.html#projets">
+                    <span aria-hidden="true">←</span>
+                    Retour aux projets
+                </a>
+
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">RWA / COMPLIANCE · DOCUMENT INTELLIGENCE</p>
+
+                        <h1 class="project-hero__title" id="project-title">
+                            Plateforme IA d’analyse réglementaire RWA
+                        </h1>
+
+                        <p class="project-hero__summary">
+                            Pipeline backend d’analyse automatisée de whitepapers,
+                            intégré à l’application ARIA et orienté conformité dans
+                            le cadre VARA. La chaîne associe préparation documentaire,
+                            OCR, orchestration multi-agents, contrôles qualité,
+                            publication API et traçabilité des traitements.
+                        </p>
+
+                        <ul class="project-tags project-tags--hero" aria-label="Technologies principales du projet">
+                            <li>Python</li>
+                            <li>OCR</li>
+                            <li>LLM</li>
+                            <li>OpenAI</li>
+                            <li>Gemini</li>
+                            <li>Docker</li>
+                            <li>API REST</li>
+                        </ul>
+
+                        <!--
+                            Le dépôt public permet de poursuivre la lecture
+                            depuis la présentation visuelle vers le code source.
+                        -->
+                        <div class="project-resource-links">
+                            <a
+                                class="project-resource-link"
+                                href="https://github.com/Fred-Zang/VARA_ARIA_RWA"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Voir le dépôt public
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <dl class="project-meta" aria-label="Informations principales du projet">
+                        <div>
+                            <dt>Période</dt>
+                            <dd>2025</dd>
+                        </div>
+                        <div>
+                            <dt>Type</dt>
+                            <dd>Pipeline IA · conformité réglementaire</dd>
+                        </div>
+                        <div>
+                            <dt>Rôle</dt>
+                            <dd>Conception &amp; développement du pipeline IA</dd>
+                        </div>
+                        <div>
+                            <dt>Contexte</dt>
+                            <dd>Application ARIA · cadre VARA</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="overview-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">VUE D’ENSEMBLE</p>
+                    <h2 id="overview-title">Comprendre le projet</h2>
+                </header>
+
+                <div class="project-overview">
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">01</p>
+                        <h3>Contexte</h3>
+                        <p>
+                            L’application ARIA doit analyser des whitepapers liés aux actifs
+                            tokenisés selon un framework réglementaire structuré. Les documents
+                            arrivent sous plusieurs formats et les preuves retenues doivent
+                            rester précisément traçables.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">02</p>
+                        <h3>Objectif</h3>
+                        <p>
+                            Transformer automatiquement un document soumis en analyse structurée :
+                            critères, flags, citations exactes, numéros de page, consolidation
+                            des preuves et synthèse exécutive, puis publier ces résultats.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">03</p>
+                        <h3>Notre rôle</h3>
+                        <p>
+                            Concevoir et développer le pipeline Python V4 : récupération API,
+                            préparation documentaire et OCR, orchestration de trois agents IA,
+                            retry/failover, contrôles qualité, monitoring et publication API.
+                        </p>
+                    </article>
+
+                    <article class="project-overview__item">
+                        <p class="project-overview__index" aria-hidden="true">04</p>
+                        <h3>Résultat</h3>
+                        <p>
+                            Un worker conteneurisé capable de prendre en charge automatiquement
+                            un rapport, de produire et contrôler l’analyse, de publier les
+                            résultats et de conserver les artefacts utiles à l’audit.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--media" aria-labelledby="architecture-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">ARCHITECTURE</p>
+                    <h2 id="architecture-title">Du whitepaper à l’analyse publiée</h2>
+
+                    <p class="project-section__intro">
+                        Le schéma distingue le contexte applicatif ARIA du périmètre
+                        effectivement réalisé : orchestration, préparation documentaire,
+                        agents IA, publication, monitoring et services LLM externes.
+                    </p>
+                </header>
+
+                <figure class="project-media">
+                    <button
+                        class="project-media__zoom"
+                        type="button"
+                        data-project-image
+                        data-image-src="../assets/images/projects/rwa-compliance/architecture-rwa-compliance.png"
+                        data-image-alt="Schéma du pipeline RWA V4 : contexte applicatif ARIA, ingestion documentaire, trois agents IA, publication, monitoring et services OpenAI Gemini"
+                        aria-haspopup="dialog"
+                    >
+                        <img
+                            src="../assets/images/projects/rwa-compliance/architecture-rwa-compliance.png"
+                            alt="Schéma de principe du pipeline d’analyse réglementaire RWA"
+                        >
+                    </button>
+
+                    <div class="project-media__actions">
+                        <button
+                            class="project-media__open"
+                            type="button"
+                            data-project-image
+                            data-image-src="../assets/images/projects/rwa-compliance/architecture-rwa-compliance.png"
+                            data-image-alt="Schéma du pipeline RWA V4 : contexte applicatif ARIA, ingestion documentaire, trois agents IA, publication, monitoring et services OpenAI Gemini"
+                        >
+                            Ouvrir le schéma en grand
+                            <span aria-hidden="true">↗</span>
+                        </button>
+                    </div>
+
+                    <figcaption>
+                        Vue système du pipeline RWA V4. Les interfaces web, le backend
+                        applicatif et la base de données sont représentés pour le contexte,
+                        mais ne font pas partie du périmètre de réalisation présenté.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="markers-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">REPÈRES TECHNIQUES</p>
+                    <h2 id="markers-title">Les éléments structurants</h2>
+                </header>
+
+                <div class="project-results">
+                    <article class="project-result">
+                        <strong>3 pipelines documentaires</strong>
+                        <span>DOCX, PDF vectoriel et PDF raster avec OCR.</span>
+                    </article>
+                    <article class="project-result">
+                        <strong>3 agents IA</strong>
+                        <span>Analyse, déduplication puis synthèse exécutive.</span>
+                    </article>
+                    <article class="project-result">
+                        <strong>2 providers LLM</strong>
+                        <span>OpenAI + Gemini avec retry et failover configurables.</span>
+                    </article>
+                    <article class="project-result">
+                        <strong>Citations paginées</strong>
+                        <span>Preuves exactes rattachées aux pages du document source.</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section project-section--technical" aria-labelledby="technical-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">DÉTAILS TECHNIQUES</p>
+                    <h2 id="technical-title">Architecture et mise en œuvre</h2>
+
+                    <p class="project-section__intro">
+                        Cette partie présente le périmètre technique du worker :
+                        ingestion, orchestration IA, contrôles de qualité,
+                        traçabilité et intégration avec l’application.
+                    </p>
+                </header>
+
+                <div class="project-details">
+                    <article class="project-detail">
+                        <p class="project-detail__label">DOCUMENT · INGESTION</p>
+                        <h3>Préparation documentaire &amp; OCR</h3>
+                        <ul class="project-detail__list">
+                            <li>Récupération des rapports via API et téléchargement du whitepaper.</li>
+                            <li>Trois chaînes : DOC/DOCX, PDF vectoriel et PDF raster.</li>
+                            <li>Conversion DOCX vers PDF avec LibreOffice.</li>
+                            <li>Rendu des PDF raster à 300 dpi puis OCR Tesseract.</li>
+                            <li>Pagination avec marqueurs <code>--- PAGE N ---</code> pour tracer les citations.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">AI · ORCHESTRATION</p>
+                        <h3>Analyse et consolidation multi-agents</h3>
+                        <ul class="project-detail__list">
+                            <li>Découpage du whitepaper en chunks d’environ deux pages.</li>
+                            <li>Agent 1 : analyse du framework et extraction de citations verbatim.</li>
+                            <li>Agrégation multi-chunks et contrôles de cohérence.</li>
+                            <li>Agent 2 : suppression des redondances par <code>framework_id</code>.</li>
+                            <li>Agent 3 : synthèse exécutive complémentaire et non bloquante.</li>
+                            <li>Retry et failover OpenAI / Gemini configurables selon les étapes.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">QUALITY · TRACEABILITY</p>
+                        <h3>Contrôles, audit &amp; robustesse</h3>
+                        <ul class="project-detail__list">
+                            <li>Format JSON strict attendu des agents et redressement des structures incomplètes.</li>
+                            <li>Contrôle de l’alignement entre flags, pages, extraits et sorties.</li>
+                            <li>Validation des citations et des sous-points avant publication.</li>
+                            <li>Conservation des chunks, JSON intermédiaires, payloads, audits et logs.</li>
+                            <li>Monitoring du provider, du modèle utilisé, des statuts et artefacts.</li>
+                            <li>Verrou anti-concurrence pour empêcher le double lancement CRON.</li>
+                        </ul>
+                    </article>
+
+                    <article class="project-detail">
+                        <p class="project-detail__label">APPLICATION · INTÉGRATION</p>
+                        <h3>API, statuts &amp; publication</h3>
+                        <ul class="project-detail__list">
+                            <li>Interaction avec le backend ARIA via API HTTP authentifiée.</li>
+                            <li>Cycle <code>PENDING</code> → <code>PROCESSING</code> → <code>COMPLETED</code> / <code>ERROR</code>.</li>
+                            <li>Publication des résultats détaillés par <code>framework_id</code>.</li>
+                            <li>Publication séparée de la synthèse Agent 3.</li>
+                            <li>Dockerisation du worker et utilisation de volumes partagés.</li>
+                            <li>Interfaces Admin/Utilisateur et base applicative hors périmètre de réalisation.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="stack-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">STACK</p>
+                    <h2 id="stack-title">Technologies utilisées</h2>
+                </header>
+
+                <ul class="project-stack" aria-label="Stack complète du projet RWA Compliance">
+                    <li>Python 3.11</li>
+                    <li>pandas</li>
+                    <li>requests</li>
+                    <li>LangChain</li>
+                    <li>OpenAI API</li>
+                    <li>Google Gemini</li>
+                    <li>PyMuPDF</li>
+                    <li>pdfplumber</li>
+                    <li>pdf2image</li>
+                    <li>Tesseract OCR</li>
+                    <li>LibreOffice</li>
+                    <li>Ghostscript</li>
+                    <li>Poppler</li>
+                    <li>Docker</li>
+                    <li>Docker Compose</li>
+                    <li>CRON</li>
+                    <li>API REST / JSON</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="project-section" aria-labelledby="evidence-title">
+            <div class="content-container">
+                <header class="project-section__heading">
+                    <p class="eyebrow">EXEMPLES PUBLICS</p>
+                    <h2 id="evidence-title">Des dossiers analysés à leur évolution publique</h2>
+
+                    <p class="project-section__intro">
+                        Ces liens illustrent des projets ou actifs associés à des
+                        whitepapers étudiés. Le statut public d’un VASP ou d’un actif
+                        ne doit pas être confondu automatiquement avec l’approbation
+                        individuelle d’un token précis par VARA.
+                    </p>
+                </header>
+
+                <div class="project-evidence">
+                    <article class="project-evidence__card">
+                        <p class="project-evidence__status">Projet public opérationnel</p>
+                        <h3>PRYPCO Mint</h3>
+                        <p>
+                            Plateforme publique de tokenisation d’actifs réels à Dubaï.
+                            PRYPCO indique une licence VARA pour ses activités réglementées
+                            et un partenariat avec le Dubai Land Department.
+                        </p>
+                        <a class="project-evidence__link" href="https://prypco.com/mint" target="_blank" rel="noopener noreferrer">
+                            Voir le projet public <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="project-evidence__card">
+                        <p class="project-evidence__status">Projet public · émission à distinguer</p>
+                        <h3>AquaIndex / Water Tokenization</h3>
+                        <p>
+                            Projet public de valorisation et tokenisation d’actifs liés à l’eau.
+                            L’existence du projet est publique, sans assimiler automatiquement
+                            le token exact du whitepaper à une émission VARA confirmée.
+                        </p>
+                        <a class="project-evidence__link" href="https://www.aqua-index.com/" target="_blank" rel="noopener noreferrer">
+                            Voir AquaIndex <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="project-evidence__card">
+                        <p class="project-evidence__status">Actif public · token exact non confirmé</p>
+                        <h3>Ellington — Belgravia Gardens</h3>
+                        <p>
+                            Belgravia Gardens est publiquement référencé par Ellington.
+                            L’existence du projet immobilier ne suffit toutefois pas à confirmer
+                            publiquement l’émission exacte du token étudié dans le whitepaper.
+                        </p>
+                        <a class="project-evidence__link" href="https://ellingtonproperties.ae/en/property-for-sale/belgravia-gardens-dubailand#close-popup" target="_blank" rel="noopener noreferrer">
+                            Voir Belgravia Gardens <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+
+                    <article class="project-evidence__card">
+                        <p class="project-evidence__status">Fonds public · token exact non confirmé</p>
+                        <h3>Laser Digital Carry Fund</h3>
+                        <p>
+                            Le fonds sous-jacent et son ouverture à des mécanismes de tokenisation
+                            sont publiquement documentés. Le token exact TLCF du whitepaper étudié
+                            ne doit pas être présenté comme une émission VARA publiquement confirmée.
+                        </p>
+                        <a class="project-evidence__link" href="https://www.laserdigital.com/newsroom/sui-partners-with-libre-giving-investors-access-to-the-laser-carry-fund-lcf" target="_blank" rel="noopener noreferrer">
+                            Voir Laser Digital <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                </div>
+
+                <p class="project-note">
+                    Les statuts réglementaires évoluent. Cette sélection illustre
+                    le contexte métier du projet ; elle ne remplace pas le registre
+                    officiel VARA ni l’analyse réglementaire propre à chaque actif.
+                </p>
+            </div>
+        </section>
+
+        <aside class="project-confidentiality" aria-labelledby="confidentiality-title">
+            <div class="content-container project-confidentiality__inner">
+                <p class="project-confidentiality__label" id="confidentiality-title">
+                    Confidentialité
+                </p>
+
+                <p class="project-confidentiality__text">
+                    Cette présentation décrit le pipeline IA et ses intégrations
+                    techniques. Les whitepapers clients, résultats d’analyse,
+                    logs de production, credentials, secrets, prompts privés
+                    et données internes ne sont pas publiés. Les interfaces web
+                    et la base de données sont représentées uniquement pour
+                    restituer le contexte du système.
+                </p>
+            </div>
+        </aside>
+
+        <nav class="project-navigation" aria-label="Navigation entre les projets">
+            <div class="content-container project-navigation__inner">
+                <a href="rag-juridique.html">
+                    <span aria-hidden="true">←</span>
+                    Projet précédent : RAG juridique
+                </a>
+
+                <a class="project-navigation__all" href="../index.html#projets">
+                    Tous les projets
+                </a>
+
+                <a class="project-navigation__next" href="ajc-data.html">
+                    Projet suivant : AJC Match
+                    <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <dialog class="image-dialog" data-image-dialog aria-label="Agrandissement du visuel">
+        <div class="image-dialog__toolbar">
+            <p>Vue agrandie</p>
+            <button class="image-dialog__close" type="button" data-image-dialog-close aria-label="Fermer l’image agrandie">
+                ×
+            </button>
+        </div>
+
+        <div class="image-dialog__viewport">
+            <img data-image-dialog-img src="" alt="">
+        </div>
+    </dialog>
+</body>
+</html>
