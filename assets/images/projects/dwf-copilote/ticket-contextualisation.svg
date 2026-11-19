@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="470" viewBox="0 0 1600 470" role="img" aria-labelledby="ti td"><title id="ti">Contexte d’un ticket DWF-Copilote</title><desc id="td">Un ticket est rattaché à une identité vérifiée, enrichi par la Knowledge et les preuves avant la revue humaine ; l'aide RAG demeure une trajectoire.</desc><rect width="1600" height="470" fill="#0d1724" rx="28"/>
+<text x="52" y="68" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" font-weight="700" fill="#f7fafc"><tspan x="52" dy="0">TICKET INTELLIGENCE / PARCOURS DÉMONTRÉ</tspan></text>
+<rect x="48" y="121" width="267" height="144" rx="20" fill="#16293b" stroke="#5cd3e6" stroke-width="2"/>
+<text x="67" y="178" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#e9f6ff"><tspan x="67" dy="0">TICKET</tspan></text>
+<text x="67" y="218" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#a8c1d4"><tspan x="67" dy="0">Entrée support</tspan></text>
+<path d="M320 194 H357 m-13 -9 l13 9 -13 9" fill="none" stroke="#63d7ff" stroke-width="4"/>
+<rect x="361" y="121" width="267" height="144" rx="20" fill="#16293b" stroke="#5cd3e6" stroke-width="2"/>
+<text x="380" y="178" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#e9f6ff"><tspan x="380" dy="0">IDENTITÉ</tspan></text>
+<text x="380" y="218" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#a8c1d4"><tspan x="380" dy="0">Client vérifié</tspan></text>
+<path d="M633 194 H670 m-13 -9 l13 9 -13 9" fill="none" stroke="#63d7ff" stroke-width="4"/>
+<rect x="674" y="121" width="267" height="144" rx="20" fill="#16293b" stroke="#5cd3e6" stroke-width="2"/>
+<text x="693" y="178" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#e9f6ff"><tspan x="693" dy="0">KNOWLEDGE</tspan></text>
+<text x="693" y="218" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#a8c1d4"><tspan x="693" dy="0">SQLite + fraîcheur</tspan></text>
+<path d="M946 194 H983 m-13 -9 l13 9 -13 9" fill="none" stroke="#63d7ff" stroke-width="4"/>
+<rect x="987" y="121" width="267" height="144" rx="20" fill="#16293b" stroke="#5cd3e6" stroke-width="2"/>
+<text x="1006" y="178" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#e9f6ff"><tspan x="1006" dy="0">PREUVES</tspan></text>
+<text x="1006" y="218" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#a8c1d4"><tspan x="1006" dy="0">Git / hébergement</tspan></text>
+<path d="M1259 194 H1296 m-13 -9 l13 9 -13 9" fill="none" stroke="#63d7ff" stroke-width="4"/>
+<rect x="1300" y="121" width="267" height="144" rx="20" fill="#16293b" stroke="#5cd3e6" stroke-width="2"/>
+<text x="1319" y="178" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="700" fill="#e9f6ff"><tspan x="1319" dy="0">REVUE</tspan></text>
+<text x="1319" y="218" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="400" fill="#a8c1d4"><tspan x="1319" dy="0">Décision humaine</tspan></text>
+<rect x="48" y="305" width="1504" height="104" rx="16" fill="#211d38" stroke="#b89eff" stroke-width="2" stroke-dasharray="12 9"/>
+<text x="76" y="346" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" fill="#e2d7ff"><tspan x="76" dy="0">IA / RAG — CIBLE : reformulation, retrieval documenté, diagnostic candidat et validation humaine avant action</tspan></text>
+<text x="76" y="384" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="400" fill="#b6aecf"><tspan x="76" dy="0">Aucune décision autonome de résolution ou de déploiement n’est annoncée comme opérationnelle.</tspan></text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="svg-title svg-desc">
+<title id="svg-title">Architecture publique DWF-Copilote en six couches</title>
+<desc id="svg-desc">Du CRM, des tickets et des fournisseurs à la collecte, la Knowledge SQLite, le contexte des tickets, la trajectoire IA et les portails. Les états distinguent réalisé local, mixte et cible.</desc>
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0a1220"/><stop offset="1" stop-color="#101e2b"/></linearGradient></defs>
+<rect width="1920" height="1080" fill="url(#bg)"/>
+<rect x="48" y="32" width="1824" height="1016" rx="24" fill="none" stroke="#365063" stroke-width="2"/>
+
+<text x="91" y="91" font-family="DejaVu Sans,Arial,sans-serif" font-size="36" font-weight="700" fill="#f8fafc"><tspan x="91" dy="0">DWF-COPILOTE  /  ARCHITECTURE DE RÉFÉRENCE</tspan></text>
+<text x="93" y="131" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" fill="#9db2c7"><tspan x="93" dy="0">Du patrimoine technique au support gouverné — synthèse publique KDv2 → KDv4</tspan></text>
+<rect x="92" y="173" width="1736" height="111" rx="17" fill="#172637" stroke="#58d8ed" stroke-opacity=".7" stroke-width="2"/>
+<rect x="105" y="185" width="82" height="86" rx="12" fill="#58d8ed" fill-opacity=".12"/>
+<text x="123" y="242" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="700" fill="#58d8ed"><tspan x="123" dy="0">01</tspan></text>
+<text x="218" y="216" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f7ff"><tspan x="218" dy="0">SOURCES &amp; PROVIDERS</tspan></text>
+<text x="218" y="253" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="500" fill="#58d8ed"><tspan x="218" dy="0">Démontré sur périmètres contrôlés</tspan></text>
+<text x="835" y="216" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#c6d4e2"><tspan x="835" dy="0">DWF / CRM et tickets  •  Bitbucket / Git  •  o2switch  •  Infomaniak</tspan><tspan x="835" dy="31">DNS / WHOIS  •  documentation fournisseur</tspan></text>
+<path d="M960 285 V308" stroke="#8ca3b7" stroke-width="4" stroke-dasharray="none"/>
+<path d="M950 300 L960 311 L970 300" fill="none" stroke="#8ca3b7" stroke-width="3"/>
+<rect x="92" y="310" width="1736" height="111" rx="17" fill="#172637" stroke="#58d8ed" stroke-opacity=".7" stroke-width="2"/>
+<rect x="105" y="322" width="82" height="86" rx="12" fill="#58d8ed" fill-opacity=".12"/>
+<text x="123" y="379" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="700" fill="#58d8ed"><tspan x="123" dy="0">02</tspan></text>
+<text x="218" y="353" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f7ff"><tspan x="218" dy="0">COLLECTE &amp; NORMALISATION</tspan></text>
+<text x="218" y="390" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="500" fill="#58d8ed"><tspan x="218" dy="0">Pilotes et collectes qualifiés</tspan></text>
+<text x="835" y="353" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#c6d4e2"><tspan x="835" dy="0">API et import  •  Git  •  SSH / FTPES  •  cPanel  •  navigateur contrôlé</tspan><tspan x="835" dy="31">périmètres, instantanés et diagnostics traçables</tspan></text>
+<path d="M960 422 V445" stroke="#8ca3b7" stroke-width="4" stroke-dasharray="none"/>
+<path d="M950 437 L960 448 L970 437" fill="none" stroke="#8ca3b7" stroke-width="3"/>
+<rect x="92" y="447" width="1736" height="111" rx="17" fill="#172637" stroke="#58d8ed" stroke-opacity=".7" stroke-width="2"/>
+<rect x="105" y="459" width="82" height="86" rx="12" fill="#58d8ed" fill-opacity=".12"/>
+<text x="123" y="516" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="700" fill="#58d8ed"><tspan x="123" dy="0">03</tspan></text>
+<text x="218" y="490" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f7ff"><tspan x="218" dy="0">KNOWLEDGE &amp; QUALITÉ</tspan></text>
+<text x="218" y="527" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="500" fill="#58d8ed"><tspan x="218" dy="0">Réalisé / qualification progressive</tspan></text>
+<text x="835" y="490" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#c6d4e2"><tspan x="835" dy="0">SQLite  •  identités et rattachements  •  provenance et fraîcheur</tspan><tspan x="835" dy="31">relations attestées / candidates  •  contrôles et revue humaine</tspan></text>
+<path d="M960 559 V582" stroke="#8ca3b7" stroke-width="4" stroke-dasharray="none"/>
+<path d="M950 574 L960 585 L970 574" fill="none" stroke="#8ca3b7" stroke-width="3"/>
+<rect x="92" y="584" width="1736" height="111" rx="17" fill="#172637" stroke="#58d8ed" stroke-opacity=".7" stroke-width="2"/>
+<rect x="105" y="596" width="82" height="86" rx="12" fill="#58d8ed" fill-opacity=".12"/>
+<text x="123" y="653" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="700" fill="#58d8ed"><tspan x="123" dy="0">04</tspan></text>
+<text x="218" y="627" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f7ff"><tspan x="218" dy="0">TICKET &amp; CONTEXTE</tspan></text>
+<text x="218" y="664" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="500" fill="#58d8ed"><tspan x="218" dy="0">Démontré en local / sous contrôle</tspan></text>
+<text x="835" y="627" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#c6d4e2"><tspan x="835" dy="0">ticket → client → site → domaine → dépôt → hébergement → runtime</tspan><tspan x="835" dy="31">preuves vérifiées  •  contexte borné  •  préparation du diagnostic</tspan></text>
+<path d="M960 696 V719" stroke="#8ca3b7" stroke-width="4" stroke-dasharray="6 5"/>
+<path d="M950 711 L960 722 L970 711" fill="none" stroke="#8ca3b7" stroke-width="3"/>
+<rect x="92" y="721" width="1736" height="111" rx="17" fill="#172637" stroke="#b89eff" stroke-opacity=".7" stroke-width="2" stroke-dasharray="12 9"/>
+<rect x="105" y="733" width="82" height="86" rx="12" fill="#b89eff" fill-opacity=".12"/>
+<text x="123" y="790" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="700" fill="#b89eff"><tspan x="123" dy="0">05</tspan></text>
+<text x="218" y="764" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f7ff"><tspan x="218" dy="0">IA &amp; RAG — TRAJECTOIRE</tspan></text>
+<text x="218" y="801" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="500" fill="#b89eff"><tspan x="218" dy="0">Cible, pas en production</tspan></text>
+<text x="835" y="764" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#c6d4e2"><tspan x="835" dy="0">classification  •  recherche documentaire + Knowledge  •  LLM</tspan><tspan x="835" dy="31">diagnostic et proposition de résolution  •  validation humaine obligatoire</tspan></text>
+<path d="M960 833 V856" stroke="#8ca3b7" stroke-width="4" stroke-dasharray="none"/>
+<path d="M950 848 L960 859 L970 848" fill="none" stroke="#8ca3b7" stroke-width="3"/>
+<rect x="92" y="858" width="1736" height="111" rx="17" fill="#172637" stroke="#ffbf70" stroke-opacity=".7" stroke-width="2"/>
+<rect x="105" y="870" width="82" height="86" rx="12" fill="#ffbf70" fill-opacity=".12"/>
+<text x="123" y="927" font-family="DejaVu Sans,Arial,sans-serif" font-size="35" font-weight="700" fill="#ffbf70"><tspan x="123" dy="0">06</tspan></text>
+<text x="218" y="901" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f7ff"><tspan x="218" dy="0">PORTAILS &amp; INDUSTRIALISATION</tspan></text>
+<text x="218" y="938" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="500" fill="#ffbf70"><tspan x="218" dy="0">Réalisé local + objectifs à valider</tspan></text>
+<text x="835" y="901" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="400" fill="#c6d4e2"><tspan x="835" dy="0">portail client en lecture seule  •  portail de revue  •  jobs</tspan><tspan x="835" dy="31">Docker en validation locale  •  observabilité  •  RBAC / bascule futurs</tspan></text>
+<text x="94" y="1031" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="400" fill="#9fb2c4"><tspan x="94" dy="0">Trait plein : fonction démontrée localement   •   Pointillés : couche cible   •   Aucun accès aux données clients dans ce schéma</tspan></text>
+</svg>

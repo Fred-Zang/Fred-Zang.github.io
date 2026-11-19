@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+
+    <!--
+        Le viewport conserve une mise en page adaptée aux smartphones
+        et aux écrans de bureau.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="DWF-Copilote : collecte multi-sources, Knowledge SQLite, gouvernance des preuves et support technique augmenté par Data, QA et IA."
+    >
+
+    <title>DWF-Copilote — Zang.AI</title>
+    <!-- Icônes du site : SVG moderne + ICO de compatibilité. -->
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+
+    <!--
+        La feuille principale conserve l'identité visuelle de Zang.AI.
+        project.css?v=1.0.0 contient uniquement les composants propres aux fiches projets.
+    -->
+    <link rel="stylesheet" href="../styles.css?v=1.1.0">
+    <link rel="stylesheet" href="project.css?v=1.0.0">
+
+    <!--
+        script.js?v=1.0.0 conserve la navigation mobile du site.
+        project.js?v=1.0.0 gère uniquement l'agrandissement des visuels techniques.
+    -->
+    <script src="../script.js?v=1.0.0" defer></script>
+    <script src="project.js?v=1.0.0" defer></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#contenu-principal">
+        Aller directement au contenu
+    </a>
+
+    <!--
+        En-tête mobile identique à celui de la page d'accueil.
+        Tous les liens remontent d'un dossier grâce à ../
+    -->
+    <header class="mobile-header">
+        <a
+            class="brand brand--mobile"
+            href="../index.html#accueil"
+            aria-label="Accueil Zang.AI"
+        >
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="menu-mobile"
+            aria-label="Ouvrir le menu principal"
+        >
+            <span class="menu-toggle__icon" aria-hidden="true"></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" data-menu-overlay hidden></div>
+
+    <nav
+        class="mobile-menu"
+        id="menu-mobile"
+        aria-label="Navigation principale mobile"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        <div class="mobile-menu__header">
+            <a class="brand" href="../index.html#accueil" data-menu-link>
+                <span class="brand__name">
+                    Zang<span class="brand__accent">.AI</span>
+                </span>
+                <span class="brand__tagline">AI · Data · Automation</span>
+            </a>
+
+            <button
+                class="menu-close"
+                type="button"
+                aria-label="Fermer le menu principal"
+            >
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <ul class="navigation-list">
+            <li><a class="navigation-link" href="../index.html#accueil" data-menu-link>Accueil</a></li>
+            <li>
+                <a
+                    class="navigation-link navigation-link--active"
+                    href="../index.html#projets"
+                    aria-current="page"
+                    data-menu-link
+                >
+                    Projets
+                </a>
+            </li>
+            <li><a class="navigation-link" href="../index.html#competences" data-menu-link>Compétences</a></li>
+            <li><a class="navigation-link" href="../index.html#articles" data-menu-link>Articles</a></li>
+            <li><a class="navigation-link" href="../index.html#parcours" data-menu-link>Parcours</a></li>
+            <li><a class="navigation-link" href="../index.html#contact" data-menu-link>Contact</a></li>
+        </ul>
+
+        <div class="mobile-menu__secondary">
+            <a
+                href="https://github.com/Fred-Zang/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-menu-link
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-menu-link
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="../assets/documents/CV_Fred_Zanghi_2026.pdf"
+                download
+                data-menu-link
+            >
+                Télécharger le CV
+            </a>
+        </div>
+    </nav>
+
+    <!--
+        Sidebar desktop conservée pour que la fiche reste immédiatement
+        identifiable comme une page du même portfolio.
+    -->
+    <aside class="sidebar">
+        <a class="brand" href="../index.html#accueil" aria-label="Accueil Zang.AI">
+            <span class="brand__name">
+                Zang<span class="brand__accent">.AI</span>
+            </span>
+            <span class="brand__tagline">AI · Data · Automation</span>
+        </a>
+
+        <nav class="sidebar__navigation" aria-label="Navigation principale">
+            <ul class="navigation-list">
+                <li><a class="navigation-link" href="../index.html#accueil">Accueil</a></li>
+                <li>
+                    <a
+                        class="navigation-link navigation-link--active"
+                        href="../index.html#projets"
+                        aria-current="page"
+                    >
+                        Projets
+                    </a>
+                </li>
+                <li><a class="navigation-link" href="../index.html#competences">Compétences</a></li>
+                <li><a class="navigation-link" href="../index.html#articles">Articles</a></li>
+                <li><a class="navigation-link" href="../index.html#parcours">Parcours</a></li>
+                <li><a class="navigation-link" href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar__secondary">
+            <a
+                href="https://github.com/Fred-Zang/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/fred-zanghi-89a01390/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a href="../assets/documents/CV_Fred_Zanghi_2026.pdf" download>
+                Télécharger le CV
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content project-page" id="contenu-principal">
+        <!-- Présentation du cas client sans données métier privées ni promesse de production IA. -->
+        <section class="project-hero" aria-labelledby="project-title">
+            <div class="content-container">
+                <a class="project-back-link" href="../index.html#projets"><span aria-hidden="true">←</span> Retour aux projets</a>
+                <div class="project-hero__layout">
+                    <div class="project-hero__content">
+                        <p class="eyebrow">DATA ENGINEERING · QUALITY ASSURANCE · COPILOTE</p>
+                        <h1 class="project-hero__title project-hero__title--dwf" id="project-title">DWF-Copilote — Support Technique Augmenté par Data, QA &amp; IA</h1>
+                        <p class="project-hero__summary">Un portefeuille de centaines de clients, des informations dispersées entre outil métier, tickets, dépôts Git, hébergeurs et infrastructures : le défi est de reconstituer un contexte technique fiable avant toute assistance au diagnostic.</p>
+                        <ul class="project-tags project-tags--hero" aria-label="Principales technologies"><li>Python</li><li>SQLite</li><li>ETL / API</li><li>Git / Bitbucket</li><li>Docker</li><li>pytest</li><li>IA / RAG cible</li></ul>
+                        <div class="project-resource-links">
+                            <a class="project-resource-link" href="../demos/dwf-knowledge-fictive.html" target="_blank" rel="noopener noreferrer">Explorer la démonstration fictive <span aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                    <dl class="project-meta" aria-label="Informations du projet">
+                        <div><dt>Client</dt><dd>Delta Web France (DWF)</dd></div>
+                        <div><dt>Période</dt><dd>2026</dd></div>
+                        <div><dt>Périmètre de référence</dt><dd>204 clients</dd></div>
+                        <div><dt>Rôle</dt><dd>Conception, développement, audit et qualification technique</dd></div>
+                        <div><dt>Maturité</dt><dd>Socle et pilotes locaux démontrés · industrialisation et IA avancée progressives</dd></div>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- Le contexte, la mission et le résultat se lisent sans connaître les outils DWF. -->
+        <section class="project-section" aria-labelledby="dwf-intro">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">MISSION</p><h2 id="dwf-intro">Rendre le support mieux informé, et ses preuves vérifiables</h2></header>
+                <div class="project-overview">
+                    <article class="project-overview__item"><p class="project-overview__index">01 · PROBLÈME</p><h3>Sources dispersées</h3><p>Clients, sites, domaines, tickets, dépôts et hébergements se croisent sans correspondance toujours garantie.</p></article>
+                    <article class="project-overview__item"><p class="project-overview__index">02 · RÉPONSE</p><h3>Collecter et consolider</h3><p>Réutiliser les accès autorisés, normaliser les observations et constituer une Knowledge structurée dans SQLite.</p></article>
+                    <article class="project-overview__item"><p class="project-overview__index">03 · GARDE-FOU</p><h3>Qualifier avant d'affirmer</h3><p>Documenter provenance, fraîcheur, identités et niveaux de preuve ; laisser les conflits et données inconnues visibles.</p></article>
+                    <article class="project-overview__item"><p class="project-overview__index">04 · CAP</p><h3>Vers l'aide au diagnostic</h3><p>Préparer les informations pertinentes pour un ticket, puis envisager l'assistance RAG/LLM sous contrôle humain.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schéma public SVG statique : aucune bibliothèque Mermaid externe requise. -->
+        <section class="project-section project-section--media" aria-labelledby="dwf-architecture">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">ARCHITECTURE</p><h2 id="dwf-architecture">Six couches, de la collecte au copilote</h2><p class="project-section__intro">Synthèse des flux KDv2 et de l'architecture ticket-first KDv4 : les traits pleins caractérisent les briques démontrées localement, les pointillés les trajectoires cibles. Les statuts sont indiqués dans le schéma.</p></header>
+                <figure class="project-media">
+                    <button class="project-media__zoom" type="button" data-project-image data-image-src="../assets/images/projects/dwf-copilote/architecture-dwf-copilote.svg" data-image-alt="Architecture DWF-Copilote en six couches avec distinction des pilotes, acquis locaux et objectifs" aria-haspopup="dialog">
+                        <img src="../assets/images/projects/dwf-copilote/architecture-dwf-copilote.svg" alt="Schéma DWF-Copilote : sources, collecteurs, SQLite et qualité, ticket, IA/RAG cible, portails et Docker" loading="lazy">
+                    </button>
+                    <div class="project-media__actions"><button class="project-media__open" type="button" data-project-image data-image-src="../assets/images/projects/dwf-copilote/architecture-dwf-copilote.svg" data-image-alt="Architecture DWF-Copilote en six couches">Ouvrir le schéma en grand <span aria-hidden="true">↗</span></button></div>
+                    <figcaption>Illustration publique simplifiée, basée sur les schémas Mermaid et les contrats du projet ; aucune donnée client ou capture privée.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Quelques repères opérationnels, sans statistiques extraites des bases privées. -->
+        <section class="project-section" aria-labelledby="dwf-reperes">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">REPÈRES</p><h2 id="dwf-reperes">Ce que l'expérience concrétise</h2></header>
+                <div class="project-results">
+                    <article class="project-result"><strong>204 clients</strong><span>Portefeuille de référence à contextualiser.</span></article>
+                    <article class="project-result"><strong>Multi-sources</strong><span>Outil métier, Git, hébergeurs, DNS et tickets.</span></article>
+                    <article class="project-result"><strong>SQLite + QA</strong><span>Observations, rapprochements, états de preuve et revue.</span></article>
+                    <article class="project-result"><strong>KDv2 → KDv4</strong><span>Progression vers des composants autonomes, testables et contrôlés.</span></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quatre domaines techniques évitent de répéter la chronologie des versions. -->
+        <section class="project-section project-section--technical" aria-labelledby="dwf-technique">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">MISE EN ŒUVRE</p><h2 id="dwf-technique">Collecte, Knowledge, QA et contexte des tickets</h2></header>
+                <div class="project-details">
+                    <article class="project-detail"><p class="project-detail__label">01 · DATA ENGINEERING</p><h3>Collectes et consolidation</h3><ul class="project-detail__list"><li>Collectes et audits ciblés depuis DWF/outil métier, Git/Bitbucket, o2switch, Infomaniak et DNS/WHOIS.</li><li>Parcours API, Git, cPanel, SSH/FTPES et navigateur automatisé dans des périmètres contrôlés.</li><li>Normalisation et matérialisation SQLite, avec séparation des observations et des projections.</li></ul></article>
+                    <article class="project-detail"><p class="project-detail__label">02 · DATA QUALITY</p><h3>Relations, preuve et gouvernance</h3><ul class="project-detail__list"><li>Rapprochement prudent client ↔ site ↔ domaine ↔ dépôt ↔ hébergement.</li><li>Provenance, horodatage, empreintes, fraîcheur et niveau de confiance.</li><li>Relations candidates conservées comme telles ; conflits, lacunes et validations humaines explicites.</li></ul></article>
+                    <article class="project-detail"><p class="project-detail__label">03 · TICKET INTELLIGENCE</p><h3>Contexte technique avant diagnostic</h3><ul class="project-detail__list"><li>Lecture des tickets et de leur historique, raccordement à l'identité client et aux références disponibles.</li><li>Préparation du contexte Git, DNS, hébergement et runtime à partir de preuves limitées au périmètre du ticket.</li><li>Portails locaux et vues de revue : les éléments non prouvés ne sont pas présentés comme certifiés.</li></ul></article>
+                    <article class="project-detail"><p class="project-detail__label">04 · PACKAGING &amp; TESTS</p><h3>Vers un runtime reproductible</h3><ul class="project-detail__list"><li>Composants Python testés avec pytest, journaux et contrats de reprise.</li><li>Travaux Docker et isolation des données privées, validations sur le poste de développement.</li><li>Déploiement sur un autre poste, restauration, droits fins et automatisation complète encore soumis à recette.</li></ul></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parcours ticket-first : l'automatisation des réponses n'est pas annoncée comme existante. -->
+        <section class="project-section project-section--media" aria-labelledby="dwf-ticket">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">TICKET INTELLIGENCE</p><h2 id="dwf-ticket">Un ticket doit d'abord hériter d'un contexte fiable</h2></header>
+                <figure class="project-media">
+                    <button class="project-media__zoom" type="button" data-project-image data-image-src="../assets/images/projects/dwf-copilote/ticket-contextualisation.svg" data-image-alt="Parcours ticket DWF, vérification d'identité, consolidation, preuves, revue humaine et IA cible" aria-haspopup="dialog"><img src="../assets/images/projects/dwf-copilote/ticket-contextualisation.svg" alt="Parcours depuis un ticket entrant jusqu'à la revue humaine, avant l'extension IA/RAG" loading="lazy"></button>
+                    <figcaption>Le périmètre réellement démontré est distinct de l'extension IA/LLM envisagée.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Une seule démonstration : toutes ses données sont fictives et isolées. -->
+        <section class="project-section" aria-labelledby="dwf-demo">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">DÉMONSTRATION FICTIVE</p><h2 id="dwf-demo">Explorer une Knowledge client sans exposer de données réelles</h2><p class="project-section__intro">Cette démonstration HTML autonome illustre les cartes clients, les tickets, les relations candidates et les états de preuve. Noms, tickets, domaines et configurations sont fictifs : aucun accès aux outils DWF ni aux serveurs n'est effectué.</p></header>
+                <div class="project-evidence"><article class="project-evidence__card"><span class="project-evidence__status">Démo locale et fictive</span><h3>Knowledge V2 — Atelier Papier Étoilé</h3><p>Parcours interactif de données d'exemple, avec distinctions entre observé, candidat, inconnu et validé.</p><a class="project-evidence__link" href="../demos/dwf-knowledge-fictive.html" target="_blank" rel="noopener noreferrer">Ouvrir la démonstration <span aria-hidden="true">↗</span></a></article><article class="project-evidence__card"><span class="project-evidence__status">Confidentialité</span><h3>Une vitrine indépendante du moteur privé</h3><p>Le site public n'intègre ni scripts de collecte réels, ni tokens, ni SQLite client, ni captures du portail métier privé.</p></article></div>
+            </div>
+        </section>
+
+        <!-- Séparation explicite des acquis et de la trajectoire pour le lecteur public. -->
+        <section class="project-section" aria-labelledby="dwf-maturite">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">TRANSPARENCE</p><h2 id="dwf-maturite">Aujourd'hui et prochaines étapes</h2></header>
+                <div class="project-evidence">
+                    <article class="project-evidence__card"><span class="project-evidence__status">Réalisé et démontré localement</span><h3>Socle Data / QA / portail</h3><p>Collectes et audits multi-sources, Knowledge SQLite, rapprochements qualifiés, vues locales de tickets et de preuves, tests Python et premiers travaux de packaging.</p></article>
+                    <article class="project-evidence__card"><span class="project-evidence__status">En cours ou cible</span><h3>Industrialisation &amp; assistance IA</h3><p>Portabilité Docker au-delà du poste local, orchestration complète autorisée, sauvegarde et reprise, droits d'accès et cycle RAG/LLM d'aide au diagnostic avec validation humaine.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Les technologies sont affichées sans attribuer une IA de production à DWF. -->
+        <section class="project-section" aria-labelledby="dwf-stack">
+            <div class="content-container">
+                <header class="project-section__heading"><p class="eyebrow">TECHNOLOGIES</p><h2 id="dwf-stack">Stack pratiquée et trajectoire</h2></header>
+                <ul class="project-stack" aria-label="Stack technique du projet DWF"><li>Python</li><li>SQLite / SQL</li><li>ETL</li><li>API REST</li><li>Git / Bitbucket</li><li>o2switch / cPanel</li><li>Infomaniak</li><li>DNS / WHOIS</li><li>HTML / CSS / JS</li><li>Docker (local)</li><li>pytest</li><li>RAG / LLM (cible)</li></ul>
+            </div>
+        </section>
+        <nav class="project-navigation" aria-label="Navigation entre projets"><div class="content-container project-navigation__inner"><span class="project-navigation__placeholder" aria-hidden="true"></span><a class="project-navigation__all" href="../index.html#projets">Tous les projets</a><a class="project-navigation__next" href="rag-juridique.html">Projet suivant : RAG juridique <span aria-hidden="true">→</span></a></div></nav>
+    </main>
+
+
+    <!--
+        Fenêtre native de zoom.
+        Le JavaScript injecte dans cette image la source du visuel sélectionné.
+    -->
+    <dialog class="image-dialog" data-image-dialog aria-label="Agrandissement du visuel">
+        <div class="image-dialog__toolbar">
+            <p>Vue agrandie</p>
+
+            <button
+                class="image-dialog__close"
+                type="button"
+                data-image-dialog-close
+                aria-label="Fermer l’image agrandie"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="image-dialog__viewport">
+            <img data-image-dialog-img src="" alt="">
+        </div>
+    </dialog>
+
+</body>
+</html>

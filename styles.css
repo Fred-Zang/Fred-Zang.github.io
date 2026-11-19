@@ -2899,3 +2899,49 @@ ol {
         background: var(--color-surface-hover);
     }
 }
+
+/*
+   DWF-Copilote : identité typographique légère, intégrée aux cartes existantes.
+   Le nom est volontairement textuel pour éviter un logo client non autorisé.
+*/
+.project-card__visual--dwf {
+    background:
+        radial-gradient(circle at 24% 95%, rgb(56 189 248 / 18%), transparent 55%),
+        repeating-linear-gradient(90deg, transparent 0 39px, rgb(255 255 255 / 4%) 39px 40px),
+        #171b1f;
+}
+.project-card__dwf-mark {
+    position: absolute;
+    left: var(--space-5);
+    bottom: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+    font-weight: 750;
+    line-height: 1.15;
+    color: var(--color-text);
+    letter-spacing: 0.015em;
+}
+.project-card__dwf-mark span {
+    color: var(--color-accent);
+    font-size: 0.58em;
+    font-weight: 600;
+}
+/* La compétence DWF est acquise sur les périmètres décrits, pas classée comme un cours. */
+.skills-progress--dwf {
+    border-color: rgb(52 211 153 / 35%);
+    background: linear-gradient(120deg, rgb(52 211 153 / 8%), transparent 60%), var(--color-surface);
+}
+.skills-dwf__link {
+    width: fit-content;
+    color: var(--color-accent);
+    font-weight: 650;
+    text-decoration: none;
+}
+.skills-dwf__link:hover, .skills-dwf__link:focus-visible { text-decoration: underline; }
+
+/* Titre DWF un peu plus compact pour garder un hero équilibré sur ordinateur. */
+.project-page .project-hero__title--dwf {
+    max-width: 24ch;
+    font-size: clamp(2.1rem, 4.2vw, 3.7rem);
+    line-height: 1.07;
+}
